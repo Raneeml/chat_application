@@ -127,4 +127,12 @@
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="chatroomform.resx">
+      <Filter>Resources</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SQLQuery1.sql" />
+  </ItemGroup>
 </Project>

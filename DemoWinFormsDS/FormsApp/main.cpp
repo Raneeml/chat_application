@@ -14,7 +14,7 @@ using namespace Globals;
 
 [STAThread]
 int main() {
-	SqlDbManager::startConnection("Data Source=DESKTOP-H1U4ABL;Initial Catalog=DemoAppDb;Integrated Security=True");
+	SqlDbManager::startConnection("Data Source=DESKTOP-PS268NT;Initial Catalog=ChatApplication;Integrated Security=True");
 	if (!usersRepo->tableExists()) {
 		usersRepo->createTable("id", true);
 	}
