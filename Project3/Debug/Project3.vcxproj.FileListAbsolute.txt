@@ -1,0 +1,9 @@
+D:\github\Chat-Application\project3\Project3\Debug\Project3.vcxproj.AssemblyReference.cache
+D:\github\Chat-Application\project3\Project3\Debug\Project3.chatroom.resources
+D:\github\Chat-Application\project3\Project3\Debug\Project3.MyForm.resources
+D:\github\Chat-Application\project3\Project3\Debug\Project3.SignUp.resources
+D:\github\Chat-Application\project3\Project3\Debug\Project3.vcxproj.GenerateResource.cache
+D:\github\chat\Project3\Debug\Project3.chatroom.resources
+D:\github\chat\Project3\Debug\Project3.MyForm.resources
+D:\github\chat\Project3\Debug\Project3.SignUp.resources
+D:\github\chat\Project3\Debug\Project3.vcxproj.GenerateResource.cache

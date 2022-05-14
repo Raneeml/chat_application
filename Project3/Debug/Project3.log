@@ -1,0 +1,5 @@
+﻿  main.cpp
+D:\github\chat\Project3\MyForm.h(239,23): warning C4101: 'e': unreferenced local variable
+D:\github\chat\Project3\SignUp.h(348,20): warning C4101: 'ex': unreferenced local variable
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Project3.vcxproj -> D:\github\chat\Debug\Project3.exe
