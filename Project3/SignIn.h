@@ -208,7 +208,7 @@ namespace Project3 {
 		}
 #pragma endregion
 
-	public: UserData^ user = nullptr;
+	public: UserData^ user ;
     public: bool switchToChatRoom = false;
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		
@@ -220,7 +220,7 @@ namespace Project3 {
 			 }
 			 try {
 				 QueryFilter^ filter = gcnew QueryFilter();
-				 filter = filter->whereColumn("user_id")
+				 filter = filter->whereColumn("UserId")
 					 ->isEqualTo(id)
 					 -> and ()
 					 ->whereColumn("password")

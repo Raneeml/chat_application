@@ -314,22 +314,29 @@ namespace Project3 {
 
 		}
 #pragma endregion
-public: UserData^ user = nullptr;
+public: UserData^ user= gcnew UserData() ;
 
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	String^ id = this->ID->Text;
-    //user->UserId = System::Convert::ToInt32(id);
+  
 	String^ fn = this->Fn->Text;
-    user->Fname = fn;
+ 
 	String^ ln = this->Ln->Text;
-    user->Lname = ln;
+
 	String^ pn = this->Pn->Text;
-     user->MobileNum = pn;
+ 
 	String^ password = this->pass1->Text;
-    user->password = password;
+
 	String^ confirm = this->confirm->Text;
 	String^ desc = this->desc->Text;
-    user->desc_ = desc;
+
+
+	//user->UserId = System::Convert::ToInt32(id);
+	user->Fname = fn;
+	user->Lname = ln;
+	user->MobileNum = pn;
+	user->password = password;
+	user->desc_ = desc;
 
 
 	if (id->Length == 0 || fn->Length == 0 || ln->Length == 0 || pn->Length == 0 || password->Length == 0 || confirm->Length == 0 || desc->Length == 0) {
@@ -344,7 +351,12 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	try {
 
 		bool inserted=usersRepo->insert(user);
-		if(inserted)this->Close();
+		if (inserted) {
+	
+
+
+			this->Close();
+		}
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show("Exist Phone number or ID","Failed to register new user", MessageBoxButtons::OK);
