@@ -25,13 +25,6 @@ Class UserData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String MobileNum : Public
     System.String password : Public
     System.String desc_ : Public
-Class Project3.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    UserData user : Public
-    Boolean switchToChatRoom : Public
-    Boolean switchToSignup : Public
 Class Project3.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -41,3 +34,10 @@ Class Project3.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Project3.chatroom: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project3.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UserData user : Public
+    Boolean switchToChatRoom : Public
+    Boolean switchToSignup : Public

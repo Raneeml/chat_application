@@ -17,7 +17,6 @@ namespace DBRepository {
 	}
 
 
-
 	generic <class T>
 	String^ SqlRepo<T>::getTableName()
 	{

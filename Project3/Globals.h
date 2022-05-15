@@ -14,7 +14,7 @@ using namespace std;
 
 namespace Globals {
 	//extern MyDataStruct* myGlobalDS;
-	 int theUserID;     // global variable for the current account ID
+	 extern int theUserID; // global variable for the current account ID
 	 extern gcroot<SqlRepo<UserData^>^> usersRepo;
 
 	//convert .NET String to c++ string

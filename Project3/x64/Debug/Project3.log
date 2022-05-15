@@ -1,12 +1,5 @@
-﻿  Globals.cpp
-D:\github\chat_application\Project3\Globals.cpp(17,18): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
-D:\github\chat_application\Project3\Globals.cpp(17,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  SignIn.cpp
-D:\github\chat_application\Project3\SignIn.h(229,39): error C2065: 'usersRepo': undeclared identifier
-D:\github\chat_application\Project3\SignIn.h(234,28): error C3861: 'cliToSTD': identifier not found
-D:\github\chat_application\Project3\SignIn.h(235,6): error C2065: 'theUserID': undeclared identifier
-  main.cpp
-D:\github\chat_application\Project3\SignIn.h(229,39): error C2065: 'usersRepo': undeclared identifier
-D:\github\chat_application\Project3\SignIn.h(234,28): error C3861: 'cliToSTD': identifier not found
-D:\github\chat_application\Project3\SignIn.h(235,6): error C2065: 'theUserID': undeclared identifier
-  Generating Code...
+﻿  main.cpp
+D:\github\chat_application\Project3\SignUp.h(349,20): warning C4101: 'ex': unreferenced local variable
+D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Project3.vcxproj -> D:\github\chat_application\x64\Debug\Project3.exe

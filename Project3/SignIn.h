@@ -1,14 +1,17 @@
 #pragma once
 #include "UserData.h"
+#include "SignUp.h"
 #include "Globals.h"
 #include "SqlRepo.h"
 #include "QueryFilter.h"
+#include "chatroom.h"
 #include <string>
 #include <iostream>
 
 namespace Project3 {
 	using namespace std;
 	using namespace System;
+	using namespace Globals;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
@@ -231,9 +234,8 @@ namespace Project3 {
 				 if (filteredUsers->ToArray()->Length == 1) {
 					 UserData^ user = filteredUsers[0];
 					  //get the user data from database and login to his account
-					 string convertedID = cliToSTD(id); //convert ID from sys to std
-					theUserID = stoi(convertedID);//convert ID from std string to int
-					
+					 string convertedID =cliToSTD(id); //convert ID from sys to std
+					 theUserID =stoi(convertedID); //convert ID from std string to int				
 					 switchToChatRoom = true;
 					 this->Close();
 				 }
@@ -241,21 +243,7 @@ namespace Project3 {
 				 else {
 					 MessageBox::Show("ID or Password is Incorrect", "ID or Password Error", MessageBoxButtons::OK);
 				 }
-			/*	
-				
 
-				 SqlDataReader^ reader = command.ExecuteReader();
-				 if (reader->Read()) {
-					 user = gcnew UserData;
-					 user->UserId = reader->GetInt32(0);
-					 user->Fname = reader->GetString(1);
-					 user->Lname = reader->GetString(2);
-					 user->MobileNum = reader->GetString(3);
-					 user->password = reader->GetString(4);
-					 user->desc_ = reader->GetString(5);
-					 this->Close();
-				 }
-				*/
 			 }
 			 catch (Exception^ e) {
 				 MessageBox::Show("Failed to connect", "Database connection Error", MessageBoxButtons::OK);
@@ -268,6 +256,10 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 public: bool switchToSignup = false;
 private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
 	this->switchToSignup = true;
+
+	//Project3::SignUp f;
+	Project3::chatroom f;
+	f.ShowDialog();
 	this->Close();
 }
 

@@ -8,7 +8,7 @@ using namespace DBRepository;
 
 namespace Globals {
 	//MyDataStruct* myGlobalDS;
-	int theID;
+	extern int theUserID=0;
 	gcroot<SqlRepo<UserData^>^> usersRepo = gcnew SqlRepo<UserData^>("UserData",true);
 
 	string cliToSTD(String^ cliString) {

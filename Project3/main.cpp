@@ -26,8 +26,12 @@ void main() {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	Project3::chatroom form;
+	//Project3::SignIn form;
+	Project3::SignUp form;
+	//Project3::chatroom form;
 	form.ShowDialog();
+
+
 }
 
 	/*User^ user = nullptr;
@@ -51,11 +55,6 @@ void main() {
 		}
 	}
 
-	if (user != nullptr) {
-		MessageBox::Show("Successfull Authentication of " + user->Fname, "Program.cpp", MessageBoxButtons::OK);
-	}
-	else {
-		MessageBox::Show("Authentication Canceled ", "Program.cpp", MessageBoxButtons::OK);
 	}*/
 
 
