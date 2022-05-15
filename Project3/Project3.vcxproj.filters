@@ -24,6 +24,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="dataStructures">
+      <UniqueIdentifier>{fbfe3775-cd5a-4c1a-b2b3-93263dcbee9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SignIn.cpp">
@@ -49,6 +52,21 @@
     </ClCompile>
     <ClCompile Include="SqlRepo.cpp">
       <Filter>repository</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatData.cpp">
+      <Filter>dataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Status.cpp">
+      <Filter>dataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>dataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="userProfileDesc.cpp">
+      <Filter>dataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>dataStructures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,11 +112,23 @@
     <ClInclude Include="SqlRepo.h">
       <Filter>repository</Filter>
     </ClInclude>
+    <ClInclude Include="ChatData.h">
+      <Filter>dataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>dataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>dataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="userProfileDesc.h">
+      <Filter>dataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>dataStructures</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>

@@ -1,9 +1,187 @@
-﻿  SignIn.cpp
+﻿  AssemblyInfo.cpp
+  ChatData.cpp
 D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
+D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\main.cpp(15,6): error C2371: 'main': redefinition; different basic types
+D:\github\chat_application\Project3\main.cpp(15): message : see declaration of 'main'
+D:\github\chat_application\Project3\User.h(23,9): error C2065: 'ChatRoom': undeclared identifier
+D:\github\chat_application\Project3\User.h(23,2): error C2923: 'std::vector': 'ChatRoom' is not a valid template type argument for parameter '_Ty'
+D:\github\chat_application\Project3\User.h(23): message : see declaration of 'ChatRoom'
+D:\github\chat_application\Project3\User.h(23,2): error C2976: 'std::vector': too few template arguments
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(443): message : see declaration of 'std::vector'
+D:\github\chat_application\Project3\User.h(36,36): error C2535: 'void User::AddContacts(int)': member function already defined or declared
+D:\github\chat_application\Project3\User.h(33): message : see declaration of 'User::AddContacts'
+D:\github\chat_application\Project3\User.cpp(7,57): error C2512: 'std::vector': no appropriate default constructor available
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(443,14): message : see declaration of 'std::vector'
+D:\github\chat_application\Project3\User.cpp(26,39): error C2084: function 'void User::AddContacts(int)' already has a body
+D:\github\chat_application\Project3\User.cpp(17): message : see previous definition of 'AddContacts'
+D:\github\chat_application\Project3\User.cpp(31,39): error C2084: function 'void User::AddContacts(int)' already has a body
+D:\github\chat_application\Project3\User.cpp(26): message : see previous definition of 'AddContacts'
+D:\github\chat_application\Project3\User.cpp(40,2): error C2065: 'ChatData': undeclared identifier
+D:\github\chat_application\Project3\User.cpp(40,11): error C2146: syntax error: missing ';' before identifier 'newChatRoom'
+D:\github\chat_application\Project3\User.cpp(40,11): error C2065: 'newChatRoom': undeclared identifier
+D:\github\chat_application\Project3\User.cpp(40,29): error C2061: syntax error: identifier 'ChatData'
+D:\github\chat_application\Project3\User.cpp(41,22): error C2065: 'newChatRoom': undeclared identifier
+D:\github\chat_application\Project3\User.cpp(71,37): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+D:\github\chat_application\Project3\User.cpp(71,37): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+D:\github\chat_application\Project3\User.cpp(71,22): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1547,49): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+D:\github\chat_application\Project3\User.cpp(73,23): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(73,23): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(74,25): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(74,25): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(80,37): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+D:\github\chat_application\Project3\User.cpp(80,37): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+D:\github\chat_application\Project3\User.cpp(80,22): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1547,49): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+D:\github\chat_application\Project3\User.cpp(82,22): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(82,22): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(83,22): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(83,22): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\ChatData.h(20,16): error C2872: 'Message': ambiguous symbol
+D:\github\chat_application\Project3\Message.h(10,7): message : could be 'Message'
+D:\github\chat_application\Project3\ChatData.h(20,16): message : or       'System::Windows::Forms::Message'
+D:\github\chat_application\Project3\ChatData.cpp(20,9): error C2872: 'Message': ambiguous symbol
+D:\github\chat_application\Project3\Message.h(10,7): message : could be 'Message'
+D:\github\chat_application\Project3\ChatData.cpp(20,9): message : or       'System::Windows::Forms::Message'
+D:\github\chat_application\Project3\ChatData.cpp(20,35): error C2872: 'Message': ambiguous symbol
+D:\github\chat_application\Project3\Message.h(10,7): message : could be 'Message'
+D:\github\chat_application\Project3\ChatData.cpp(20,35): message : or       'System::Windows::Forms::Message'
+D:\github\chat_application\Project3\ChatData.cpp(20,36): error C2065: 'theID': undeclared identifier
+D:\github\chat_application\Project3\ChatData.cpp(22,11): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
+  Globals.cpp
+D:\github\chat_application\Project3\Globals.cpp(17,18): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+D:\github\chat_application\Project3\Globals.cpp(17,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Message.cpp
+  SignIn.cpp
+D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
+D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
+  pch.cpp
+  QueryFilter.cpp
   SignUp.cpp
+D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
 D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
   main.cpp
 D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
+D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
+  SqlRepo.cpp
+D:\github\chat_application\Project3\SqlRepo.cpp(53,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\github\chat_application\Project3\SqlRepo.cpp(54,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\github\chat_application\Project3\SqlRepo.cpp(149,22): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\SqlRepo.cpp(283,59): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\github\chat_application\Project3\SqlRepo.cpp(300,21): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\SqlRepo.cpp(322,59): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\github\chat_application\Project3\SqlRepo.cpp(324,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\github\chat_application\Project3\SqlRepo.cpp(340,21): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\SqlRepo.cpp(366,21): warning C4101: 'e': unreferenced local variable
+  Status.cpp
+D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
+D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
+  User.cpp
+D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
+D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\main.cpp(15,6): error C2371: 'main': redefinition; different basic types
+D:\github\chat_application\Project3\main.cpp(15): message : see declaration of 'main'
+D:\github\chat_application\Project3\User.h(23,9): error C2065: 'ChatRoom': undeclared identifier
+D:\github\chat_application\Project3\User.h(23,2): error C2923: 'std::vector': 'ChatRoom' is not a valid template type argument for parameter '_Ty'
+D:\github\chat_application\Project3\User.h(23): message : see declaration of 'ChatRoom'
+D:\github\chat_application\Project3\User.h(23,2): error C2976: 'std::vector': too few template arguments
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(443): message : see declaration of 'std::vector'
+D:\github\chat_application\Project3\User.h(36,36): error C2535: 'void User::AddContacts(int)': member function already defined or declared
+D:\github\chat_application\Project3\User.h(33): message : see declaration of 'User::AddContacts'
+D:\github\chat_application\Project3\User.cpp(7,57): error C2512: 'std::vector': no appropriate default constructor available
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(443,14): message : see declaration of 'std::vector'
+D:\github\chat_application\Project3\User.cpp(26,39): error C2084: function 'void User::AddContacts(int)' already has a body
+D:\github\chat_application\Project3\User.cpp(17): message : see previous definition of 'AddContacts'
+D:\github\chat_application\Project3\User.cpp(31,39): error C2084: function 'void User::AddContacts(int)' already has a body
+D:\github\chat_application\Project3\User.cpp(26): message : see previous definition of 'AddContacts'
+D:\github\chat_application\Project3\User.cpp(40,2): error C2065: 'ChatData': undeclared identifier
+D:\github\chat_application\Project3\User.cpp(40,11): error C2146: syntax error: missing ';' before identifier 'newChatRoom'
+D:\github\chat_application\Project3\User.cpp(40,11): error C2065: 'newChatRoom': undeclared identifier
+D:\github\chat_application\Project3\User.cpp(40,29): error C2061: syntax error: identifier 'ChatData'
+D:\github\chat_application\Project3\User.cpp(41,22): error C2065: 'newChatRoom': undeclared identifier
+D:\github\chat_application\Project3\User.cpp(71,37): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+D:\github\chat_application\Project3\User.cpp(71,37): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+D:\github\chat_application\Project3\User.cpp(71,22): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1547,49): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+D:\github\chat_application\Project3\User.cpp(73,23): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(73,23): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(74,25): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(74,25): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(80,37): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+D:\github\chat_application\Project3\User.cpp(80,37): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+D:\github\chat_application\Project3\User.cpp(80,22): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1547,49): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+D:\github\chat_application\Project3\User.cpp(82,22): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(82,22): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(83,22): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(83,22): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\ChatData.h(20,16): error C2872: 'Message': ambiguous symbol
+D:\github\chat_application\Project3\Message.h(10,7): message : could be 'Message'
+D:\github\chat_application\Project3\ChatData.h(20,16): message : or       'System::Windows::Forms::Message'
+D:\github\chat_application\Project3\User.cpp(7,57): error C2084: function 'User::User(std::string,std::string,std::string,std::string)' already has a body
+D:\github\chat_application\Project3\User.cpp(7): message : see previous definition of '{ctor}'
+D:\github\chat_application\Project3\User.cpp(7,57): error C2512: 'std::vector': no appropriate default constructor available
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(443,14): message : see declaration of 'std::vector'
+D:\github\chat_application\Project3\User.cpp(17,39): error C2084: function 'void User::AddContacts(int)' already has a body
+D:\github\chat_application\Project3\User.cpp(31): message : see previous definition of 'AddContacts'
+D:\github\chat_application\Project3\User.cpp(26,39): error C2084: function 'void User::AddContacts(int)' already has a body
+D:\github\chat_application\Project3\User.cpp(17): message : see previous definition of 'AddContacts'
+D:\github\chat_application\Project3\User.cpp(31,39): error C2084: function 'void User::AddContacts(int)' already has a body
+D:\github\chat_application\Project3\User.cpp(26): message : see previous definition of 'AddContacts'
+D:\github\chat_application\Project3\User.cpp(39,35): error C2084: function 'void User::AddChatRoom(bool)' already has a body
+D:\github\chat_application\Project3\User.cpp(39): message : see previous definition of 'AddChatRoom'
+D:\github\chat_application\Project3\User.cpp(41,11): error C2663: 'std::vector<_Ty,_Alloc>::push_back': 2 overloads have no legal conversion for 'this' pointer
+D:\github\chat_application\Project3\User.cpp(49,1): error C2084: function 'int User::displayID(void)' already has a body
+D:\github\chat_application\Project3\User.cpp(48): message : see previous definition of 'displayID'
+D:\github\chat_application\Project3\User.cpp(52,30): error C2084: function 'void User::displayContacts(void)' already has a body
+D:\github\chat_application\Project3\User.cpp(52): message : see previous definition of 'displayContacts'
+D:\github\chat_application\Project3\User.cpp(62,6): error C2084: function 'bool sortbysec(const std::pair<int,int> &,const std::pair<int,int> &)' already has a body
+D:\github\chat_application\Project3\User.cpp(62): message : see previous definition of 'sortbysec'
+D:\github\chat_application\Project3\User.cpp(67,31): error C2084: function 'void User::displayChatRooms(void)' already has a body
+D:\github\chat_application\Project3\User.cpp(67): message : see previous definition of 'displayChatRooms'
+D:\github\chat_application\Project3\User.cpp(71,37): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+D:\github\chat_application\Project3\User.cpp(71,37): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+D:\github\chat_application\Project3\User.cpp(71,22): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1547,49): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+D:\github\chat_application\Project3\User.cpp(73,23): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(73,23): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(74,25): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(74,25): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(80,37): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+D:\github\chat_application\Project3\User.cpp(80,37): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+D:\github\chat_application\Project3\User.cpp(80,22): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1547,49): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+D:\github\chat_application\Project3\User.cpp(82,22): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(82,22): message : while trying to match the argument list '(std::vector, int)'
+D:\github\chat_application\Project3\User.cpp(83,22): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1572,50): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1562,44): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+D:\github\chat_application\Project3\User.cpp(83,22): message : while trying to match the argument list '(std::vector, int)'
+  userProfileDesc.cpp
+D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
+D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
   Generating Code...
-  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Project3.vcxproj -> D:\github\chat_application\x64\Debug\Project3.exe

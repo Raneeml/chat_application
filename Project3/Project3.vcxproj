@@ -134,15 +134,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="ChatData.cpp" />
     <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="Message.cpp" />
     <ClCompile Include="SignIn.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="QueryFilter.cpp" />
     <ClCompile Include="SignUp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SqlRepo.cpp" />
+    <ClCompile Include="Status.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="userProfileDesc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChatData.h" />
     <ClInclude Include="chatroom.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -150,6 +156,7 @@
     <ClInclude Include="contactData.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="hasData.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="messageData.h" />
     <ClInclude Include="SignIn.h">
       <FileType>CppForm</FileType>
@@ -161,8 +168,11 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SqlRepo.h" />
+    <ClInclude Include="Status.h" />
     <ClInclude Include="storyData.h" />
+    <ClInclude Include="User.h" />
     <ClInclude Include="UserData.h" />
+    <ClInclude Include="userProfileDesc.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="chatroom.resx">

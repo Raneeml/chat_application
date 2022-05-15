@@ -26,9 +26,9 @@ void main() {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	Project3::SignIn form;
+	//Project3::SignIn form;
 	//Project3::SignUp form;
-	//Project3::chatroom form;
+	Project3::chatroom form;
 	form.ShowDialog();
 
 
