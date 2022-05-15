@@ -17,7 +17,7 @@ void ChatData::AddMember(User Member) {
 
 void ChatData::AddMessage(string msg) {
 	time_t now = time(0);
-	Message* newMessage = new Message(theID,msg);
+	Messages* newMessage = new Messages(theUserID,msg);
 		allMessages.push_back(*newMessage);
 	secNow = now;
 }
@@ -73,6 +73,6 @@ int ChatData::getSecNow() {
 	return secNow;
 }
 string ChatData::getDateAndTime() {
-	dateAndTime =allMessages[allMessages.size() - 1].getStatus().getDateAndTimeOfMessage();
+	dateAndTime = allMessages[allMessages.size() - 1].getStatus().getDateAndTimeOfMessage();
 	return dateAndTime;
 }

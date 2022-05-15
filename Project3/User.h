@@ -1,14 +1,15 @@
 #pragma once
-#include <vector>
 #include "userProfileDesc.h"
-#include"ChatRoom.h"
+#include"ChatData.h"
 //#include"Story.h"
-#include<iostream>
-#include"Message.h"
-#include <stack>
-#include<string>
+#include"Messages.h"
 #include "Status.h"
 #include "main.cpp"
+#include "ChatData.h"
+#include <stack>
+#include <vector>
+#include<string>
+#include<iostream>
 using namespace std;
 
 
@@ -20,9 +21,9 @@ class User {
 	string MobileNum;
 	string Fname;
 	string Lname;
-	vector<ChatRoom>chatRooms;
+	vector<ChatData>chatRooms;
 	//stack<Story>stories;
-	vector <User> contacts;
+	//vector <User> contacts;
 	vector <int> contactsIDs;
 	userProfileDesc * desc;
 
@@ -31,9 +32,9 @@ public:
     User(string pass,string num,string f,string l);
    // User(int id,string pass,int num,string f,string l);
     void AddContacts(int contactID);
-	void AddContacts(User  u);
+	//void AddContacts(User  u);
 	//void AddStory(Story st);
-    void AddContacts(int contactNo);
+   // void AddContacts(int contactNo);
 	void AddChatRoom(bool type);
 	void displayContacts();
 	void displayChatRooms();

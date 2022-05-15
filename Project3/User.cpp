@@ -14,19 +14,6 @@ User::User(string pass, string num, string f, string l) {
 	desc = new userProfileDesc(UserId);
 }
 
-void User::AddContacts(int contactID) {
-	contactsIDs.push_back(contactID);
-	//add contact from database
-	//contacts.push_back(contact);
-}
-
-
-
-
-void User::AddContacts(int contactID) {
-	contactsIDs.push_back(contactID);
-
-}
 
 void User::AddContacts(int contactID) {
 	contactsIDs.push_back(contactID);

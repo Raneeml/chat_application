@@ -65,7 +65,7 @@
     <ClCompile Include="userProfileDesc.cpp">
       <Filter>dataStructures</Filter>
     </ClCompile>
-    <ClCompile Include="Message.cpp">
+    <ClCompile Include="Messages.cpp">
       <Filter>dataStructures</Filter>
     </ClCompile>
   </ItemGroup>
@@ -124,7 +124,7 @@
     <ClInclude Include="userProfileDesc.h">
       <Filter>dataStructures</Filter>
     </ClInclude>
-    <ClInclude Include="Message.h">
+    <ClInclude Include="Messages.h">
       <Filter>dataStructures</Filter>
     </ClInclude>
   </ItemGroup>

@@ -136,7 +136,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="ChatData.cpp" />
     <ClCompile Include="Globals.cpp" />
-    <ClCompile Include="Message.cpp" />
+    <ClCompile Include="Messages.cpp" />
     <ClCompile Include="SignIn.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="QueryFilter.cpp" />
@@ -156,8 +156,8 @@
     <ClInclude Include="contactData.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="hasData.h" />
-    <ClInclude Include="Message.h" />
     <ClInclude Include="messageData.h" />
+    <ClInclude Include="Messages.h" />
     <ClInclude Include="SignIn.h">
       <FileType>CppForm</FileType>
     </ClInclude>

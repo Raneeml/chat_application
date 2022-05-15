@@ -1,9 +1,6 @@
 #pragma once
-#pragma once
-#include "User.cpp"
 #include "User.h"
-#include "Message.cpp"
-#include "Message.h"
+#include "Messages.h"
 #include<iostream>
 #include <vector>
 #include <ctime>
@@ -16,8 +13,8 @@ class ChatData
 	
 	int ChatRoomID;
 	string dateAndTime;
-	vector<User>Users;
-	//vector<Message>allMessages;
+	vector<User> Users;
+	vector<Messages> allMessages;
 	/*vector<int>groupID;
 	vector<int>one_to_one_ID;*/
 	bool ChatRoom_Type;
@@ -27,13 +24,13 @@ class ChatData
 	int secNow;
 public:
 	ChatData(bool type);
-	void AddMember(User);
+	void AddMember(User Member);
 	void AddMessage(string msg);
 	void DisplayMessages();
 	void one_to_one();
 	void Group();
 	//void displayChatRooms();
-	void changeLastSeen();
+	//void changeLastSeen();
 	int getID();
 	int getSecNow();
 	string getDateAndTime();
