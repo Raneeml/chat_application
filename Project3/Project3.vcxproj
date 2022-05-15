@@ -135,7 +135,7 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Globals.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="SignIn.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="QueryFilter.cpp" />
     <ClCompile Include="SignUp.cpp" />
@@ -151,7 +151,7 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="hasData.h" />
     <ClInclude Include="messageData.h" />
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="SignIn.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
@@ -168,8 +168,8 @@
     <EmbeddedResource Include="chatroom.resx">
       <DependentUpon>chatroom.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
+    <EmbeddedResource Include="SignIn.resx">
+      <DependentUpon>SignIn.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.h</DependentUpon>
