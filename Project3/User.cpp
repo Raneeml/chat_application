@@ -5,8 +5,7 @@
 using namespace std;
 
 User::User(string pass, string num, string f, string l) {
-	static int noOfUsers = 0;
-	UserId = noOfUsers++;
+	UserId = theUserID;
 	password = pass;
 	MobileNum = num;
 	Fname = f;
@@ -24,8 +23,8 @@ void User::AddContacts(int contactID) {
 
 
 void User::AddChatRoom(bool type) {
-	ChatData newChatRoom = new ChatData(type);
-	chatRooms.push_back(newChatRoom);
+	int newChatRoomID ;//add in database
+	chatRoomsIDs.push_back(newChatRoomID);
 }
 
 //void User <T>::AddStory(Story <T> st) {
@@ -55,19 +54,19 @@ void User::displayChatRooms() {
 
 	vector<pair<int, int>>timeAndIDofChatRooms;
 
-	for (int i = 0; i < chatRooms.size(); i++)
+	for (int i = 0; i < chatRoomsIDs.size(); i++)
 	{
-		int id = chatRooms[i].getID();
-		int time = chatRooms[i].getSecNow();
-		timeAndIDofChatRooms.push_back(make_pair(id, time));
+		int id = chatRoomsIDs[i];
+		//int time = chatRooms[i].getSecNow();
+		//timeAndIDofChatRooms.push_back(make_pair(id, time));
 	}
 
 	sort(timeAndIDofChatRooms.begin(), timeAndIDofChatRooms.end(),sortbysec);
 
-	for (int i = 0; i < chatRooms.size(); i++)
+	for (int i = 0; i < chatRoomsIDs.size(); i++)
 	{
-		cout << chatRooms[i].getID() << endl;
-		cout << chatRooms[i].getDateAndTime() << endl;
+		cout << chatRoomsIDs[i]<< endl;
+		//cout << chatRooms[i].getDateAndTime() << endl;
 	}
 
 

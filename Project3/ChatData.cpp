@@ -10,8 +10,8 @@ ChatData::ChatData(bool type) {
 		Group();
 }
 
-void ChatData::AddMember(User Member) {
-	Users.push_back(Member);
+void ChatData::AddMember(int addedID) {
+	UsersIDs.push_back(addedID);
 }
 
 

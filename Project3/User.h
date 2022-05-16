@@ -12,8 +12,6 @@
 #include<iostream>
 using namespace std;
 
-
-
 class User {
 
 	int UserId;
@@ -21,7 +19,7 @@ class User {
 	string MobileNum;
 	string Fname;
 	string Lname;
-	vector<ChatData>chatRooms;
+	vector<int>chatRoomsIDs;
 	//stack<Story>stories;
 	//vector <User> contacts;
 	vector <int> contactsIDs;

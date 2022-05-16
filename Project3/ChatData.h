@@ -13,7 +13,7 @@ class ChatData
 	
 	int ChatRoomID;
 	string dateAndTime;
-	vector<User> Users;
+	vector<int> UsersIDs;
 	vector<Messages> allMessages;
 	/*vector<int>groupID;
 	vector<int>one_to_one_ID;*/
@@ -24,7 +24,7 @@ class ChatData
 	int secNow;
 public:
 	ChatData(bool type);
-	void AddMember(User Member);
+	void AddMember(int addedID);
 	void AddMessage(string msg);
 	void DisplayMessages();
 	void one_to_one();
