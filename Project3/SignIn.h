@@ -202,6 +202,7 @@ namespace Project3 {
 			this->Controls->Add(this->label1);
 			this->Name = L"SignIn";
 			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &SignIn::SignIn_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -266,6 +267,8 @@ private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Wi
 private: System::Void ID_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void SignIn_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

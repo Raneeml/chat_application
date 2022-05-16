@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include "Status.h"
-#include "main.cpp"
+
 using namespace std;
 
 class Messages

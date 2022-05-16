@@ -1,8 +1,14 @@
 #pragma once
+#include "SqlRepo.h"
+#include "UserData.h"
+#include "SignUp.h"
+#include "Globals.h"
+#include "QueryFilter.h"
 
 namespace Project3 {
 
 	using namespace System;
+	using namespace Globals;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
@@ -17,18 +23,30 @@ namespace Project3 {
 	public ref class chatroom : public System::Windows::Forms::Form
 	{
 	public:
+		UserData^ user;
+		String^ ID;
+		String^ fName;
+		String^ lName;
+		String^ desc;
+
 		chatroom(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
+			// 
+			// 
+			// 
 			//
+
 		}
 
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
+		/// 
+
 		~chatroom()
 		{
 			if (components)
@@ -36,6 +54,15 @@ namespace Project3 {
 				delete components;
 			}
 		}
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Panel^ pn_title_bar;
 	protected:
 	private: System::Windows::Forms::Button^ exit;
@@ -170,8 +197,35 @@ namespace Project3 {
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+
+
+
+
+
+
 		void InitializeComponent(void)
 		{
+
+			user = gcnew UserData();
+			user = usersRepo->getItem(theUserID);
+			ID = Globals::stdToCLI(to_string(user->UserId));
+			fName = user->Fname;
+			lName = user->Lname;
+			desc = user->desc_;
+
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(chatroom::typeid));
 			this->pn_title_bar = (gcnew System::Windows::Forms::Panel());
 			this->chat = (gcnew System::Windows::Forms::Button());
@@ -727,7 +781,7 @@ namespace Project3 {
 			this->richTextBox1->Name = L"richTextBox1";
 			this->richTextBox1->Size = System::Drawing::Size(335, 76);
 			this->richTextBox1->TabIndex = 8;
-			this->richTextBox1->Text = L"";
+			this->richTextBox1->Text = desc;
 			// 
 			// description_label
 			// 
@@ -740,6 +794,8 @@ namespace Project3 {
 			this->description_label->TabIndex = 7;
 			this->description_label->Text = L"Description :";
 			// 
+			// 
+
 			// fname_text
 			// 
 			this->fname_text->Location = System::Drawing::Point(243, 315);
@@ -747,12 +803,15 @@ namespace Project3 {
 			this->fname_text->Name = L"fname_text";
 			this->fname_text->Size = System::Drawing::Size(274, 20);
 			this->fname_text->TabIndex = 6;
+			this->fname_text->Text = fName;
+			this->fname_text->TextChanged += gcnew System::EventHandler(this, &chatroom::fname_text_TextChanged);
 			// 
 			// lname_text
 			// 
 			this->lname_text->Location = System::Drawing::Point(243, 361);
 			this->lname_text->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->lname_text->Name = L"lname_text";
+			this->lname_text->Text = lName;
 			this->lname_text->Size = System::Drawing::Size(274, 20);
 			this->lname_text->TabIndex = 5;
 			// 
@@ -761,6 +820,7 @@ namespace Project3 {
 			this->id_text->Location = System::Drawing::Point(243, 270);
 			this->id_text->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->id_text->Name = L"id_text";
+			this->id_text->Text = ID;
 			this->id_text->Size = System::Drawing::Size(274, 20);
 			this->id_text->TabIndex = 4;
 			this->id_text->TextChanged += gcnew System::EventHandler(this, &chatroom::id_text_TextChanged);
@@ -1255,6 +1315,16 @@ namespace Project3 {
 			this->pn_con->ResumeLayout(false);
 			this->ResumeLayout(false);
 
+
+
+
+			//UserData^ user= gcnew UserData();
+			//user = usersRepo->getItem(theUserID);
+			//int ID = user->UserId;
+			//String^ fName = user->Fname;
+			//String^ lName = user->Lname;
+			//String^ description =user->desc_;
+
 		}
 #pragma endregion
 	private: System::Void exit_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1395,5 +1465,9 @@ namespace Project3 {
 	}
 private: System::Void ID_label_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void fname_text_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+
+	   
 };
 }

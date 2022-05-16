@@ -2,7 +2,8 @@
 #include <string>
 #include <iostream>
 #include <ctime>
-#include "main.cpp"
+#include"Globals.h"
+//#include "main.cpp"
 
 using namespace std;
 class Status

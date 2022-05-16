@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string>
-#include "main.cpp"
+#include"Globals.h"
 using namespace std;
 
 class userProfileDesc

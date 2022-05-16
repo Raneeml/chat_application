@@ -1,16 +1,16 @@
 #pragma once
 #include "User.h"
 #include "Messages.h"
+#include "Globals.h"
 #include<iostream>
 #include <vector>
 #include <ctime>
-#include "main.cpp"
-using namespace std;
 
+using namespace std;
+using namespace Globals;
 
 class ChatData
 {
-	
 	int ChatRoomID;
 	string dateAndTime;
 	vector<int> UsersIDs;

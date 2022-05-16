@@ -2,9 +2,9 @@
 #include "userProfileDesc.h"
 #include"ChatData.h"
 //#include"Story.h"
+#include"Globals.h"
 #include"Messages.h"
 #include "Status.h"
-#include "main.cpp"
 #include "ChatData.h"
 #include <stack>
 #include <vector>

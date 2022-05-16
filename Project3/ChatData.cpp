@@ -1,4 +1,7 @@
 #include "ChatData.h"
+#include"Globals.h"
+
+
 
 ChatData::ChatData(bool type) {
 	static int noOfChatRooms = 0;

@@ -136,12 +136,12 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="ChatData.cpp" />
     <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Messages.cpp" />
     <ClCompile Include="SignIn.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="QueryFilter.cpp" />
     <ClCompile Include="SignUp.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="SqlRepo.cpp" />
     <ClCompile Include="Status.cpp" />
     <ClCompile Include="User.cpp" />

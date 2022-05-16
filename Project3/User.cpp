@@ -1,11 +1,12 @@
 #include "User.h"
 #include "ChatData.h"
 #include "userProfileDesc.h"
+#include"Globals.h"
 #include<bits/stdc++.h>
 using namespace std;
 
 User::User(string pass, string num, string f, string l) {
-	UserId = theUserID;
+	//UserId = theUserID;
 	password = pass;
 	MobileNum = num;
 	Fname = f;

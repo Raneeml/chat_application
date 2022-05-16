@@ -1,20 +1,12 @@
-﻿  ChatData.cpp
+﻿  SignIn.cpp
 D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
-D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
-D:\github\chat_application\Project3\main.cpp(17,6): error C2371: 'main': redefinition; different basic types
-D:\github\chat_application\Project3\main.cpp(17): message : see declaration of 'main'
-D:\github\chat_application\Project3\ChatData.cpp(22,11): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
-  Messages.cpp
+D:\github\chat_application\Project3\SignIn.h(249,23): warning C4101: 'e': unreferenced local variable
+  SignUp.cpp
+D:\github\chat_application\Project3\SignIn.h(249,23): warning C4101: 'e': unreferenced local variable
 D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
-D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
-D:\github\chat_application\Project3\main.cpp(17,6): error C2371: 'main': redefinition; different basic types
-D:\github\chat_application\Project3\main.cpp(17): message : see declaration of 'main'
   main.cpp
 D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
-D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
-  User.cpp
-D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
-D:\github\chat_application\Project3\SignIn.h(248,23): warning C4101: 'e': unreferenced local variable
-D:\github\chat_application\Project3\main.cpp(17,6): error C2371: 'main': redefinition; different basic types
-D:\github\chat_application\Project3\main.cpp(17): message : see declaration of 'main'
+D:\github\chat_application\Project3\SignIn.h(249,23): warning C4101: 'e': unreferenced local variable
   Generating Code...
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Project3.vcxproj -> D:\github\chat_application\x64\Debug\Project3.exe

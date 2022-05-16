@@ -47,25 +47,25 @@
     <ClCompile Include="pch.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>main</Filter>
-    </ClCompile>
     <ClCompile Include="SqlRepo.cpp">
       <Filter>repository</Filter>
     </ClCompile>
-    <ClCompile Include="ChatData.cpp">
-      <Filter>dataStructures</Filter>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
     </ClCompile>
     <ClCompile Include="Status.cpp">
-      <Filter>dataStructures</Filter>
-    </ClCompile>
-    <ClCompile Include="User.cpp">
       <Filter>dataStructures</Filter>
     </ClCompile>
     <ClCompile Include="userProfileDesc.cpp">
       <Filter>dataStructures</Filter>
     </ClCompile>
+    <ClCompile Include="ChatData.cpp">
+      <Filter>dataStructures</Filter>
+    </ClCompile>
     <ClCompile Include="Messages.cpp">
+      <Filter>dataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
       <Filter>dataStructures</Filter>
     </ClCompile>
   </ItemGroup>
@@ -112,19 +112,19 @@
     <ClInclude Include="SqlRepo.h">
       <Filter>repository</Filter>
     </ClInclude>
-    <ClInclude Include="ChatData.h">
-      <Filter>dataStructures</Filter>
-    </ClInclude>
     <ClInclude Include="Status.h">
-      <Filter>dataStructures</Filter>
-    </ClInclude>
-    <ClInclude Include="User.h">
       <Filter>dataStructures</Filter>
     </ClInclude>
     <ClInclude Include="userProfileDesc.h">
       <Filter>dataStructures</Filter>
     </ClInclude>
+    <ClInclude Include="ChatData.h">
+      <Filter>dataStructures</Filter>
+    </ClInclude>
     <ClInclude Include="Messages.h">
+      <Filter>dataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
       <Filter>dataStructures</Filter>
     </ClInclude>
   </ItemGroup>
