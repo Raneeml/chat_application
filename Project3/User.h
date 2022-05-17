@@ -3,6 +3,7 @@
 #include"ChatData.h"
 //#include"Story.h"
 #include"Globals.h"
+#include "SqlRepo.h"
 #include"Messages.h"
 #include "Status.h"
 #include "ChatData.h"
@@ -27,8 +28,7 @@ class User {
 
 public:
 
-    User(string pass,string num,string f,string l);
-   // User(int id,string pass,int num,string f,string l);
+    User();
     void AddContacts(int contactID);
 	//void AddContacts(User  u);
 	//void AddStory(Story st);

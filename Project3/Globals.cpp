@@ -7,9 +7,10 @@ using namespace msclr;
 using namespace DBRepository;
 
 namespace Globals {
-	//MyDataStruct* myGlobalDS;
+
 	extern int theUserID=2;
 	gcroot<SqlRepo<UserData^>^> usersRepo = gcnew SqlRepo<UserData^>("UserData",true);
+	extern gcroot<SqlRepo<UserDescData^>^> descRepo = gcnew SqlRepo<UserDescData^>("UserDescData");
 
 	string cliToSTD(String^ cliString) {
 		char cStr[450] = { 0 };

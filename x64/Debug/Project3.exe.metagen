@@ -34,12 +34,6 @@ Class Project3.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Project3.chatroom: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    UserData user : Public
-    System.String ID : Public
-    System.String fName : Public
-    System.String lName : Public
-    System.String desc : Public
 Class Project3.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -127,6 +127,9 @@
     <ClInclude Include="User.h">
       <Filter>dataStructures</Filter>
     </ClInclude>
+    <ClInclude Include="userDescData.h">
+      <Filter>database\entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SignUp.resx">

@@ -1,10 +1,17 @@
 #include "userProfileDesc.h"
 
-userProfileDesc::userProfileDesc(int ID) {
-	userID = ID;
-	 personalPhoto=0;
+userProfileDesc::userProfileDesc(UserData^ user) {
+	userID = theUserID;
+	 personalPhoto="";
 	aboutDescription="Available";
 	 visibility=true;
+
+	 UserDescData^ desc = gcnew UserDescData();
+	 desc->UserId = userID;
+	 desc->photo = stdToCLI(personalPhoto);
+	 desc->about = stdToCLI(aboutDescription);
+	 desc->visibility = visibility;
+	 descRepo->insert(desc);
 
 }
 void userProfileDesc ::changeVisibility() {
@@ -14,6 +21,6 @@ void userProfileDesc::editAboutDescription(string newAbout) {
 	aboutDescription = newAbout;
 
 }
-void userProfileDesc::changeProfilePhoto(long newPhoto) {
+void userProfileDesc::changeProfilePhoto(string newPhoto) {
 
 }

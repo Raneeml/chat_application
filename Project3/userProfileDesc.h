@@ -2,19 +2,21 @@
 #include<iostream>
 #include<string>
 #include"Globals.h"
+#include"SqlRepo.h"
 using namespace std;
+using namespace Globals;
 
 class userProfileDesc
 {
 	int userID;
-	long personalPhoto;
+	string personalPhoto;
 	string aboutDescription;
 	bool visibility;
 
 
 public:
-	userProfileDesc(int ID);
-	void changeProfilePhoto(long newPhoto);
+	userProfileDesc(UserData^ user);
+	void changeProfilePhoto(string newPhoto);
 	void changeVisibility();
 	void editAboutDescription(string newAbout);
 	

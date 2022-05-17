@@ -4,14 +4,16 @@
 #include"Globals.h"
 #include<bits/stdc++.h>
 using namespace std;
-
-User::User(string pass, string num, string f, string l) {
-	//UserId = theUserID;
-	password = pass;
-	MobileNum = num;
-	Fname = f;
-	Lname = l;
-	desc = new userProfileDesc(UserId);
+using namespace Globals;
+User::User() {
+	UserData^ user = gcnew UserData();
+	user = usersRepo->getItem(theUserID);
+	UserId = user->UserId;
+	password = cliToSTD(user->password);
+	MobileNum = cliToSTD(user->MobileNum);
+	Fname = cliToSTD(user->Fname);
+	Lname = cliToSTD(user->Lname);
+	desc = new userProfileDesc(user);
 }
 
 

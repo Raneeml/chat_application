@@ -4,6 +4,8 @@
 #include "SignUp.h"
 #include "Globals.h"
 #include "QueryFilter.h"
+	
+
 
 namespace Project3 {
 
@@ -14,6 +16,10 @@ namespace Project3 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace std;
+	using namespace System::Data::SqlClient;
+
+
 
 	/// <summary>
 	/// Summary for chatroom
@@ -22,22 +28,25 @@ namespace Project3 {
 
 	public ref class chatroom : public System::Windows::Forms::Form
 	{
-	public:
-		UserData^ user;
-		String^ ID;
-		String^ fName;
-		String^ lName;
-		String^ desc;
 
+
+
+	public:
+
+	
 		chatroom(void)
-		{
+		{	
+	
+			user = gcnew UserData();
+			user = usersRepo->getItem(theUserID);
+			ID = Globals::stdToCLI(to_string(user->UserId));
+			fName = user->Fname;
+			lName = user->Lname;
+			desc = user->desc_;
 			InitializeComponent();
 			//
-			//TODO: Add the constructor code here
-			// 
-			// 
-			// 
-			//
+	
+
 
 		}
 
@@ -60,8 +69,11 @@ namespace Project3 {
 
 
 
-
-
+	private: UserData^ user;
+	private:String^ ID;
+	private:String^ fName;
+	private:String^ lName;
+	private:String^ desc;
 
 	private: System::Windows::Forms::Panel^ pn_title_bar;
 	protected:
@@ -218,13 +230,8 @@ namespace Project3 {
 
 		void InitializeComponent(void)
 		{
+			
 
-			user = gcnew UserData();
-			user = usersRepo->getItem(theUserID);
-			ID = Globals::stdToCLI(to_string(user->UserId));
-			fName = user->Fname;
-			lName = user->Lname;
-			desc = user->desc_;
 
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(chatroom::typeid));
 			this->pn_title_bar = (gcnew System::Windows::Forms::Panel());
