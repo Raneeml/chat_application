@@ -1,12 +1,1 @@
-﻿  SignIn.cpp
-D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
-D:\github\chat_application\Project3\SignIn.h(249,23): warning C4101: 'e': unreferenced local variable
-  SignUp.cpp
-D:\github\chat_application\Project3\SignIn.h(249,23): warning C4101: 'e': unreferenced local variable
-D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
-  main.cpp
-D:\github\chat_application\Project3\SignUp.h(361,20): warning C4101: 'ex': unreferenced local variable
-D:\github\chat_application\Project3\SignIn.h(249,23): warning C4101: 'e': unreferenced local variable
-  Generating Code...
-  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Project3.vcxproj -> D:\github\chat_application\x64\Debug\Project3.exe
+﻿  Project3.vcxproj -> D:\github\chat_application\x64\Debug\Project3.exe
