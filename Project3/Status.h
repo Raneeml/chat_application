@@ -4,10 +4,11 @@
 #include <ctime>
 #include"Globals.h"
 //#include "main.cpp"
-
+using namespace Globals;
 using namespace std;
 class Status
 {
+	int messageID;
 	string dateAndTime;
 	string Date_of_message_sent;
 	string  time_of_message_sent ;
@@ -19,7 +20,7 @@ public :
 	string status_of_message();
 	string getDateAndTimeOfMessage();
 	void change_status();
-	void view_status();
+	statusData ^ getStatus();
 
 };
 

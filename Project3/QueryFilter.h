@@ -3,38 +3,42 @@
 using namespace System;
 
 namespace DBRepository {
-	
+
 
 	ref class QueryFilter {
+
 	protected:
-		String^ query;
-
-		QueryFilter(String^ lastQuery) {
-			query = lastQuery;
-		}
-
-	public:
-		QueryFilter() {
-			query = " WHERE ";
-		}
-
-		String^ wcond() { return query; };
 
 		ref class Column;
 		ref class FilterResult;
+		ref class OrderResult;
+		ref class AndOrResult;
 
+		String^ query = "";
+
+	public:
+		QueryFilter() {}
+
+		String^ wcond() { return query; };
+
+
+
+
+		OrderResult^ orderBy(String^ columnName, bool isDescending);
 
 		Column^ whereColumn(String^ columnName);
 
-		
+
 
 		ref class Column {
 
-		public:
-			QueryFilter^ fi;
+		protected:
+			QueryFilter^ filter;
 
-			Column(QueryFilter^ filter) {
-				fi = filter;
+		public:
+
+			Column(QueryFilter^ filtr) {
+				filter = filtr;
 			}
 
 
@@ -51,25 +55,61 @@ namespace DBRepository {
 			FilterResult^ isSmallerThan(Object^ value);
 
 			FilterResult^ isSmallerThanOrEqual(Object^ value);
-			
+
+		};
+
+
+		ref class OrderResult {
+
+		protected:
+			QueryFilter^ filter;
+		public:
+
+			OrderResult(QueryFilter^ filtr) {
+				filter = filtr;
+			}
+
+			OrderResult^ orderBy(String^ columnName, bool isDescending);
+
+			QueryFilter^ build();
 		};
 
 
 
 		ref class FilterResult {
 
-		public:
-			Column^ ci;
+		protected:
+			QueryFilter^ filter;
 
-			FilterResult(Column^ colInst) {
-				ci = colInst;
+		public:
+
+			FilterResult(QueryFilter^ filtr) {
+				filter = filtr;
 			}
 
-			QueryFilter^and ();
+			AndOrResult^and ();
 
-			QueryFilter^or ();
+			AndOrResult^ or ();
+
+			OrderResult^ orderBy(String^ columnName, bool isDescending);
 
 			QueryFilter^ build();
+		};
+
+
+
+		ref class AndOrResult {
+
+		protected:
+			QueryFilter^ filter;
+
+		public:
+
+			AndOrResult(QueryFilter^ filtr) {
+				filter = filtr;
+			}
+
+			Column^ whereColumn(String^ columnName);
 		};
 
 

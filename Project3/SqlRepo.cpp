@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "SqlRepo.h"
+#include "UserData.h"
 #include <assert.h>
 
 using namespace System;
@@ -15,6 +16,7 @@ namespace DBRepository {
 		}
 		
 	}
+
 
 
 	generic <class T>
@@ -386,4 +388,5 @@ namespace DBRepository {
 	}
 
 }
+
 

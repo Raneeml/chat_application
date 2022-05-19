@@ -149,13 +149,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChatData.h" />
+    <ClInclude Include="chatMessageData.h" />
     <ClInclude Include="chatroom.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="chatRoomData.h" />
-    <ClInclude Include="contactData.h" />
+    <ClInclude Include="userContactsData.h" />
     <ClInclude Include="Globals.h" />
-    <ClInclude Include="hasData.h" />
+    <ClInclude Include="chatUsersData.h" />
     <ClInclude Include="messageData.h" />
     <ClInclude Include="Messages.h" />
     <ClInclude Include="SignIn.h">
@@ -169,6 +170,7 @@
     </ClInclude>
     <ClInclude Include="SqlRepo.h" />
     <ClInclude Include="Status.h" />
+    <ClInclude Include="statusData.h" />
     <ClInclude Include="storyData.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UserData.h" />

@@ -20,6 +20,27 @@ SqlDbManager::startConnection("Data Source=DESKTOP-PS268NT;Initial Catalog=ChatA
 if (!usersRepo->tableExists()) {
 	usersRepo->createTable("UserId");
 }
+if (!chatRoomsRepo->tableExists()) {
+	chatRoomsRepo->createTable("chatroomID");
+}
+if (!descRepo->tableExists()) {
+	descRepo->createTable("UserId");
+}
+if (!statusRepo->tableExists()) {
+	statusRepo->createTable("messageID");
+}
+if (!messageRepo->tableExists()) {
+	messageRepo->createTable("messageID");
+}
+if (!chatMessageRepo->tableExists()) {
+	chatMessageRepo->createTable("message_ID");
+}
+if (!userContactsRepo->tableExists()) {
+	userContactsRepo->createTable("user_ID,contact_ID");
+}
+if (!chatUsersRepo->tableExists()) {
+	userContactsRepo->createTable("chatroom_ID,member_ID");
+}
 
 Application::EnableVisualStyles();
 Application::SetCompatibleTextRenderingDefault(false);

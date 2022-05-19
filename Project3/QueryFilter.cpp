@@ -4,9 +4,16 @@
 namespace DBRepository {
     
     
+    QueryFilter::OrderResult^ QueryFilter::orderBy(String^ columnName, bool isDescending)
+    {
+        String^ ascDesc = isDescending ? " DESC" : " ASC";
+        query = " ORDER BY " + columnName + ascDesc;
+        return gcnew OrderResult(this);
+    }
 
     QueryFilter::Column^ QueryFilter::whereColumn(String^ columnName)
     {
+        query = " WHERE ";
         query += columnName->ToLower();
         return gcnew Column(this);
     }
@@ -16,14 +23,14 @@ namespace DBRepository {
     
     QueryFilter::FilterResult^ QueryFilter::Column::isNull()
     {
-        fi->query += " IS NULL";
-        return gcnew FilterResult(this);
+        filter->query += " IS NULL";
+        return gcnew FilterResult(filter);
     }
 
     QueryFilter::FilterResult^ QueryFilter::Column::isNotNull()
     {
-        fi->query += " IS NOT NULL";
-        return gcnew FilterResult(this);
+        filter->query += " IS NOT NULL";
+        return gcnew FilterResult(filter);
     }
 
     QueryFilter::FilterResult^ QueryFilter::Column::isEqualTo(Object^ value)
@@ -36,52 +43,80 @@ namespace DBRepository {
             value = value->Equals(true) ? "1" : "0";
         }
 
-        fi->query += " = " + value;
-        return gcnew FilterResult(this);
+        filter->query += " = " + value;
+        return gcnew FilterResult(filter);
     }
 
     QueryFilter::FilterResult^ QueryFilter::Column::isGreaterThan(Object^ value)
     {
-        fi->query += " > " + value;
-        return gcnew FilterResult(this);
+        filter->query += " > " + value;
+        return gcnew FilterResult(filter);
     }
 
     QueryFilter::FilterResult^ QueryFilter::Column::isGreaterThanOrEqual(Object^ value)
     {
-        fi->query += " >= " + value;
-        return gcnew FilterResult(this);
+        filter->query += " >= " + value;
+        return gcnew FilterResult(filter);
     }
 
     QueryFilter::FilterResult^ QueryFilter::Column::isSmallerThan(Object^ value)
     {
-        fi->query += " < " + value;
-        return gcnew FilterResult(this);
+        filter->query += " < " + value;
+        return gcnew FilterResult(filter);
     }
 
     QueryFilter::FilterResult^ QueryFilter::Column::isSmallerThanOrEqual(Object^ value)
     {
-        fi->query += " <= " + value;
-        return gcnew FilterResult(this);
+        filter->query += " <= " + value;
+        return gcnew FilterResult(filter);
     }
 
 
 
 
-    QueryFilter^ QueryFilter::FilterResult::and ()
+    QueryFilter::AndOrResult^ QueryFilter::FilterResult::and ()
     {
-        ci->fi->query += " AND ";
-        return ci->fi;
+        filter->query += " AND ";
+        return gcnew AndOrResult(filter);
     }
 
-    QueryFilter^ QueryFilter::FilterResult:: or ()
+    QueryFilter::AndOrResult^ QueryFilter::FilterResult:: or ()
     {
-        ci->fi->query += " OR ";
-        return ci->fi;
+        filter->query += " OR ";
+        return gcnew AndOrResult(filter);
+    }
+
+    QueryFilter::OrderResult^ QueryFilter::FilterResult::orderBy(String^ columnName, bool isDescending)
+    {
+        String^ ascDesc = isDescending ? " DESC" : " ASC";
+        filter->query += " ORDER BY " + columnName + ascDesc;
+        return gcnew OrderResult(filter);
+    }
+
+
+
+    QueryFilter::OrderResult^ QueryFilter::OrderResult::orderBy(String^ columnName, bool isDescending)
+    {
+        String^ ascDesc = isDescending ? " DESC" : " ASC";
+        filter->query += ", " + columnName + ascDesc;
+        return this;
+    }
+
+    QueryFilter^ QueryFilter::OrderResult::build()
+    {
+        return filter;
+    }
+
+
+    QueryFilter::Column^ QueryFilter::AndOrResult::whereColumn(String^ columnName)
+    {
+        filter->query += columnName->ToLower();
+        return gcnew Column(filter);
     }
 
     QueryFilter^ QueryFilter::FilterResult::build()
     {
-        return ci->fi;
+        return filter;
     }
 
 }

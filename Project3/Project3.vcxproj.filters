@@ -97,13 +97,13 @@
     <ClInclude Include="messageData.h">
       <Filter>database\entities</Filter>
     </ClInclude>
-    <ClInclude Include="hasData.h">
+    <ClInclude Include="chatUsersData.h">
       <Filter>database\entities</Filter>
     </ClInclude>
     <ClInclude Include="storyData.h">
       <Filter>database\entities</Filter>
     </ClInclude>
-    <ClInclude Include="contactData.h">
+    <ClInclude Include="userContactsData.h">
       <Filter>database\entities</Filter>
     </ClInclude>
     <ClInclude Include="UserData.h">
@@ -128,6 +128,12 @@
       <Filter>dataStructures</Filter>
     </ClInclude>
     <ClInclude Include="userDescData.h">
+      <Filter>database\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="statusData.h">
+      <Filter>database\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="chatMessageData.h">
       <Filter>database\entities</Filter>
     </ClInclude>
   </ItemGroup>

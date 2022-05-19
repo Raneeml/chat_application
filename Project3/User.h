@@ -22,7 +22,6 @@ class User {
 	string Lname;
 	vector<int>chatRoomsIDs;
 	//stack<Story>stories;
-	//vector <User> contacts;
 	vector <int> contactsIDs;
 	userProfileDesc * desc;
 
@@ -33,8 +32,8 @@ public:
 	//void AddContacts(User  u);
 	//void AddStory(Story st);
    // void AddContacts(int contactNo);
-	void AddChatRoom(bool type);
-	void displayContacts();
+	//void AddChatRoom(bool type);
+	List<UserData^>^ displayContacts();
 	void displayChatRooms();
 	int displayID();
 	//void AddStory(Story <T> st);

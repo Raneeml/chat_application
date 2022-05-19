@@ -17,8 +17,8 @@ class Messages
 	Status* status;
 
 public:
-	Messages(int user_id);
-	Messages(int UserID, string Text);
+	Messages();
+	Messages( string Text);
 	int getUserID();
 	Status getStatus();
 	string getText();

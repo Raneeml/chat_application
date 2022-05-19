@@ -12,6 +12,15 @@ Status::Status()
 	time_of_message_sent = dateAndTime.substr(11, 8);
 	status_type = 0;
 
+	statusData^ status = gcnew statusData();
+	status->messageID = messageID;
+	status->Date_of_message =stdToCLI(Date_of_message_sent);
+	status->time_of_message = stdToCLI(time_of_message_sent);
+	status->dateAndtime = stdToCLI(dateAndTime);
+	status->statusType = status_type;
+	
+	statusRepo->insert(status);
+
 }
 
  string Status::status_of_message()
@@ -26,13 +35,17 @@ Status::Status()
 void Status::change_status()
 {
 	status_type = !status_type;
+	statusData^ status = gcnew statusData();
+	status = statusRepo->getItem(messageID);
+	status->statusType = !status_type;
+	bool updated = statusRepo->update(messageID, status);
 }
 
-void Status::view_status()
+statusData^ Status::getStatus()
 {
-	cout << "date of sent message is : " << Date_of_message_sent<< endl;
-	cout << "time of sent message is : " << time_of_message_sent<< endl;
-	cout << "status type of this message : " << status_type<< endl;
+	statusData^ status = gcnew statusData();
+	status = statusRepo->getItem(messageID);
+	return status;
 }
 
 

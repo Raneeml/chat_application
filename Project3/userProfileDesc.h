@@ -15,7 +15,7 @@ class userProfileDesc
 
 
 public:
-	userProfileDesc(UserData^ user);
+	userProfileDesc();
 	void changeProfilePhoto(string newPhoto);
 	void changeVisibility();
 	void editAboutDescription(string newAbout);
