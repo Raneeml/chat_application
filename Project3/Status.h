@@ -10,6 +10,7 @@ class Status
 {
 	int messageID;
 	string dateAndTime;
+	time_t timeOfMsg;
 	string Date_of_message_sent;
 	string  time_of_message_sent ;
 	bool status_type;

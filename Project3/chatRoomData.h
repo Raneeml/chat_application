@@ -7,4 +7,5 @@ public:
 	int chatroomID;
 	bool type;
 	String^ lastSeen;
+	time_t timeOfLastMsg;
 };

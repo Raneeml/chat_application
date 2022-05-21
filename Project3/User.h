@@ -1,6 +1,7 @@
 #pragma once
 #include "userProfileDesc.h"
 #include"ChatData.h"
+#include"chatRoomData.h"
 //#include"Story.h"
 #include"Globals.h"
 #include "SqlRepo.h"
@@ -21,8 +22,9 @@ class User {
 	string MobileNum;
 	string Fname;
 	string Lname;
-	vector<int>chatRoomsIDs;
+	vector <int> chatRoomsIDs;
 	//stack<Story>stories;
+	story* userStory;
 	vector <int> contactsIDs;
 	userProfileDesc * desc;
 
@@ -37,10 +39,12 @@ public:
 	void autoDeleteStory(int accountID);
 	void deleteMyStory();
 
-	//void AddChatRoom(bool type);
+	
 	List<UserData^>^ displayContacts();
-	void displayChatRooms();
+	void addChatRoom(bool type);
+	List<ChatRoomData^>^ displayChatRooms();
 	int displayID();
+
 	void calcTime(int storyUserID,time_t time);
 
 

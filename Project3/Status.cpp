@@ -6,6 +6,7 @@ Status::Status()
 {
 	
 	time_t now = time(0);
+	timeOfMsg = now;
 	 dateAndTime = ctime(&now);
 
 	Date_of_message_sent  = dateAndTime.substr(8, 2) + '-' + dateAndTime.substr(4, 3) + '-' + dateAndTime.substr(20, 4);
@@ -18,7 +19,8 @@ Status::Status()
 	status->time_of_message = stdToCLI(time_of_message_sent);
 	status->dateAndtime = stdToCLI(dateAndTime);
 	status->statusType = status_type;
-	
+	status->timeOfMsg = timeOfMsg;
+
 	statusRepo->insert(status);
 
 }

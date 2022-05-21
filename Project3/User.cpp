@@ -91,11 +91,13 @@ List<storyData^>^ User::displayContactsStories() {
 	List<storyData^>^ contactsStories = {};
 	for (int i = 0; i < filteredContacts->Count; i++)
 	{
+		autoDeleteStory(filteredContacts[i]->contact_ID);
 		contactsStories[i] = storyRepo->getItem(filteredContacts[i]->contact_ID);
 
 	}
 	return contactsStories;
 }
+
 storyData^ User::displayMystory() {
 	storyData^ myStory = gcnew storyData();
 	myStory = storyRepo->getItem(theUserID);
@@ -125,29 +127,39 @@ bool sortbysec(const pair<int, int>& a,const pair<int, int>& b)
 
 
 
+void User::addChatRoom(bool type) {
+	ChatData newChat = new ChatData(type);
+	newChat.AddMember(theUserID);
 
-void User::displayChatRooms() {
-
-	//vector<pair<int, int>>timeAndIDofChatRooms;
-
-	//for (int i = 0; i < chatRoomsIDs.size(); i++)
-	//{
-	//	int id = chatRoomsIDs[i];
-	//	//int time = chatRooms[i].getSecNow();
-	//	//timeAndIDofChatRooms.push_back(make_pair(id, time));
-	//}
-
-	//sort(timeAndIDofChatRooms.begin(), timeAndIDofChatRooms.end(),sortbysec);
-
-	//for (int i = 0; i < chatRoomsIDs.size(); i++)
-	//{
-	//	cout << chatRoomsIDs[i]<< endl;
-	//	//cout << chatRooms[i].getDateAndTime() << endl;
-	//}
-
-
-
+	chatRoomsIDs.push_back(newChat.getChatID());
+    
 }
 
+List<ChatRoomData^>^ User::displayChatRooms() {
+	QueryFilter^ filter = gcnew QueryFilter();
+	filter = filter->whereColumn("member_ID")
+		->isEqualTo(theUserID)
+		->build();
+
+	// return a List of contacts of the current user
+	List<chatUsersData^>^ filteredChatRooms = chatUsersRepo->getFiltered(filter);
+
+	List<ChatRoomData^>^ chatRooms = {};
+	for (int i = 0; i < filteredChatRooms->Count; i++)
+	{
+		chatRooms[i] = chatRoomsRepo->getItem(filteredChatRooms[i]->member_ID);
+
+	}
+
+	//sort the contacts by first name
+	QueryFilter^ sort = gcnew QueryFilter();
+	sort = sort->orderBy("timeOfLastMsg", true)
+		->build();
+
+	chatRooms = chatRoomsRepo->getFiltered(sort);
+
+	return chatRooms;
+
+}
 
 

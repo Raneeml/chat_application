@@ -16,10 +16,11 @@ class ChatData
 	vector<Messages> allMessages;
 	bool ChatRoom_Type;
 	string lastSeen;
-
 	string dateAndTime;
+	time_t timeOfLastMsg;
 	time_t now = time(0);
 	int secNow;
+
 public:
 	ChatData(bool type);
 	void AddMember(int addedID);
@@ -27,7 +28,9 @@ public:
 	List<messageData^>^ DisplayMessages();
 	//void changeLastSeen();
 	int getSecNow();
+	int getChatID();
 	string getDateAndTime();
+	time_t getChatRoomTime();
 
 };
 

@@ -82,7 +82,16 @@ int ChatData::getSecNow() {
 	return secNow;
 }
 
+int ChatData::getChatID() {
+	return ChatRoomID;
+}
+
 string ChatData::getDateAndTime() {
 	dateAndTime = allMessages[allMessages.size() - 1].getStatus().getDateAndTimeOfMessage();
 	return dateAndTime;
+}
+
+time_t ChatData::getChatRoomTime() {
+	ChatRoomData^ chat = chatRoomsRepo->getItem(getChatID());
+		return chat->timeOfLastMsg ;
 }
