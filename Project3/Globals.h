@@ -8,6 +8,7 @@
 #include "messageData.h"
 #include "userContactsData.h"
 #include "chatMessageData.h"
+#include "storyData.h"
 #include "User.h"
 //#include "MyDataStruct.h"
 
@@ -31,6 +32,7 @@ namespace Globals {
 	 extern gcroot<SqlRepo<chatMessageData^>^> chatMessageRepo;
 	 extern gcroot<SqlRepo<userContactsData^>^> userContactsRepo;
 	 extern gcroot<SqlRepo<chatUsersData^>^> chatUsersRepo;
+	 extern gcroot<SqlRepo<storyData^>^> storyRepo;
 	//convert .NET String to c++ string
 	extern string cliToSTD(String^ cliString);
 

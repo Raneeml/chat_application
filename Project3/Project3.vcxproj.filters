@@ -38,9 +38,6 @@
     <ClCompile Include="QueryFilter.cpp">
       <Filter>repository</Filter>
     </ClCompile>
-    <ClCompile Include="Globals.cpp">
-      <Filter>main</Filter>
-    </ClCompile>
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -68,6 +65,12 @@
     <ClCompile Include="User.cpp">
       <Filter>dataStructures</Filter>
     </ClCompile>
+    <ClCompile Include="Globals.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="story.cpp">
+      <Filter>dataStructures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SignIn.h">
@@ -81,9 +84,6 @@
     </ClInclude>
     <ClInclude Include="QueryFilter.h">
       <Filter>repository</Filter>
-    </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>main</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>core</Filter>
@@ -135,6 +135,12 @@
     </ClInclude>
     <ClInclude Include="chatMessageData.h">
       <Filter>database\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="story.h">
+      <Filter>dataStructures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

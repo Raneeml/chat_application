@@ -144,6 +144,7 @@
     <ClCompile Include="SignUp.cpp" />
     <ClCompile Include="SqlRepo.cpp" />
     <ClCompile Include="Status.cpp" />
+    <ClCompile Include="story.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="userProfileDesc.cpp" />
   </ItemGroup>
@@ -154,8 +155,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="chatRoomData.h" />
-    <ClInclude Include="userContactsData.h" />
     <ClInclude Include="Globals.h" />
+    <ClInclude Include="story.h" />
+    <ClInclude Include="userContactsData.h" />
     <ClInclude Include="chatUsersData.h" />
     <ClInclude Include="messageData.h" />
     <ClInclude Include="Messages.h" />

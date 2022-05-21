@@ -6,6 +6,7 @@
 #include "SqlRepo.h"
 #include"Messages.h"
 #include "Status.h"
+#include "story.h"
 #include "ChatData.h"
 #include <stack>
 #include <vector>
@@ -29,18 +30,18 @@ public:
 
     User();
     void AddContacts(int contactID);
-	//void AddContacts(User  u);
-	//void AddStory(Story st);
-   // void AddContacts(int contactNo);
+
+	void AddStory(string story , bool type);
+	storyData^ displayMystory();
+	List<storyData^>^ displayContactsStories();
+	void autoDeleteStory(int accountID);
+	void deleteMyStory();
+
 	//void AddChatRoom(bool type);
 	List<UserData^>^ displayContacts();
 	void displayChatRooms();
 	int displayID();
-	//void AddStory(Story <T> st);
-
-
-	
-
+	void calcTime(int storyUserID,time_t time);
 
 
 };

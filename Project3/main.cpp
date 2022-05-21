@@ -41,7 +41,9 @@ if (!userContactsRepo->tableExists()) {
 if (!chatUsersRepo->tableExists()) {
 	userContactsRepo->createTable("chatroom_ID,member_ID");
 }
-
+if (!storyRepo->tableExists()) {
+	storyRepo->createTable("story_user_id");
+}
 Application::EnableVisualStyles();
 Application::SetCompatibleTextRenderingDefault(false);
 /*Application::Run(gcnew CppCLRWinformsProjekt::chatroom());*/

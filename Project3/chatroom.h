@@ -1,25 +1,16 @@
 #pragma once
-#include "SqlRepo.h"
-#include "UserData.h"
-#include "SignUp.h"
 #include "Globals.h"
-#include "QueryFilter.h"
-	
-
 
 namespace Project3 {
 
 	using namespace System;
+	using namespace std;
 	using namespace Globals;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace std;
-	using namespace System::Data::SqlClient;
-
-
 
 	/// <summary>
 	/// Summary for chatroom
@@ -28,34 +19,26 @@ namespace Project3 {
 
 	public ref class chatroom : public System::Windows::Forms::Form
 	{
-
-
-
 	public:
 
-	
 		chatroom(void)
-		{	
-	
-			user = gcnew UserData();
-			user = usersRepo->getItem(theUserID);
-			ID = Globals::stdToCLI(to_string(user->UserId));
-			fName = user->Fname;
-			lName = user->Lname;
-			desc = user->desc_;
+		{
 			InitializeComponent();
 			//
-	
-
-
+			//TODO: Add the constructor code here
+			//
+			user = gcnew UserData();
+			user = usersRepo->getItem(theUserID);
+			 ID = Globals::stdToCLI(to_string(user->UserId));
+			fName = user->Fname;
+			lName = user->Lname;
+			 desc = user->desc_;
 		}
 
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		/// 
-
 		~chatroom()
 		{
 			if (components)
@@ -63,11 +46,6 @@ namespace Project3 {
 				delete components;
 			}
 		}
-
-
-
-
-
 
 	private: UserData^ user;
 	private:String^ ID;
@@ -97,11 +75,11 @@ namespace Project3 {
 	private: System::Windows::Forms::Button^ AddChatRoom;
 	private: System::Windows::Forms::Button^ chat;
 	private: System::Windows::Forms::Panel^ pn_sphoto;
-	private: System::Windows::Forms::Label^ label4;
+
 	private: System::Windows::Forms::Panel^ add_chat;
 
 	private: System::Windows::Forms::Panel^ pn_stext;
-	private: System::Windows::Forms::Label^ label3;
+
 
 
 	private: System::Windows::Forms::Panel^ pn_shows;
@@ -169,7 +147,15 @@ namespace Project3 {
 	private: System::Windows::Forms::Button^ select;
 
 	private: System::Windows::Forms::ListBox^ The_selected_membersers;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ add_contact;
+
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::PictureBox^ pictureBox7;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::RichTextBox^ richTextBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox8;
 
 
 
@@ -209,30 +195,8 @@ namespace Project3 {
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-		/// 
-
-
-
-
-
-
 		void InitializeComponent(void)
 		{
-			
-
-
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(chatroom::typeid));
 			this->pn_title_bar = (gcnew System::Windows::Forms::Panel());
 			this->chat = (gcnew System::Windows::Forms::Button());
@@ -248,7 +212,9 @@ namespace Project3 {
 			this->DeleteChatRoom = (gcnew System::Windows::Forms::Button());
 			this->AddChatRoom = (gcnew System::Windows::Forms::Button());
 			this->pn_sphoto = (gcnew System::Windows::Forms::Panel());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
 			this->add_chat = (gcnew System::Windows::Forms::Panel());
 			this->The_selected_membersers = (gcnew System::Windows::Forms::ListBox());
 			this->choose = (gcnew System::Windows::Forms::Button());
@@ -261,7 +227,10 @@ namespace Project3 {
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pn_stext = (gcnew System::Windows::Forms::Panel());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
+			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->pn_shows = (gcnew System::Windows::Forms::Panel());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->pn_chat = (gcnew System::Windows::Forms::Panel());
@@ -279,7 +248,7 @@ namespace Project3 {
 			this->ID_label = (gcnew System::Windows::Forms::Label());
 			this->profile_pic = (gcnew System::Windows::Forms::PictureBox());
 			this->pn_new_contact = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->add_contact = (gcnew System::Windows::Forms::Button());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -318,8 +287,10 @@ namespace Project3 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->pn_st_bar->SuspendLayout();
 			this->pn_sphoto->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			this->add_chat->SuspendLayout();
 			this->pn_stext->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			this->pn_shows->SuspendLayout();
 			this->pn_chat->SuspendLayout();
 			this->pn_profile->SuspendLayout();
@@ -513,7 +484,9 @@ namespace Project3 {
 			// 
 			// pn_sphoto
 			// 
-			this->pn_sphoto->Controls->Add(this->label4);
+			this->pn_sphoto->Controls->Add(this->button3);
+			this->pn_sphoto->Controls->Add(this->button2);
+			this->pn_sphoto->Controls->Add(this->pictureBox7);
 			this->pn_sphoto->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->pn_sphoto->Location = System::Drawing::Point(0, 0);
 			this->pn_sphoto->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -521,16 +494,42 @@ namespace Project3 {
 			this->pn_sphoto->Size = System::Drawing::Size(722, 510);
 			this->pn_sphoto->TabIndex = 3;
 			// 
-			// label4
+			// button3
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Tahoma", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
+			this->button3->Location = System::Drawing::Point(255, 448);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(87, 56);
+			this->button3->TabIndex = 2;
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &chatroom::button3_Click);
+			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(289, 175);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(77, 27);
-			this->label4->TabIndex = 1;
-			this->label4->Text = L"sphoto";
+			this->button2->Location = System::Drawing::Point(400, 276);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(189, 47);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Add photo";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &chatroom::button2_Click);
+			// 
+			// pictureBox7
+			// 
+			this->pictureBox7->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->pictureBox7->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
+			this->pictureBox7->Location = System::Drawing::Point(9, 7);
+			this->pictureBox7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->pictureBox7->Name = L"pictureBox7";
+			this->pictureBox7->Size = System::Drawing::Size(334, 498);
+			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox7->TabIndex = 0;
+			this->pictureBox7->TabStop = false;
 			// 
 			// add_chat
 			// 
@@ -674,7 +673,10 @@ namespace Project3 {
 			// 
 			// pn_stext
 			// 
+			this->pn_stext->Controls->Add(this->button4);
 			this->pn_stext->Controls->Add(this->label3);
+			this->pn_stext->Controls->Add(this->richTextBox2);
+			this->pn_stext->Controls->Add(this->pictureBox8);
 			this->pn_stext->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->pn_stext->Location = System::Drawing::Point(0, 0);
 			this->pn_stext->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -682,16 +684,49 @@ namespace Project3 {
 			this->pn_stext->Size = System::Drawing::Size(722, 510);
 			this->pn_stext->TabIndex = 4;
 			// 
+			// button4
+			// 
+			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
+			this->button4->Location = System::Drawing::Point(315, 275);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(87, 56);
+			this->button4->TabIndex = 3;
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &chatroom::button4_Click);
+			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Tahoma", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->BackColor = System::Drawing::SystemColors::Control;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(289, 175);
+			this->label3->Location = System::Drawing::Point(283, 117);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(59, 27);
-			this->label3->TabIndex = 1;
-			this->label3->Text = L"stext";
+			this->label3->Size = System::Drawing::Size(165, 24);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"Add a Story Text";
+			// 
+			// richTextBox2
+			// 
+			this->richTextBox2->Location = System::Drawing::Point(250, 174);
+			this->richTextBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->richTextBox2->Name = L"richTextBox2";
+			this->richTextBox2->Size = System::Drawing::Size(219, 79);
+			this->richTextBox2->TabIndex = 1;
+			this->richTextBox2->Text = L"";
+			// 
+			// pictureBox8
+			// 
+			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
+			this->pictureBox8->Location = System::Drawing::Point(0, 0);
+			this->pictureBox8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->pictureBox8->Name = L"pictureBox8";
+			this->pictureBox8->Size = System::Drawing::Size(723, 509);
+			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox8->TabIndex = 0;
+			this->pictureBox8->TabStop = false;
+			this->pictureBox8->Click += gcnew System::EventHandler(this, &chatroom::pictureBox8_Click);
 			// 
 			// pn_shows
 			// 
@@ -780,6 +815,7 @@ namespace Project3 {
 			this->change_photo_bu->UseVisualStyleBackColor = true;
 			this->change_photo_bu->Click += gcnew System::EventHandler(this, &chatroom::change_photo_bu_Click);
 			// 
+
 			// richTextBox1
 			// 
 			this->richTextBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
@@ -801,8 +837,6 @@ namespace Project3 {
 			this->description_label->TabIndex = 7;
 			this->description_label->Text = L"Description :";
 			// 
-			// 
-
 			// fname_text
 			// 
 			this->fname_text->Location = System::Drawing::Point(243, 315);
@@ -811,26 +845,24 @@ namespace Project3 {
 			this->fname_text->Size = System::Drawing::Size(274, 20);
 			this->fname_text->TabIndex = 6;
 			this->fname_text->Text = fName;
-			this->fname_text->TextChanged += gcnew System::EventHandler(this, &chatroom::fname_text_TextChanged);
 			// 
 			// lname_text
 			// 
 			this->lname_text->Location = System::Drawing::Point(243, 361);
 			this->lname_text->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->lname_text->Name = L"lname_text";
-			this->lname_text->Text = lName;
 			this->lname_text->Size = System::Drawing::Size(274, 20);
 			this->lname_text->TabIndex = 5;
+			this->lname_text->Text = lName;
 			// 
 			// id_text
 			// 
 			this->id_text->Location = System::Drawing::Point(243, 270);
 			this->id_text->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->id_text->Name = L"id_text";
-			this->id_text->Text = ID;
 			this->id_text->Size = System::Drawing::Size(274, 20);
 			this->id_text->TabIndex = 4;
-			this->id_text->TextChanged += gcnew System::EventHandler(this, &chatroom::id_text_TextChanged);
+			this->id_text->Text = ID;
 			// 
 			// fname_label
 			// 
@@ -864,7 +896,6 @@ namespace Project3 {
 			this->ID_label->Size = System::Drawing::Size(104, 27);
 			this->ID_label->TabIndex = 1;
 			this->ID_label->Text = L"User ID:";
-			this->ID_label->Click += gcnew System::EventHandler(this, &chatroom::ID_label_Click);
 			// 
 			// profile_pic
 			// 
@@ -883,7 +914,7 @@ namespace Project3 {
 			// 
 			// pn_new_contact
 			// 
-			this->pn_new_contact->Controls->Add(this->button1);
+			this->pn_new_contact->Controls->Add(this->add_contact);
 			this->pn_new_contact->Controls->Add(this->label13);
 			this->pn_new_contact->Controls->Add(this->textBox4);
 			this->pn_new_contact->Controls->Add(this->textBox3);
@@ -902,16 +933,18 @@ namespace Project3 {
 			this->pn_new_contact->Size = System::Drawing::Size(722, 510);
 			this->pn_new_contact->TabIndex = 1;
 			// 
-			// button1
+			// add_contact
 			// 
-			this->button1->Location = System::Drawing::Point(303, 394);
-			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(64, 19);
-			this->button1->TabIndex = 11;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &chatroom::button1_Click_2);
+			this->add_contact->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->add_contact->Location = System::Drawing::Point(303, 394);
+			this->add_contact->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->add_contact->Name = L"add_contact";
+			this->add_contact->Size = System::Drawing::Size(176, 32);
+			this->add_contact->TabIndex = 11;
+			this->add_contact->Text = L"Add Contact";
+			this->add_contact->UseVisualStyleBackColor = true;
+			this->add_contact->Click += gcnew System::EventHandler(this, &chatroom::button1_Click_2);
 			// 
 			// label13
 			// 
@@ -1003,6 +1036,7 @@ namespace Project3 {
 			// 
 			// pictureBox6
 			// 
+			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
 			this->pictureBox6->Location = System::Drawing::Point(21, 292);
 			this->pictureBox6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pictureBox6->Name = L"pictureBox6";
@@ -1013,6 +1047,7 @@ namespace Project3 {
 			// 
 			// pictureBox5
 			// 
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
 			this->pictureBox5->Location = System::Drawing::Point(21, 117);
 			this->pictureBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pictureBox5->Name = L"pictureBox5";
@@ -1253,15 +1288,15 @@ namespace Project3 {
 			// 
 			// pn_con
 			// 
-			this->pn_con->Controls->Add(this->pn_profile);
+			this->pn_con->Controls->Add(this->pn_stext);
 			this->pn_con->Controls->Add(this->pn_new_contact);
+			this->pn_con->Controls->Add(this->pn_profile);
+			this->pn_con->Controls->Add(this->pn_sphoto);
 			this->pn_con->Controls->Add(this->pn_show_contact);
 			this->pn_con->Controls->Add(this->pn_shows);
 			this->pn_con->Controls->Add(this->pn_chat);
 			this->pn_con->Controls->Add(this->add_chat);
 			this->pn_con->Controls->Add(this->stories);
-			this->pn_con->Controls->Add(this->pn_stext);
-			this->pn_con->Controls->Add(this->pn_sphoto);
 			this->pn_con->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->pn_con->Location = System::Drawing::Point(0, 32);
 			this->pn_con->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -1294,11 +1329,12 @@ namespace Project3 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->pn_st_bar->ResumeLayout(false);
 			this->pn_sphoto->ResumeLayout(false);
-			this->pn_sphoto->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			this->add_chat->ResumeLayout(false);
 			this->add_chat->PerformLayout();
 			this->pn_stext->ResumeLayout(false);
 			this->pn_stext->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			this->pn_shows->ResumeLayout(false);
 			this->pn_shows->PerformLayout();
 			this->pn_chat->ResumeLayout(false);
@@ -1321,16 +1357,6 @@ namespace Project3 {
 			this->stories->PerformLayout();
 			this->pn_con->ResumeLayout(false);
 			this->ResumeLayout(false);
-
-
-
-
-			//UserData^ user= gcnew UserData();
-			//user = usersRepo->getItem(theUserID);
-			//int ID = user->UserId;
-			//String^ fName = user->Fname;
-			//String^ lName = user->Lname;
-			//String^ description =user->desc_;
 
 		}
 #pragma endregion
@@ -1465,16 +1491,23 @@ namespace Project3 {
 		The_selected_membersers->Items->RemoveAt(0);
 	}
 	private: System::Void button1_Click_2(System::Object^ sender, System::EventArgs^ e) {
-
 	}
-	private: System::Void id_text_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		ofd->Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
+		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		{
+			pictureBox7->ImageLocation = ofd->FileName;
+			pictureBox7->Image = System::Drawing::Image::FromFile(ofd->FileName);
+		}
 	}
-private: System::Void ID_label_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void fname_text_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		stories->BringToFront();
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		stories->BringToFront();
+	}
+	private: System::Void pictureBox8_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }
 
-	   
-};
-}

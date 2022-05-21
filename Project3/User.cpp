@@ -27,21 +27,6 @@ void User::AddContacts(int contactID) {
 	userContactsRepo->insert(userContact);
 }
 
-//
-//void User::AddChatRoom(bool type) {
-//	int newChatRoomID ;//add in database
-//	chatRoomsIDs.push_back(newChatRoomID);
-//}
-
-//void User <T>::AddStory(Story <T> st) {
-//	s.push(st);
-//}
-
-int User::displayID()
-{
-	return UserId;
-}
-
 List<UserData^>^ User::displayContacts() {
 	QueryFilter^ filter = gcnew QueryFilter();
 	filter = filter->whereColumn("user_ID")
@@ -60,18 +45,86 @@ List<UserData^>^ User::displayContacts() {
 
 	//sort the contacts by first name
 	QueryFilter^ sort = gcnew QueryFilter();
-	sort = sort->orderBy("Fname",false)
+	sort = sort->orderBy("Fname", false)
 		->build();
-	
+
 	contacts = usersRepo->getFiltered(sort);
 
 	return contacts;
 }
 
+
+void User::AddStory(string storyAdded, bool type) {
+	story *addedStory = new story(storyAdded, type);
+}
+
+void User::autoDeleteStory(int accountID)
+	{
+	storyData^ storyToDelete = gcnew storyData();
+		storyToDelete = storyRepo->getItem(accountID);
+
+	calcTime(accountID,storyToDelete->published_time_t);
+
+}
+void User::calcTime(int storyUserID,time_t timeOfStory)
+{
+	time_t now = time(0);
+	double diff = difftime(now, timeOfStory);
+
+	if (diff >= 86400) // 24h passed the delete story
+	{
+		storyRepo->remove(storyUserID);
+	}
+
+
+}
+
+List<storyData^>^ User::displayContactsStories() {
+	QueryFilter^ filter = gcnew QueryFilter();
+	filter = filter->whereColumn("user_ID")
+		->isEqualTo(theUserID)
+		->build();
+
+	// return a List of contacts of the current user
+	List<userContactsData^>^ filteredContacts = userContactsRepo->getFiltered(filter);
+
+	List<storyData^>^ contactsStories = {};
+	for (int i = 0; i < filteredContacts->Count; i++)
+	{
+		contactsStories[i] = storyRepo->getItem(filteredContacts[i]->contact_ID);
+
+	}
+	return contactsStories;
+}
+storyData^ User::displayMystory() {
+	storyData^ myStory = gcnew storyData();
+	myStory = storyRepo->getItem(theUserID);
+
+	return myStory;
+}
+
+void User::deleteMyStory()
+{
+	storyRepo->remove(theUserID);
+}
+
+
+
+
+int User::displayID()
+{
+	return UserId;
+}
+
+
+
 bool sortbysec(const pair<int, int>& a,const pair<int, int>& b)
 {
 	return (a.second < b.second);
 }
+
+
+
 
 void User::displayChatRooms() {
 
