@@ -7,13 +7,17 @@
 #include <ctime>
 
 using namespace std;
-using namespace Globals;
+using namespace System;
+//using namespace Globals;
+
+#include "global.h"
 
 class ChatData
 {
 	int ChatRoomID;
 	vector<int> UsersIDs;
-	vector<Messages> allMessages;
+	//vector<Messages*> allMessages;
+	vector<int> allMessagesIDs;
 	bool ChatRoom_Type;
 	string lastSeen;
 	string dateAndTime;
@@ -29,7 +33,7 @@ public:
 	//void changeLastSeen();
 	int getSecNow();
 	int getChatID();
-	string getDateAndTime();
+	string getAndUpdateDateAndTime();
 	time_t getChatRoomTime();
 
 };

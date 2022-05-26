@@ -4,7 +4,9 @@
 #include"Globals.h"
 #include"SqlRepo.h"
 using namespace std;
-using namespace Globals;
+//using namespace Globals;
+
+#include "global.h"
 
 class userProfileDesc
 {

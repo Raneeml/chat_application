@@ -14,6 +14,9 @@
 #include<string>
 #include<iostream>
 using namespace std;
+//using namespace Globals;
+
+#include "global.h"
 
 class User {
 
@@ -24,7 +27,7 @@ class User {
 	string Lname;
 	vector <int> chatRoomsIDs;
 	//stack<Story>stories;
-	story* userStory;
+	story * userStory;
 	vector <int> contactsIDs;
 	userProfileDesc * desc;
 

@@ -1,5 +1,4 @@
-﻿  AssemblyInfo.cpp
-  ChatData.cpp
+﻿  Globals.cpp
 D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
 D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
@@ -8,18 +7,16 @@ D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstan
 D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
 D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
-  Globals.cpp
-D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
-D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
-D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
-D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\ChatRoomData.h(10,9): error C3646: 'timeOfLastMsg': unknown override specifier
+D:\github\chat_application\Project3\ChatRoomData.h(10,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\statusData.h(10,9): error C3646: 'timeOfMsg': unknown override specifier
+D:\github\chat_application\Project3\statusData.h(10,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\storyData.h(10,9): error C3646: 'published_time_t': unknown override specifier
+D:\github\chat_application\Project3\storyData.h(10,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 D:\github\chat_application\Project3\userProfileDesc.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\Status.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\ChatData.h(10,24): error C2871: 'Globals': a namespace with this name does not exist
+D:\github\chat_application\Project3\story.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\Globals.cpp(26,18): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
 D:\github\chat_application\Project3\Globals.cpp(26,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   main.cpp
@@ -31,9 +28,16 @@ D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstan
 D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
 D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\ChatRoomData.h(10,9): error C3646: 'timeOfLastMsg': unknown override specifier
+D:\github\chat_application\Project3\ChatRoomData.h(10,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\statusData.h(10,9): error C3646: 'timeOfMsg': unknown override specifier
+D:\github\chat_application\Project3\statusData.h(10,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\storyData.h(10,9): error C3646: 'published_time_t': unknown override specifier
+D:\github\chat_application\Project3\storyData.h(10,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 D:\github\chat_application\Project3\userProfileDesc.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\Status.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\ChatData.h(10,24): error C2871: 'Globals': a namespace with this name does not exist
+D:\github\chat_application\Project3\story.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
   Messages.cpp
 D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
@@ -50,6 +54,7 @@ D:\github\chat_application\Project3\ChatData.h(16,2): error C2923: 'std::vector'
 D:\github\chat_application\Project3\ChatData.h(16): message : see declaration of 'Messages'
 D:\github\chat_application\Project3\ChatData.h(16,2): error C2976: 'std::vector': too few template arguments
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(443): message : see declaration of 'std::vector'
+D:\github\chat_application\Project3\story.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
   SignIn.cpp
 D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
@@ -59,19 +64,16 @@ D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstan
 D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
 D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\ChatRoomData.h(10,9): error C3646: 'timeOfLastMsg': unknown override specifier
+D:\github\chat_application\Project3\ChatRoomData.h(10,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\statusData.h(10,9): error C3646: 'timeOfMsg': unknown override specifier
+D:\github\chat_application\Project3\statusData.h(10,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\storyData.h(10,9): error C3646: 'published_time_t': unknown override specifier
+D:\github\chat_application\Project3\storyData.h(10,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 D:\github\chat_application\Project3\userProfileDesc.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\Status.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\ChatData.h(10,24): error C2871: 'Globals': a namespace with this name does not exist
-  pch.cpp
-  QueryFilter.cpp
-D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
-D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
-D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
-D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\story.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
   SignUp.cpp
 D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
@@ -81,27 +83,16 @@ D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstan
 D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
 D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\ChatRoomData.h(10,9): error C3646: 'timeOfLastMsg': unknown override specifier
+D:\github\chat_application\Project3\ChatRoomData.h(10,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\statusData.h(10,9): error C3646: 'timeOfMsg': unknown override specifier
+D:\github\chat_application\Project3\statusData.h(10,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\storyData.h(10,9): error C3646: 'published_time_t': unknown override specifier
+D:\github\chat_application\Project3\storyData.h(10,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 D:\github\chat_application\Project3\userProfileDesc.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\Status.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\ChatData.h(10,24): error C2871: 'Globals': a namespace with this name does not exist
-  SqlRepo.cpp
-D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
-D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
-D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
-D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
-D:\github\chat_application\Project3\SqlRepo.cpp(55,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\github\chat_application\Project3\SqlRepo.cpp(56,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\github\chat_application\Project3\SqlRepo.cpp(151,22): warning C4101: 'e': unreferenced local variable
-D:\github\chat_application\Project3\SqlRepo.cpp(285,59): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\github\chat_application\Project3\SqlRepo.cpp(302,21): warning C4101: 'e': unreferenced local variable
-D:\github\chat_application\Project3\SqlRepo.cpp(324,59): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\github\chat_application\Project3\SqlRepo.cpp(326,37): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\github\chat_application\Project3\SqlRepo.cpp(342,21): warning C4101: 'e': unreferenced local variable
-D:\github\chat_application\Project3\SqlRepo.cpp(368,21): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\story.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
   Status.cpp
 D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
@@ -119,7 +110,8 @@ D:\github\chat_application\Project3\Messages.h(23,9): error C3646: 'getStatus': 
 D:\github\chat_application\Project3\Messages.h(23,18): error C2059: syntax error: '('
 D:\github\chat_application\Project3\Messages.h(23,20): error C2238: unexpected token(s) preceding ';'
 D:\github\chat_application\Project3\ChatData.h(10,24): error C2871: 'Globals': a namespace with this name does not exist
-  User.cpp
+D:\github\chat_application\Project3\story.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
+  story.cpp
 D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
 D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
@@ -128,6 +120,17 @@ D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstan
 D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
 D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\userProfileDesc.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
+D:\github\chat_application\Project3\Status.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
+D:\github\chat_application\Project3\ChatData.h(10,24): error C2871: 'Globals': a namespace with this name does not exist
+D:\github\chat_application\Project3\story.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
+D:\github\chat_application\Project3\story.cpp(14,11): error C2065: 'theUserID': undeclared identifier
+D:\github\chat_application\Project3\story.cpp(29,25): error C2065: 'theUserID': undeclared identifier
+D:\github\chat_application\Project3\story.cpp(30,26): error C3861: 'stdToCLI': identifier not found
+D:\github\chat_application\Project3\story.cpp(32,22): error C3861: 'stdToCLI': identifier not found
+D:\github\chat_application\Project3\story.cpp(33,21): error C3861: 'stdToCLI': identifier not found
+D:\github\chat_application\Project3\story.cpp(35,2): error C2065: 'storyRepo': undeclared identifier
+D:\github\chat_application\Project3\story.cpp(24,16): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   userProfileDesc.cpp
 D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
 D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
@@ -139,8 +142,8 @@ D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonsta
 D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
 D:\github\chat_application\Project3\Status.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
 D:\github\chat_application\Project3\ChatData.h(10,24): error C2871: 'Globals': a namespace with this name does not exist
-D:\github\chat_application\Project3\User.h(26,18): error C2143: syntax error: missing ';' before '*'
-D:\github\chat_application\Project3\User.h(26,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-D:\github\chat_application\Project3\User.h(26,24): error C2238: unexpected token(s) preceding ';'
-  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+D:\github\chat_application\Project3\story.h(7,24): error C2871: 'Globals': a namespace with this name does not exist
+D:\github\chat_application\Project3\User.h(29,18): error C2143: syntax error: missing ';' before '*'
+D:\github\chat_application\Project3\User.h(29,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\User.h(29,24): error C2238: unexpected token(s) preceding ';'
   Generating Code...

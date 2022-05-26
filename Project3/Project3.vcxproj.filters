@@ -13,9 +13,6 @@
     <Filter Include="database">
       <UniqueIdentifier>{5e6a4c33-1692-4bde-beb1-d770ef0ace34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="database\entities">
-      <UniqueIdentifier>{77ac60c8-698b-4ea4-9262-2cbbb975eff9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="formsCPP">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -24,12 +21,12 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="dataStructures">
-      <UniqueIdentifier>{fbfe3775-cd5a-4c1a-b2b3-93263dcbee9a}</UniqueIdentifier>
+    <Filter Include="dataStructure">
+      <UniqueIdentifier>{83f287a0-c07f-45b0-89e1-1635de87a5f5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SignIn.cpp">
+    <ClCompile Include="MyForm.cpp">
       <Filter>formsCPP</Filter>
     </ClCompile>
     <ClCompile Include="SignUp.cpp">
@@ -38,42 +35,45 @@
     <ClCompile Include="QueryFilter.cpp">
       <Filter>repository</Filter>
     </ClCompile>
+    <ClCompile Include="Globals.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="SqlRepo.cpp">
-      <Filter>repository</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="Status.cpp">
-      <Filter>dataStructures</Filter>
-    </ClCompile>
-    <ClCompile Include="userProfileDesc.cpp">
-      <Filter>dataStructures</Filter>
+    <ClCompile Include="SqlRepo.cpp">
+      <Filter>repository</Filter>
     </ClCompile>
     <ClCompile Include="ChatData.cpp">
-      <Filter>dataStructures</Filter>
+      <Filter>dataStructure</Filter>
     </ClCompile>
     <ClCompile Include="Messages.cpp">
-      <Filter>dataStructures</Filter>
+      <Filter>dataStructure</Filter>
     </ClCompile>
-    <ClCompile Include="User.cpp">
-      <Filter>dataStructures</Filter>
-    </ClCompile>
-    <ClCompile Include="Globals.cpp">
-      <Filter>main</Filter>
+    <ClCompile Include="Status.cpp">
+      <Filter>dataStructure</Filter>
     </ClCompile>
     <ClCompile Include="story.cpp">
-      <Filter>dataStructures</Filter>
+      <Filter>dataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>dataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="userProfileDesc.cpp">
+      <Filter>dataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="global.cpp">
+      <Filter>main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SignIn.h">
+    <ClInclude Include="MyForm.h">
       <Filter>formsDesigns</Filter>
     </ClInclude>
     <ClInclude Include="SignUp.h">
@@ -85,65 +85,71 @@
     <ClInclude Include="QueryFilter.h">
       <Filter>repository</Filter>
     </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>main</Filter>
+    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="chatRoomData.h">
-      <Filter>database\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="messageData.h">
-      <Filter>database\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="chatUsersData.h">
-      <Filter>database\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="storyData.h">
-      <Filter>database\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="userContactsData.h">
-      <Filter>database\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="UserData.h">
-      <Filter>database\entities</Filter>
-    </ClInclude>
     <ClInclude Include="SqlRepo.h">
       <Filter>repository</Filter>
     </ClInclude>
-    <ClInclude Include="Status.h">
-      <Filter>dataStructures</Filter>
+    <ClInclude Include="chatMessageData.h">
+      <Filter>database</Filter>
     </ClInclude>
-    <ClInclude Include="userProfileDesc.h">
-      <Filter>dataStructures</Filter>
+    <ClInclude Include="chatRoomData.h">
+      <Filter>database</Filter>
     </ClInclude>
-    <ClInclude Include="ChatData.h">
-      <Filter>dataStructures</Filter>
+    <ClInclude Include="chatUsersData.h">
+      <Filter>database</Filter>
     </ClInclude>
-    <ClInclude Include="Messages.h">
-      <Filter>dataStructures</Filter>
-    </ClInclude>
-    <ClInclude Include="User.h">
-      <Filter>dataStructures</Filter>
-    </ClInclude>
-    <ClInclude Include="userDescData.h">
-      <Filter>database\entities</Filter>
+    <ClInclude Include="messageData.h">
+      <Filter>database</Filter>
     </ClInclude>
     <ClInclude Include="statusData.h">
-      <Filter>database\entities</Filter>
+      <Filter>database</Filter>
     </ClInclude>
-    <ClInclude Include="chatMessageData.h">
-      <Filter>database\entities</Filter>
+    <ClInclude Include="storyData.h">
+      <Filter>database</Filter>
     </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>main</Filter>
+    <ClInclude Include="userContactsData.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="userDescData.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatData.h">
+      <Filter>dataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages.h">
+      <Filter>dataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>dataStructure</Filter>
     </ClInclude>
     <ClInclude Include="story.h">
-      <Filter>dataStructures</Filter>
+      <Filter>dataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>dataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="userProfileDesc.h">
+      <Filter>dataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="UserData.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>

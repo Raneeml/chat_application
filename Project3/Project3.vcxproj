@@ -135,13 +135,14 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="ChatData.cpp" />
+    <ClCompile Include="global.cpp" />
     <ClCompile Include="Globals.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Messages.cpp" />
-    <ClCompile Include="SignIn.cpp" />
+    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="QueryFilter.cpp" />
     <ClCompile Include="SignUp.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="SqlRepo.cpp" />
     <ClCompile Include="Status.cpp" />
     <ClCompile Include="story.cpp" />
@@ -155,13 +156,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="chatRoomData.h" />
-    <ClInclude Include="Globals.h" />
-    <ClInclude Include="story.h" />
-    <ClInclude Include="userContactsData.h" />
     <ClInclude Include="chatUsersData.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="messageData.h" />
     <ClInclude Include="Messages.h" />
-    <ClInclude Include="SignIn.h">
+    <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
@@ -173,8 +173,10 @@
     <ClInclude Include="SqlRepo.h" />
     <ClInclude Include="Status.h" />
     <ClInclude Include="statusData.h" />
+    <ClInclude Include="story.h" />
     <ClInclude Include="storyData.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="userContactsData.h" />
     <ClInclude Include="UserData.h" />
     <ClInclude Include="userDescData.h" />
     <ClInclude Include="userProfileDesc.h" />
@@ -183,8 +185,8 @@
     <EmbeddedResource Include="chatroom.resx">
       <DependentUpon>chatroom.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignIn.resx">
-      <DependentUpon>SignIn.h</DependentUpon>
+    <EmbeddedResource Include="MyForm.resx">
+      <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.h</DependentUpon>

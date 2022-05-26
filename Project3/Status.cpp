@@ -15,13 +15,13 @@ Status::Status()
 
 	statusData^ status = gcnew statusData();
 	status->messageID = messageID;
-	status->Date_of_message =stdToCLI(Date_of_message_sent);
-	status->time_of_message = stdToCLI(time_of_message_sent);
-	status->dateAndtime = stdToCLI(dateAndTime);
+	status->Date_of_message = global::stdToCLI(Date_of_message_sent);
+	status->time_of_message = global::stdToCLI(time_of_message_sent);
+	status->dateAndtime = global::stdToCLI(dateAndTime);
 	status->statusType = status_type;
 	status->timeOfMsg = timeOfMsg;
 
-	statusRepo->insert(status);
+	global::statusRepo->insert(status);
 
 }
 
@@ -38,15 +38,15 @@ void Status::change_status()
 {
 	status_type = !status_type;
 	statusData^ status = gcnew statusData();
-	status = statusRepo->getItem(messageID);
+	status = global::statusRepo->getItem(messageID);
 	status->statusType = !status_type;
-	bool updated = statusRepo->update(messageID, status);
+	bool updated = global::statusRepo->update(messageID, status);
 }
 
-statusData^ Status::getStatus()
+statusData^ Status::getStatusData()
 {
 	statusData^ status = gcnew statusData();
-	status = statusRepo->getItem(messageID);
+	status = global::statusRepo->getItem(messageID);
 	return status;
 }
 

@@ -3,8 +3,9 @@
 #include <iostream>
 #include <ctime>
 #include"Globals.h"
-//#include "main.cpp"
-using namespace Globals;
+
+//using namespace Globals;
+#include "global.h"
 using namespace std;
 class Status
 {
@@ -21,7 +22,7 @@ public :
 	string status_of_message();
 	string getDateAndTimeOfMessage();
 	void change_status();
-	statusData ^ getStatus();
+	statusData ^ getStatusData();
 
 };
 

@@ -7,6 +7,9 @@
 #include "Status.h"
 
 using namespace std;
+//using namespace Globals;
+
+#include "global.h"
 
 class Messages
 {
@@ -14,13 +17,14 @@ class Messages
 	int MessageId;
 	int UserID;
 	string Text;
-	Status* status;
+	Status *status ;
 
 public:
 	Messages();
 	Messages( string Text);
 	int getUserID();
-	Status getStatus();
+	int getMessageID();
+	Status* getStatus();
 	string getText();
 
 

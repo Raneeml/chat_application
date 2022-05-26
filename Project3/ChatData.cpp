@@ -5,17 +5,17 @@
 
 ChatData::ChatData(bool type) {
 	ChatRoom_Type = type;
-     lastSeen = getDateAndTime();
+     lastSeen = getAndUpdateDateAndTime();
 
 	ChatRoomData^ chat = gcnew ChatRoomData();
 		ChatRoomID =chat->chatroomID ;
 		chat->type = ChatRoom_Type;
-		chat->lastSeen =stdToCLI(lastSeen);
+		chat->lastSeen = global::stdToCLI(lastSeen);
 		
-		chatRoomsRepo->insert(chat);
+		global::chatRoomsRepo->insert(chat);
 
 
-		theChatID = ChatRoomID;
+		global::theChatID = ChatRoomID;
 
 	
 }
@@ -26,15 +26,16 @@ void ChatData::AddMember(int addedID) {
 
 	//theChatID change when you create or enter chatroom 
 	chatUsersData^ newMember = gcnew chatUsersData();
-	newMember->chatroom_ID = theChatID;
+	newMember->chatroom_ID = global::theChatID;
 	newMember->member_ID = addedID;
 
 }
 
 
 void ChatData::AddMessage(string msg) {
-	Messages* newMessage = new Messages(msg);
-		allMessages.push_back(*newMessage);
+	Messages *newMessage = new Messages(msg);
+	allMessagesIDs.push_back(newMessage->getMessageID());
+	getAndUpdateDateAndTime();
 
 }
 
@@ -44,16 +45,16 @@ List<messageData^>^ ChatData::DisplayMessages() {
 	//get messages of that chatroom form chat/message table
 	QueryFilter^ filter = gcnew QueryFilter();
 	filter = filter->whereColumn("chat_ID")
-		->isEqualTo(theChatID)
+		->isEqualTo(global::theChatID)
 		->build();
  
-	List<chatMessageData^>^ filteredMessages = chatMessageRepo->getFiltered(filter);
+	List<chatMessageData^>^ filteredMessages = global::chatMessageRepo->getFiltered(filter);
 
 	//get list of messages of the current chatroom
 	List<messageData^>^ msgs = {};
 	for (int i = 0; i < filteredMessages->Count; i++)
 	{
-		msgs[i] = messageRepo->getItem(filteredMessages[i]->message_ID);
+		msgs[i] = global::messageRepo->getItem(filteredMessages[i]->message_ID);
 
 	}
 
@@ -61,12 +62,12 @@ List<messageData^>^ ChatData::DisplayMessages() {
 	QueryFilter^ sort = gcnew QueryFilter();
 	sort = sort->orderBy("dateAndtime", true)
 		->build();
-   List<statusData^>^ sortedStatus = statusRepo->getFiltered(sort);
+   List<statusData^>^ sortedStatus = global::statusRepo->getFiltered(sort);
 
    //get messages sorted descending
    for (int i = 0; i < msgs->Count; i++)
    {
-	   msgs[i] = messageRepo->getItem(sortedStatus[i]->messageID);
+	   msgs[i] = global::messageRepo->getItem(sortedStatus[i]->messageID);
 
    }
 
@@ -86,12 +87,24 @@ int ChatData::getChatID() {
 	return ChatRoomID;
 }
 
-string ChatData::getDateAndTime() {
-	dateAndTime = allMessages[allMessages.size() - 1].getStatus().getDateAndTimeOfMessage();
+string ChatData::getAndUpdateDateAndTime() {
+	// get
+		messageData ^ lastMsg = gcnew messageData();
+		statusData^ lastMsgStatus = gcnew statusData();
+	int lastMsgIndx = allMessagesIDs.size() - 1;
+	lastMsg = global::messageRepo->getItem(lastMsgIndx);
+	lastMsgStatus = global::statusRepo->getItem(lastMsg->messageID);
+	dateAndTime = global::cliToSTD(lastMsgStatus->dateAndtime);
+
+	//update
+	ChatRoomData^ chatupdated = gcnew ChatRoomData();
+	chatupdated->timeOfLastMsg = lastMsgStatus->timeOfMsg;
+	bool updated = global::chatRoomsRepo->update(ChatRoomID, chatupdated);
+
 	return dateAndTime;
 }
 
 time_t ChatData::getChatRoomTime() {
-	ChatRoomData^ chat = chatRoomsRepo->getItem(getChatID());
+	ChatRoomData^ chat = global::chatRoomsRepo->getItem(getChatID());
 		return chat->timeOfLastMsg ;
 }

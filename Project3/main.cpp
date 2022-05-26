@@ -1,12 +1,14 @@
 
-#include "SignIn.h"
+#include "MyForm.h"
 #include "SignUp.h"
 #include "chatroom.h"
 #include<string>
 #include "Globals.h"
 #include "SqlRepo.h"
+#include "global.h"
 
-using namespace Globals;
+//using namespace Globals;
+using namespace global;
 using namespace System;
 using namespace std;
 using namespace System::ComponentModel;

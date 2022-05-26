@@ -1,5 +1,123 @@
-﻿  main.cpp
-D:\github\chat\Project3\MyForm.h(239,23): warning C4101: 'e': unreferenced local variable
-D:\github\chat\Project3\SignUp.h(348,20): warning C4101: 'ex': unreferenced local variable
-  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Project3.vcxproj -> D:\github\chat\Debug\Project3.exe
+﻿  AssemblyInfo.cpp
+  ChatData.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+  global.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\global.cpp(27,18): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
+D:\github\chat_application\Project3\global.cpp(27,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Globals.cpp
+  Messages.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+  MyForm.cpp
+D:\github\chat_application\Project3\MyForm.h(239,23): warning C4101: 'e': unreferenced local variable
+  pch.cpp
+  QueryFilter.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+  SignUp.cpp
+D:\github\chat_application\Project3\SignUp.h(348,20): warning C4101: 'ex': unreferenced local variable
+  main.cpp
+D:\github\chat_application\Project3\MyForm.h(239,23): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\SignUp.h(348,20): warning C4101: 'ex': unreferenced local variable
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+  SqlRepo.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\SqlRepo.cpp(53,24): warning C4018: '<': signed/unsigned mismatch
+D:\github\chat_application\Project3\SqlRepo.cpp(151,22): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\SqlRepo.cpp(283,24): warning C4018: '<': signed/unsigned mismatch
+D:\github\chat_application\Project3\SqlRepo.cpp(302,21): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\SqlRepo.cpp(322,24): warning C4018: '<': signed/unsigned mismatch
+D:\github\chat_application\Project3\SqlRepo.cpp(342,21): warning C4101: 'e': unreferenced local variable
+D:\github\chat_application\Project3\SqlRepo.cpp(368,21): warning C4101: 'e': unreferenced local variable
+  Status.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\Messages.h(20,9): error C2143: syntax error: missing ';' before '*'
+D:\github\chat_application\Project3\Messages.h(20,9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\Messages.h(20,17): error C2238: unexpected token(s) preceding ';'
+D:\github\chat_application\Project3\Messages.h(27,8): error C2143: syntax error: missing ';' before '*'
+D:\github\chat_application\Project3\Messages.h(27,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\Messages.h(27,21): error C2238: unexpected token(s) preceding ';'
+  story.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\User.h(30,8): error C2143: syntax error: missing ';' before '*'
+D:\github\chat_application\Project3\User.h(30,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\User.h(30,19): error C2238: unexpected token(s) preceding ';'
+D:\github\chat_application\Project3\story.cpp(23,16): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  User.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+  userProfileDesc.cpp
+D:\github\chat_application\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
+D:\github\chat_application\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
+D:\github\chat_application\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
+D:\github\chat_application\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
+D:\github\chat_application\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
+D:\github\chat_application\Project3\User.h(32,18): error C2143: syntax error: missing ';' before '*'
+D:\github\chat_application\Project3\User.h(32,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\github\chat_application\Project3\User.h(32,24): error C2238: unexpected token(s) preceding ';'
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  Generating Code...

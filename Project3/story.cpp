@@ -6,12 +6,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "story.h"
 
-//#include<ctime>
 
 story::story(string storyAdded, bool type)
 {
 
-	userID = theUserID;
+	userID = global::theUserID;
 	storyType = type;
 
 	if (type == 0)
@@ -26,13 +25,13 @@ story::story(string storyAdded, bool type)
 
 
 	storyData^ story = gcnew storyData();
-	story->story_user_id = theUserID;
-	story->published_time = stdToCLI(timeOfStory);
+	story->story_user_id = global::theUserID;
+	story->published_time = global::stdToCLI(timeOfStory);
 	story->published_time_t = timeOfaddingStory;
-	story->storyPhoto = stdToCLI(storyPhoto);
-	story->storyText = stdToCLI(storyText);
+	story->storyPhoto = global::stdToCLI(storyPhoto);
+	story->storyText = global::stdToCLI(storyText);
 	story->type = type;
-	storyRepo->insert(story);
+	global::storyRepo->insert(story);
 
 }
 

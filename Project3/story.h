@@ -3,8 +3,9 @@
 #include <iostream>
 #include <ctime>
 #include"Globals.h"
-//#include "main.cpp"
-using namespace Globals;
+//using namespace Globals;
+
+#include "global.h"
 using namespace std;
 class story
 {
