@@ -13,7 +13,7 @@ User::User() {
 	MobileNum = global::cliToSTD(user->MobileNum);
 	Fname = global::cliToSTD(user->Fname);
 	Lname = global::cliToSTD(user->Lname);
-	desc = new userProfileDesc();
+	userProfileDesc *desc = new userProfileDesc();
 	
 }
 

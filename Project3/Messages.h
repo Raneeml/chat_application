@@ -17,14 +17,14 @@ class Messages
 	int MessageId;
 	int UserID;
 	string Text;
-	Status *status ;
+	//Status status ;
 
 public:
 	Messages();
 	Messages( string Text);
 	int getUserID();
 	int getMessageID();
-	Status* getStatus();
+	//Status getStatus();
 	string getText();
 
 

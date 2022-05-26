@@ -18,7 +18,7 @@ class Status
 	//0 for unseen & 1 for seen
 
 public :
-	Status();
+	Status(int msgID);
 	string status_of_message();
 	string getDateAndTimeOfMessage();
 	void change_status();

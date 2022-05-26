@@ -25,6 +25,60 @@ Class UserData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String MobileNum : Public
     System.String password : Public
     System.String desc_ : Public
+Class chatUsersData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 chatroom_ID : Public
+    Int32 member_ID : Public
+Class ChatRoomData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 chatroomID : Public
+    Boolean type : Public
+    System.String lastSeen : Public
+    Int64 timeOfLastMsg : Public
+Class UserDescData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 UserId : Public
+    System.String photo : Public
+    System.String about : Public
+    Boolean visibility : Public
+Class statusData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 messageID : Public
+    System.String Date_of_message : Public
+    System.String time_of_message : Public
+    System.String dateAndtime : Public
+    Int64 timeOfMsg : Public
+    Boolean statusType : Public
+Class messageData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 messageID : Public
+    Int32 userID : Public
+    Int32 chatID : Public
+    System.String text : Public
+Class userContactsData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 user_ID : Public
+    Int32 contact_ID : Public
+Class chatMessageData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 message_ID : Public
+    Int32 chat_ID : Public
+Class storyData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 story_user_id : Public
+    System.String published_time : Public
+    System.String storyText : Public
+    System.String storyPhoto : Public
+    Int64 published_time_t : Public
+    Boolean type : Public
 Class Project3.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -41,7 +41,7 @@ if (!userContactsRepo->tableExists()) {
 	userContactsRepo->createTable("user_ID,contact_ID");
 }
 if (!chatUsersRepo->tableExists()) {
-	userContactsRepo->createTable("chatroom_ID,member_ID");
+	chatUsersRepo->createTable("chatroom_ID,member_ID");
 }
 if (!storyRepo->tableExists()) {
 	storyRepo->createTable("story_user_id");

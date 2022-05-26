@@ -27,9 +27,9 @@ class User {
 	string Lname;
 	vector <int> chatRoomsIDs;
 	//stack<Story>stories;
-	story * userStory;
+	//story * userStory;
 	vector <int> contactsIDs;
-	userProfileDesc * desc;
+	//userProfileDesc * desc;
 
 public:
 

@@ -9,7 +9,7 @@ Messages::Messages()
 {
 	UserID = global::theUserID;
 	Text = " ";
-	status = new Status();
+	Status * status = new Status(MessageId);
 	
 	//add message to database and get the ID
 	messageData^ message = gcnew messageData();
@@ -33,7 +33,7 @@ Messages::Messages( string text)
 {
 	UserID = global::theUserID;
 	Text = text;
-	status = new Status();
+	Status* status = new Status(MessageId);
 	//add message to database and get the ID
 	messageData^ message = gcnew messageData();
 
@@ -63,9 +63,9 @@ int Messages::getMessageID()
 	return MessageId;
 }
 
-Status* Messages::getStatus() {
-	return status;
-}
+//Status Messages::getStatus() {
+//	return status;
+//}
 
 string Messages::getText() {
 	return Text;

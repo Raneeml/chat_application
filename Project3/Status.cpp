@@ -2,9 +2,9 @@
 #include "Status.h"
 //#include<ctime>
 
-Status::Status()
+Status::Status(int msgID)
 {
-	
+	messageID = msgID;
 	time_t now = time(0);
 	timeOfMsg = now;
 	 dateAndTime = ctime(&now);
