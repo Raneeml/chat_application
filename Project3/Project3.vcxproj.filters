@@ -26,7 +26,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyForm.cpp">
+    <ClCompile Include="signIn.cpp">
       <Filter>formsCPP</Filter>
     </ClCompile>
     <ClCompile Include="SignUp.cpp">
@@ -73,7 +73,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="signIn.h">
       <Filter>formsDesigns</Filter>
     </ClInclude>
     <ClInclude Include="SignUp.h">

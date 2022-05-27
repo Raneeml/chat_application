@@ -1,5 +1,5 @@
 
-#include "MyForm.h"
+#include "signIn.h"
 #include "SignUp.h"
 #include "chatroom.h"
 #include<string>
@@ -15,7 +15,7 @@ using namespace System::ComponentModel;
 using namespace System::Drawing;
 using namespace System::Windows::Forms;
 
-
+[STAThreadAttribute]
 void main (){
 
 SqlDbManager::startConnection("Data Source=DESKTOP-PS268NT;Initial Catalog=ChatApplication;Integrated Security=True");

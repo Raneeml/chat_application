@@ -1,5 +1,5 @@
   Project3.chatroom.resources - Embedded, ContainedInManifestFile, 
-  Project3.MyForm.resources - Embedded, ContainedInManifestFile, 
+  Project3.signIn.resources - Embedded, ContainedInManifestFile, 
   Project3.SignUp.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Project3, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
@@ -79,12 +79,6 @@ Class storyData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String storyPhoto : Public
     Int64 published_time_t : Public
     Boolean type : Public
-Class Project3.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    UserData user : Public
-    Boolean switchToSignup : Public
 Class Project3.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -94,3 +88,10 @@ Class Project3.SignUp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Project3.chatroom: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project3.SignIn: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    UserData user : Public
+    Boolean switchToChatRoom : Public
+    Boolean switchToSignup : Public

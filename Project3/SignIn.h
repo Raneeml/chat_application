@@ -1,7 +1,7 @@
 #pragma once
 #include "UserData.h"
 #include "SignUp.h"
-#include "Globals.h"
+#include "global.h"
 #include "SqlRepo.h"
 #include "QueryFilter.h"
 #include "chatroom.h"
@@ -11,7 +11,7 @@
 namespace Project3 {
 	using namespace std;
 	using namespace System;
-	using namespace Globals;
+	using namespace global;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
@@ -44,15 +44,15 @@ namespace Project3 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^ label1;
 	protected:
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::TextBox^  ID;
-	private: System::Windows::Forms::TextBox^  pass;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::LinkLabel^  llsigup;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::TextBox^ ID;
+	private: System::Windows::Forms::TextBox^ pass;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::LinkLabel^ llsigup;
 
 	protected:
 
@@ -82,7 +82,7 @@ namespace Project3 {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -209,66 +209,66 @@ namespace Project3 {
 		}
 #pragma endregion
 
-	public: UserData^ user ;
-    public: bool switchToChatRoom = false;
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-			 String^ id = this->ID->Text;
-			 String^ password = this->pass->Text;
-			 if (id->Length == 0 || password->Length == 0) {
-				 MessageBox::Show("Please enter ID and Password", "ID or Password Empty", MessageBoxButtons::OK);
-				 return;
-			 }
-			 try {
-				 QueryFilter^ filter = gcnew QueryFilter();
-				 filter = filter->whereColumn("UserId")
-					 ->isEqualTo(id)
-					 -> and ()
-					 ->whereColumn("password")
-					 ->isEqualTo(password)
-					 ->build();
+	public: UserData^ user;
+	public: bool switchToChatRoom = false;
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-				 //getFiltered always return a List, but we are sure that this userId-password combination is unique
-				 //so the first user in the List is the User we want
-				 List<UserData^>^ filteredUsers = usersRepo->getFiltered(filter);
+		String^ id = this->ID->Text;
+		String^ password = this->pass->Text;
+		if (id->Length == 0 || password->Length == 0) {
+			MessageBox::Show("Please enter ID and Password", "ID or Password Empty", MessageBoxButtons::OK);
+			return;
+		}
+		try {
+			QueryFilter^ filter = gcnew QueryFilter();
+			filter = filter->whereColumn("UserId")
+				->isEqualTo(id)
+				-> and ()
+				->whereColumn("password")
+				->isEqualTo(password)
+				->build();
 
-				 if (filteredUsers->ToArray()->Length == 1) {
-					 UserData^ user = filteredUsers[0];
-					  //get the user data from database and login to his account
-					 string convertedID =cliToSTD(id); //convert ID from sys to std
-					 theUserID =stoi(convertedID); //convert ID from std string to int				
-					 switchToChatRoom = true;
-					 this->Close();
-				 }
-				 //if List is empty, then the query conditions didn't meet any DB Record
-				 else {
-					 MessageBox::Show("ID or Password is Incorrect", "ID or Password Error", MessageBoxButtons::OK);
-				 }
+			//getFiltered always return a List, but we are sure that this userId-password combination is unique
+			//so the first user in the List is the User we want
+			List<UserData^>^ filteredUsers = usersRepo->getFiltered(filter);
 
-			 }
-			 catch (Exception^ e) {
-				 MessageBox::Show("Failed to connect", "Database connection Error", MessageBoxButtons::OK);
-			 }
+			if (filteredUsers->ToArray()->Length == 1) {
+				UserData^ user = filteredUsers[0];
+				//get the user data from database and login to his account
+				string convertedID = cliToSTD(id); //convert ID from sys to std
+				theUserID = stoi(convertedID); //convert ID from std string to int				
+				switchToChatRoom = true;
+				this->Close();
+			}
+			//if List is empty, then the query conditions didn't meet any DB Record
+			else {
+				MessageBox::Show("ID or Password is Incorrect", "ID or Password Error", MessageBoxButtons::OK);
+			}
+
+		}
+		catch (Exception^ e) {
+			MessageBox::Show("Failed to connect", "Database connection Error", MessageBoxButtons::OK);
+		}
 	}
 
-private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->Close();
-}
-public: bool switchToSignup = false;
-private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
-	this->switchToSignup = true;
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	public: bool switchToSignup = false;
+	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		this->switchToSignup = true;
 
-	//Project3::SignUp f;
-	Project3::chatroom f;
-	f.ShowDialog();
-	this->Close();
-}
+		//Project3::SignUp f;
+		Project3::chatroom f;
+		f.ShowDialog();
+		this->Close();
+	}
 
-private: System::Void ID_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void SignIn_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void ID_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void SignIn_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }

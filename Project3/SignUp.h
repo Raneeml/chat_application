@@ -1,14 +1,25 @@
 #pragma once
-#include"UserData.h"
+#include "UserData.h"
+#include "SignIn.h"
+#include "global.h"
+#include "SqlRepo.h"
+#include "QueryFilter.h"
+#include <string>
+#include <iostream>
+#include <msclr/gcroot.h>
+
 namespace Project3 {
 
 	using namespace System;
+	using namespace global;
+	using namespace std;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Data::SqlClient;
+
 
 	/// <summary>
 	/// Summary for SignUp
@@ -37,33 +48,33 @@ namespace Project3 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^ label1;
 
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label7;
 
-	private: System::Windows::Forms::TextBox^  Fn;
-	private: System::Windows::Forms::TextBox^  Ln;
-	private: System::Windows::Forms::TextBox^  Pn;
-	private: System::Windows::Forms::TextBox^  pass1;
-	private: System::Windows::Forms::TextBox^  desc;
-
-
+	private: System::Windows::Forms::TextBox^ Fn;
+	private: System::Windows::Forms::TextBox^ Ln;
+	private: System::Windows::Forms::TextBox^ Pn;
+	private: System::Windows::Forms::TextBox^ pass1;
+	private: System::Windows::Forms::TextBox^ desc;
 
 
 
 
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
 
-	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::TextBox^  confirm;
-	private: System::Windows::Forms::LinkLabel^  lllogin;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::TextBox^  ID;
+
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::TextBox^ confirm;
+	private: System::Windows::Forms::LinkLabel^ lllogin;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::TextBox^ ID;
 
 
 	protected:
@@ -72,7 +83,7 @@ namespace Project3 {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -303,61 +314,66 @@ namespace Project3 {
 
 		}
 #pragma endregion
-public: UserData^ user = nullptr;
+	public: UserData^ user = gcnew UserData();
 
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ id = this->ID->Text;
-	String^ fn = this->Fn->Text;
-	String^ ln = this->Ln->Text;
-	String^ pn = this->Pn->Text;
-	String^ password = this->pass1->Text;
-	String^ confirm = this->confirm->Text;
-	String^ desc = this->desc->Text;
-	if (id->Length == 0 || fn->Length == 0 || ln->Length == 0 || pn->Length == 0 || password->Length == 0 || confirm->Length == 0 || desc->Length == 0) {
-		MessageBox::Show("Please enter all the fields", "One or more empty fields", MessageBoxButtons::OK);
-		return;
-	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ id = this->ID->Text;
 
-	if (String::Compare(password, confirm) != 0) {
-		MessageBox::Show("Password and Confirm password do not match", "Password Ereor", MessageBoxButtons::OK);
-		return;
-	}
-	try {
-		String^ connString = "Data Source=DESKTOP-H5DN6T9;Initial Catalog=ChatApplication;Integrated Security=True";
-		SqlConnection sqlConn(connString);
-		sqlConn.Open();
-		String^ sqlQuery = "INSERT INTO userr"+"(user_id,F_name,L_name,phone_number,password_,description_) VALUES"+"(@id,@fn,@ln,@pn,@pass,@desc)";
-		SqlCommand command(sqlQuery, % sqlConn);
-		command.Parameters->AddWithValue("@id", id);
-		command.Parameters->AddWithValue("@fn", fn);
-		command.Parameters->AddWithValue("@ln", ln);
-		command.Parameters->AddWithValue("@pn", pn);
-		command.Parameters->AddWithValue("@pass", password);
-		command.Parameters->AddWithValue("@desc", desc);
-		command.ExecuteNonQuery();
+		String^ fn = this->Fn->Text;
 
-		user = gcnew UserData;
-		user->UserId = System::Convert::ToInt32(id);
+		String^ ln = this->Ln->Text;
+
+		String^ pn = this->Pn->Text;
+
+		String^ password = this->pass1->Text;
+
+		String^ confirm = this->confirm->Text;
+		String^ desc = this->desc->Text;
+
+
+		//user->UserId = System::Convert::ToInt32(id);
 		user->Fname = fn;
 		user->Lname = ln;
 		user->MobileNum = pn;
 		user->password = password;
 		user->desc_ = desc;
+
+
+		if (id->Length == 0 || fn->Length == 0 || ln->Length == 0 || pn->Length == 0 || password->Length == 0 || confirm->Length == 0 || desc->Length == 0) {
+			MessageBox::Show("Please enter all the fields", "One or more empty fields", MessageBoxButtons::OK);
+			return;
+		}
+
+		if (String::Compare(password, confirm) != 0) {
+			MessageBox::Show("Password and Confirm password do not match", "Password Ereor", MessageBoxButtons::OK);
+			return;
+		}
+		try {
+
+			bool inserted = usersRepo->insert(user);
+			if (inserted) {
+
+
+
+				this->Close();
+			}
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Exist Phone number or ID", "Failed to register new user", MessageBoxButtons::OK);
+		}
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	catch (Exception^ ex) {
-		MessageBox::Show("Exist Phone number or ID","Failed to register new user", MessageBoxButtons::OK);
+	public: bool switchToLogin = false;
+	private: System::Void lllogin_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		this->switchToLogin = true;
+		//Project3::SignIn f;
+		//f.ShowDialog();
+		this->Close();
+
 	}
-}
-private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->Close();
-}
-public: bool switchToLogin = false;
-private: System::Void lllogin_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
-	this->switchToLogin = true;
-	this->Close();
-}
-private: System::Void ID_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void ID_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }

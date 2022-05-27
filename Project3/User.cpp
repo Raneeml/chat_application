@@ -28,6 +28,12 @@ void User::AddContacts(int contactID) {
 	global::userContactsRepo->insert(userContact);
 }
 
+
+void User::deleteContact(int contactID) {
+
+	 global::userContactsRepo->remove(contactID);
+}
+
 List<UserData^>^ User::displayContacts() {
 	QueryFilter^ filter = gcnew QueryFilter();
 	filter = filter->whereColumn("user_ID")
@@ -37,10 +43,11 @@ List<UserData^>^ User::displayContacts() {
 	// return a List of contacts of the current user
 	List<userContactsData^>^ filteredContacts = global::userContactsRepo->getFiltered(filter);
 
-	List<UserData^>^ contacts = {};
+	List<UserData^>^ contacts = gcnew List<UserData^>();
+
 	for (int i = 0; i < filteredContacts->Count; i++)
 	{
-		contacts[i] = global::usersRepo->getItem(filteredContacts[i]->contact_ID);
+		contacts->Add(global::usersRepo->getItem(filteredContacts[i]->contact_ID));
 
 	}
 
@@ -48,8 +55,9 @@ List<UserData^>^ User::displayContacts() {
 	QueryFilter^ sort = gcnew QueryFilter();
 	sort = sort->orderBy("Fname", false)
 		->build();
-
 	contacts = global::usersRepo->getFiltered(sort);
+	
+	//sort(contacts[0], contacts[contacts->Count], sortbyName);
 
 	return contacts;
 }
@@ -126,6 +134,10 @@ bool sortbysec(const pair<int, int>& a,const pair<int, int>& b)
 	return (a.second < b.second);
 }
 
+//bool sortbyName( UserData^ a, UserData^ b)
+//{
+//	return (global::cliToSTD(a->Fname) < global::cliToSTD(b->Fname));
+//}
 
 
 void User::addChatRoom(bool type) {

@@ -35,6 +35,9 @@ public:
 
     User();
     void AddContacts(int contactID);
+    List<UserData^>^ displayContacts();
+	void deleteContact(int contactID);
+
 
 	void AddStory(string story , bool type);
 	storyData^ displayMystory();
@@ -43,7 +46,7 @@ public:
 	void deleteMyStory();
 
 	
-	List<UserData^>^ displayContacts();
+	
 	void addChatRoom(bool type);
 	List<ChatRoomData^>^ displayChatRooms();
 	int displayID();
