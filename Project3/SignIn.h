@@ -223,7 +223,7 @@ namespace Project3 {
 			QueryFilter^ filter = gcnew QueryFilter();
 			filter = filter->whereColumn("UserId")
 				->isEqualTo(id)
-				-> and ()
+				->andCase()
 				->whereColumn("password")
 				->isEqualTo(password)
 				->build();

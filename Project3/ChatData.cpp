@@ -5,7 +5,7 @@
 
 ChatData::ChatData(bool type) {
 	ChatRoom_Type = type;
-     lastSeen = getAndUpdateDateAndTime();
+    // lastSeen = getAndUpdateDateAndTime();
 
 	ChatRoomData^ chat = gcnew ChatRoomData();
 		ChatRoomID =chat->chatroomID ;

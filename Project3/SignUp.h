@@ -73,8 +73,8 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ confirm;
 	private: System::Windows::Forms::LinkLabel^ lllogin;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ ID;
+
+
 
 
 	protected:
@@ -108,8 +108,6 @@ namespace Project3 {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->confirm = (gcnew System::Windows::Forms::TextBox());
 			this->lllogin = (gcnew System::Windows::Forms::LinkLabel());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->ID = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -265,32 +263,12 @@ namespace Project3 {
 			this->lllogin->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->lllogin->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &SignUp::lllogin_LinkClicked);
 			// 
-			// label2
-			// 
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(18, 51);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(102, 20);
-			this->label2->TabIndex = 19;
-			this->label2->Text = L"ID";
-			// 
-			// ID
-			// 
-			this->ID->Location = System::Drawing::Point(127, 51);
-			this->ID->Name = L"ID";
-			this->ID->Size = System::Drawing::Size(169, 20);
-			this->ID->TabIndex = 20;
-			this->ID->TextChanged += gcnew System::EventHandler(this, &SignUp::ID_TextChanged);
-			// 
 			// SignUp
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(326, 328);
-			this->Controls->Add(this->ID);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->lllogin);
 			this->Controls->Add(this->confirm);
 			this->Controls->Add(this->label8);
@@ -317,7 +295,7 @@ namespace Project3 {
 	public: UserData^ user = gcnew UserData();
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ id = this->ID->Text;
+
 
 		String^ fn = this->Fn->Text;
 
@@ -339,7 +317,7 @@ namespace Project3 {
 		user->desc_ = desc;
 
 
-		if (id->Length == 0 || fn->Length == 0 || ln->Length == 0 || pn->Length == 0 || password->Length == 0 || confirm->Length == 0 || desc->Length == 0) {
+		if ( fn->Length == 0 || ln->Length == 0 || pn->Length == 0 || password->Length == 0 || confirm->Length == 0 || desc->Length == 0) {
 			MessageBox::Show("Please enter all the fields", "One or more empty fields", MessageBoxButtons::OK);
 			return;
 		}

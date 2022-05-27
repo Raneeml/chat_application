@@ -32,8 +32,16 @@ void User::AddContacts(int contactID) {
 
 
 void User::deleteContact(int contactID) {
+	//list<int> pKey = { global::theUserID,contactID };
+	QueryFilter^ DeleteFilter = gcnew QueryFilter();
+	DeleteFilter = DeleteFilter->whereColumn("user_ID")
+		->isEqualTo(global::theUserID)
+		->andCase()
+		->whereColumn("contact_ID")
+		->isEqualTo(contactID)
+		->build();
 
-	 global::userContactsRepo->remove(contactID);
+	global::userContactsRepo->removeFiltered(DeleteFilter);
 }
 
 List<UserData^>^ User::displayContacts() {
@@ -61,7 +69,7 @@ List<UserData^>^ User::displayContacts() {
 
 
 void User::AddStory(string storyAdded, bool type) {
-	story *addedStory = new story(storyAdded, type);
+	userStory *addedStory = new userStory(storyAdded, type);
 }
 
 void User::autoDeleteStory(int accountID)

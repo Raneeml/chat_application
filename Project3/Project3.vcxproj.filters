@@ -130,7 +130,7 @@
     <ClInclude Include="Status.h">
       <Filter>dataStructure</Filter>
     </ClInclude>
-    <ClInclude Include="story.h">
+    <ClInclude Include="userStory.h">
       <Filter>dataStructure</Filter>
     </ClInclude>
     <ClInclude Include="User.h">

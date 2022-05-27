@@ -173,7 +173,7 @@
     <ClInclude Include="SqlRepo.h" />
     <ClInclude Include="Status.h" />
     <ClInclude Include="statusData.h" />
-    <ClInclude Include="story.h" />
+    <ClInclude Include="userStory.h" />
     <ClInclude Include="storyData.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="usersContactsData.h" />

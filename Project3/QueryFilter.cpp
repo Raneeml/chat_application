@@ -74,7 +74,7 @@ namespace DBRepository {
 
 
 
-    QueryFilter::AndOrResult^ QueryFilter::FilterResult::and ()
+    QueryFilter::AndOrResult^ QueryFilter::FilterResult::andCase()
     {
         filter->query += " AND ";
         return gcnew AndOrResult(filter);

@@ -7,7 +7,7 @@
 #include "SqlRepo.h"
 #include"Messages.h"
 #include "Status.h"
-#include "story.h"
+#include "userStory.h"
 #include "ChatData.h"
 #include <stack>
 #include <vector>

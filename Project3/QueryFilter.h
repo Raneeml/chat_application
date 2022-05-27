@@ -87,7 +87,7 @@ namespace DBRepository {
 				filter = filtr;
 			}
 
-			AndOrResult^and ();
+			AndOrResult^ andCase ();
 
 			AndOrResult^ or ();
 

@@ -21,7 +21,6 @@ namespace Project3 {
 		List<Button^>Unselect;
 		List<Button^>select;
 		List<Button^>Delete;
-		List<Button^>edit;
 		List<Label^>lname;
 		List<Label^>fname;
 		List<Label^>phone;
@@ -34,14 +33,17 @@ namespace Project3 {
 		List<Panel^> Pn_messages;
 		List<CheckBox^> Ch_chatrooms;
 
-
+		
 		List<UserData^>^ contactsDataList;
+		List<ChatRoomData^>^ chatRoomsDataList;
+		ChatData* addedChat;
 
     UserData^ user;
 	String^ ID;
 	String^ fName;
 	String^ lName;
 	String^ desc;
+
 
 	private: System::Windows::Forms::Label^ edit_label;
 	private: System::Windows::Forms::Button^ edit_contact;
@@ -144,11 +146,6 @@ namespace Project3 {
 			Delete.Add(Delete13); Delete.Add(Delete14); Delete.Add(Delete15); Delete.Add(Delete16);
 			Delete.Add(Delete17); Delete.Add(Delete18); Delete.Add(Delete19); Delete.Add(Delete20);
 
-			edit.Add(edit1); edit.Add(edit2); edit.Add(edit3); edit.Add(edit4);
-			edit.Add(edit5); edit.Add(edit6); edit.Add(edit7); edit.Add(edit8);
-			edit.Add(edit9); edit.Add(edit10); edit.Add(edit11); edit.Add(edit12);
-			edit.Add(edit13); edit.Add(edit14); edit.Add(edit15); edit.Add(edit16);
-			edit.Add(edit17); edit.Add(edit18); edit.Add(edit19); edit.Add(edit20);
 
 			lname.Add(lname1); lname.Add(lname2); lname.Add(lname3); lname.Add(lname4);
 			lname.Add(lname5); lname.Add(lname6); lname.Add(lname7); lname.Add(lname8);
@@ -223,7 +220,6 @@ namespace Project3 {
 	private: System::Windows::Forms::TextBox^ phone_textBox;
 
 
-	private: System::Windows::Forms::Label^ label11;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
@@ -268,18 +264,15 @@ namespace Project3 {
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
 	private: System::Windows::Forms::Button^ change_photo_bu;
 	private: System::Windows::Forms::OpenFileDialog^ ofd;
-	private: System::Windows::Forms::PictureBox^ pictureBox6;
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
 
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label6;
+
 	private: System::Windows::Forms::Label^ add_label;
 
 	private: System::Windows::Forms::TextBox^ lname_textBox;
 	private: System::Windows::Forms::TextBox^ ID_textBox;
 
 
-	private: System::Windows::Forms::TextBox^ fname_textBox;
 
 
 	private: System::Windows::Forms::Label^ label12;
@@ -290,7 +283,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Button^ Delete1;
 	private: System::Windows::Forms::Label^ lname1;
 	private: System::Windows::Forms::Label^ phone1;
-	private: System::Windows::Forms::Button^ edit1;
 	private: System::Windows::Forms::Label^ fname1;
 
 
@@ -338,7 +330,6 @@ namespace Project3 {
 
 	private: System::Windows::Forms::CheckBox^ checkBox2;
 	private: System::Windows::Forms::Label^ phone2;
-	private: System::Windows::Forms::Button^ edit2;
 	private: System::Windows::Forms::Label^ fname2;
 
 
@@ -352,7 +343,6 @@ namespace Project3 {
 
 	private: System::Windows::Forms::CheckBox^ checkBox3;
 	private: System::Windows::Forms::Label^ phone3;
-	private: System::Windows::Forms::Button^ edit3;
 	private: System::Windows::Forms::Label^ fname3;
 
 
@@ -366,7 +356,6 @@ namespace Project3 {
 
 	private: System::Windows::Forms::CheckBox^ checkBox4;
 	private: System::Windows::Forms::Label^ phone4;
-	private: System::Windows::Forms::Button^ edit4;
 	private: System::Windows::Forms::Label^ fname4;
 
 
@@ -380,7 +369,6 @@ namespace Project3 {
 
 	private: System::Windows::Forms::CheckBox^ checkBox5;
 	private: System::Windows::Forms::Label^ phone5;
-	private: System::Windows::Forms::Button^ edit5;
 	private: System::Windows::Forms::Label^ fname5;
 	private: System::Windows::Forms::Panel^ panel7;
 	private: System::Windows::Forms::Button^ Unselect6;
@@ -389,7 +377,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname6;
 	private: System::Windows::Forms::CheckBox^ checkBox6;
 	private: System::Windows::Forms::Label^ phone6;
-	private: System::Windows::Forms::Button^ edit6;
 	private: System::Windows::Forms::Label^ fname6;
 	private: System::Windows::Forms::Panel^ panel8;
 	private: System::Windows::Forms::Button^ Unselect7;
@@ -398,7 +385,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname7;
 	private: System::Windows::Forms::CheckBox^ checkBox7;
 	private: System::Windows::Forms::Label^ phone7;
-	private: System::Windows::Forms::Button^ edit7;
 	private: System::Windows::Forms::Label^ fname7;
 	private: System::Windows::Forms::Panel^ panel9;
 	private: System::Windows::Forms::Button^ Unselect8;
@@ -407,7 +393,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname8;
 	private: System::Windows::Forms::CheckBox^ checkBox8;
 	private: System::Windows::Forms::Label^ phone8;
-	private: System::Windows::Forms::Button^ edit8;
 	private: System::Windows::Forms::Label^ fname8;
 	private: System::Windows::Forms::Panel^ panel10;
 	private: System::Windows::Forms::Button^ Unselect9;
@@ -416,7 +401,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname9;
 	private: System::Windows::Forms::CheckBox^ checkBox9;
 	private: System::Windows::Forms::Label^ phone9;
-	private: System::Windows::Forms::Button^ edit9;
 	private: System::Windows::Forms::Label^ fname9;
 	private: System::Windows::Forms::Panel^ panel11;
 	private: System::Windows::Forms::Button^ Unselect10;
@@ -425,7 +409,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname10;
 	private: System::Windows::Forms::CheckBox^ checkBox10;
 	private: System::Windows::Forms::Label^ phone10;
-	private: System::Windows::Forms::Button^ edit10;
 	private: System::Windows::Forms::Label^ fname10;
 	private: System::Windows::Forms::Panel^ panel12;
 	private: System::Windows::Forms::Button^ Unselect11;
@@ -434,7 +417,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname11;
 	private: System::Windows::Forms::CheckBox^ checkBox11;
 	private: System::Windows::Forms::Label^ phone11;
-	private: System::Windows::Forms::Button^ edit11;
 	private: System::Windows::Forms::Label^ fname11;
 	private: System::Windows::Forms::Panel^ panel13;
 	private: System::Windows::Forms::Button^ Unselect12;
@@ -443,7 +425,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname12;
 	private: System::Windows::Forms::CheckBox^ checkBox12;
 	private: System::Windows::Forms::Label^ phone12;
-	private: System::Windows::Forms::Button^ edit12;
 	private: System::Windows::Forms::Label^ fname12;
 	private: System::Windows::Forms::Panel^ panel14;
 	private: System::Windows::Forms::Button^ Unselect13;
@@ -452,7 +433,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname13;
 	private: System::Windows::Forms::CheckBox^ checkBox13;
 	private: System::Windows::Forms::Label^ phone13;
-	private: System::Windows::Forms::Button^ edit13;
 	private: System::Windows::Forms::Label^ fname13;
 	private: System::Windows::Forms::Panel^ panel15;
 	private: System::Windows::Forms::Button^ Unselect14;
@@ -461,7 +441,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname14;
 	private: System::Windows::Forms::CheckBox^ checkBox14;
 	private: System::Windows::Forms::Label^ phone14;
-	private: System::Windows::Forms::Button^ edit14;
 	private: System::Windows::Forms::Label^ fname14;
 	private: System::Windows::Forms::Panel^ panel16;
 	private: System::Windows::Forms::Button^ Unselect15;
@@ -470,7 +449,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname15;
 	private: System::Windows::Forms::CheckBox^ checkBox15;
 	private: System::Windows::Forms::Label^ phone15;
-	private: System::Windows::Forms::Button^ edit15;
 	private: System::Windows::Forms::Label^ fname15;
 	private: System::Windows::Forms::Panel^ panel17;
 	private: System::Windows::Forms::Button^ Unselect16;
@@ -479,7 +457,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname16;
 	private: System::Windows::Forms::CheckBox^ checkBox16;
 	private: System::Windows::Forms::Label^ phone16;
-	private: System::Windows::Forms::Button^ edit16;
 	private: System::Windows::Forms::Label^ fname16;
 	private: System::Windows::Forms::Panel^ panel18;
 	private: System::Windows::Forms::Button^ Unselect17;
@@ -488,7 +465,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname17;
 	private: System::Windows::Forms::CheckBox^ checkBox17;
 	private: System::Windows::Forms::Label^ phone17;
-	private: System::Windows::Forms::Button^ edit17;
 	private: System::Windows::Forms::Label^ fname17;
 	private: System::Windows::Forms::Panel^ panel19;
 	private: System::Windows::Forms::Button^ Unselect18;
@@ -497,7 +473,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname18;
 	private: System::Windows::Forms::CheckBox^ checkBox18;
 	private: System::Windows::Forms::Label^ phone18;
-	private: System::Windows::Forms::Button^ edit18;
 	private: System::Windows::Forms::Label^ fname18;
 	private: System::Windows::Forms::Panel^ panel20;
 	private: System::Windows::Forms::Button^ Unselect19;
@@ -506,7 +481,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname19;
 	private: System::Windows::Forms::CheckBox^ checkBox19;
 	private: System::Windows::Forms::Label^ phone19;
-	private: System::Windows::Forms::Button^ edit19;
 	private: System::Windows::Forms::Label^ fname19;
 	private: System::Windows::Forms::Panel^ panel21;
 	private: System::Windows::Forms::Button^ Unselect20;
@@ -515,7 +489,6 @@ namespace Project3 {
 	private: System::Windows::Forms::Label^ lname20;
 	private: System::Windows::Forms::CheckBox^ checkBox20;
 	private: System::Windows::Forms::Label^ phone20;
-	private: System::Windows::Forms::Button^ edit20;
 	private: System::Windows::Forms::Label^ fname20;
 
 
@@ -667,18 +640,12 @@ namespace Project3 {
 			this->profile_pic = (gcnew System::Windows::Forms::PictureBox());
 			this->pn_new_contact = (gcnew System::Windows::Forms::Panel());
 			this->edit_contact = (gcnew System::Windows::Forms::Button());
-			this->edit_label = (gcnew System::Windows::Forms::Label());
 			this->add_contact = (gcnew System::Windows::Forms::Button());
 			this->add_label = (gcnew System::Windows::Forms::Label());
 			this->lname_textBox = (gcnew System::Windows::Forms::TextBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->ID_textBox = (gcnew System::Windows::Forms::TextBox());
 			this->phone_textBox = (gcnew System::Windows::Forms::TextBox());
-			this->fname_textBox = (gcnew System::Windows::Forms::TextBox());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->pn_show_contact = (gcnew System::Windows::Forms::Panel());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
@@ -694,7 +661,6 @@ namespace Project3 {
 			this->lname1 = (gcnew System::Windows::Forms::Label());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone1 = (gcnew System::Windows::Forms::Label());
-			this->edit1 = (gcnew System::Windows::Forms::Button());
 			this->fname1 = (gcnew System::Windows::Forms::Label());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect2 = (gcnew System::Windows::Forms::Button());
@@ -703,7 +669,7 @@ namespace Project3 {
 			this->lname2 = (gcnew System::Windows::Forms::Label());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone2 = (gcnew System::Windows::Forms::Label());
-			this->edit2 = (gcnew System::Windows::Forms::Button());
+
 			this->fname2 = (gcnew System::Windows::Forms::Label());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect3 = (gcnew System::Windows::Forms::Button());
@@ -712,7 +678,6 @@ namespace Project3 {
 			this->lname3 = (gcnew System::Windows::Forms::Label());
 			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone3 = (gcnew System::Windows::Forms::Label());
-			this->edit3 = (gcnew System::Windows::Forms::Button());
 			this->fname3 = (gcnew System::Windows::Forms::Label());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect4 = (gcnew System::Windows::Forms::Button());
@@ -721,7 +686,6 @@ namespace Project3 {
 			this->lname4 = (gcnew System::Windows::Forms::Label());
 			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone4 = (gcnew System::Windows::Forms::Label());
-			this->edit4 = (gcnew System::Windows::Forms::Button());
 			this->fname4 = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect5 = (gcnew System::Windows::Forms::Button());
@@ -730,7 +694,6 @@ namespace Project3 {
 			this->lname5 = (gcnew System::Windows::Forms::Label());
 			this->checkBox5 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone5 = (gcnew System::Windows::Forms::Label());
-			this->edit5 = (gcnew System::Windows::Forms::Button());
 			this->fname5 = (gcnew System::Windows::Forms::Label());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect6 = (gcnew System::Windows::Forms::Button());
@@ -739,7 +702,6 @@ namespace Project3 {
 			this->lname6 = (gcnew System::Windows::Forms::Label());
 			this->checkBox6 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone6 = (gcnew System::Windows::Forms::Label());
-			this->edit6 = (gcnew System::Windows::Forms::Button());
 			this->fname6 = (gcnew System::Windows::Forms::Label());
 			this->panel8 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect7 = (gcnew System::Windows::Forms::Button());
@@ -748,7 +710,6 @@ namespace Project3 {
 			this->lname7 = (gcnew System::Windows::Forms::Label());
 			this->checkBox7 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone7 = (gcnew System::Windows::Forms::Label());
-			this->edit7 = (gcnew System::Windows::Forms::Button());
 			this->fname7 = (gcnew System::Windows::Forms::Label());
 			this->panel9 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect8 = (gcnew System::Windows::Forms::Button());
@@ -757,7 +718,6 @@ namespace Project3 {
 			this->lname8 = (gcnew System::Windows::Forms::Label());
 			this->checkBox8 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone8 = (gcnew System::Windows::Forms::Label());
-			this->edit8 = (gcnew System::Windows::Forms::Button());
 			this->fname8 = (gcnew System::Windows::Forms::Label());
 			this->panel10 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect9 = (gcnew System::Windows::Forms::Button());
@@ -766,7 +726,6 @@ namespace Project3 {
 			this->lname9 = (gcnew System::Windows::Forms::Label());
 			this->checkBox9 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone9 = (gcnew System::Windows::Forms::Label());
-			this->edit9 = (gcnew System::Windows::Forms::Button());
 			this->fname9 = (gcnew System::Windows::Forms::Label());
 			this->panel11 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect10 = (gcnew System::Windows::Forms::Button());
@@ -775,7 +734,6 @@ namespace Project3 {
 			this->lname10 = (gcnew System::Windows::Forms::Label());
 			this->checkBox10 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone10 = (gcnew System::Windows::Forms::Label());
-			this->edit10 = (gcnew System::Windows::Forms::Button());
 			this->fname10 = (gcnew System::Windows::Forms::Label());
 			this->panel12 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect11 = (gcnew System::Windows::Forms::Button());
@@ -784,7 +742,6 @@ namespace Project3 {
 			this->lname11 = (gcnew System::Windows::Forms::Label());
 			this->checkBox11 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone11 = (gcnew System::Windows::Forms::Label());
-			this->edit11 = (gcnew System::Windows::Forms::Button());
 			this->fname11 = (gcnew System::Windows::Forms::Label());
 			this->panel13 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect12 = (gcnew System::Windows::Forms::Button());
@@ -793,7 +750,6 @@ namespace Project3 {
 			this->lname12 = (gcnew System::Windows::Forms::Label());
 			this->checkBox12 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone12 = (gcnew System::Windows::Forms::Label());
-			this->edit12 = (gcnew System::Windows::Forms::Button());
 			this->fname12 = (gcnew System::Windows::Forms::Label());
 			this->panel14 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect13 = (gcnew System::Windows::Forms::Button());
@@ -802,7 +758,6 @@ namespace Project3 {
 			this->lname13 = (gcnew System::Windows::Forms::Label());
 			this->checkBox13 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone13 = (gcnew System::Windows::Forms::Label());
-			this->edit13 = (gcnew System::Windows::Forms::Button());
 			this->fname13 = (gcnew System::Windows::Forms::Label());
 			this->panel15 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect14 = (gcnew System::Windows::Forms::Button());
@@ -811,7 +766,6 @@ namespace Project3 {
 			this->lname14 = (gcnew System::Windows::Forms::Label());
 			this->checkBox14 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone14 = (gcnew System::Windows::Forms::Label());
-			this->edit14 = (gcnew System::Windows::Forms::Button());
 			this->fname14 = (gcnew System::Windows::Forms::Label());
 			this->panel16 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect15 = (gcnew System::Windows::Forms::Button());
@@ -820,7 +774,6 @@ namespace Project3 {
 			this->lname15 = (gcnew System::Windows::Forms::Label());
 			this->checkBox15 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone15 = (gcnew System::Windows::Forms::Label());
-			this->edit15 = (gcnew System::Windows::Forms::Button());
 			this->fname15 = (gcnew System::Windows::Forms::Label());
 			this->panel17 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect16 = (gcnew System::Windows::Forms::Button());
@@ -829,7 +782,6 @@ namespace Project3 {
 			this->lname16 = (gcnew System::Windows::Forms::Label());
 			this->checkBox16 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone16 = (gcnew System::Windows::Forms::Label());
-			this->edit16 = (gcnew System::Windows::Forms::Button());
 			this->fname16 = (gcnew System::Windows::Forms::Label());
 			this->panel18 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect17 = (gcnew System::Windows::Forms::Button());
@@ -838,7 +790,6 @@ namespace Project3 {
 			this->lname17 = (gcnew System::Windows::Forms::Label());
 			this->checkBox17 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone17 = (gcnew System::Windows::Forms::Label());
-			this->edit17 = (gcnew System::Windows::Forms::Button());
 			this->fname17 = (gcnew System::Windows::Forms::Label());
 			this->panel19 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect18 = (gcnew System::Windows::Forms::Button());
@@ -847,7 +798,6 @@ namespace Project3 {
 			this->lname18 = (gcnew System::Windows::Forms::Label());
 			this->checkBox18 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone18 = (gcnew System::Windows::Forms::Label());
-			this->edit18 = (gcnew System::Windows::Forms::Button());
 			this->fname18 = (gcnew System::Windows::Forms::Label());
 			this->panel20 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect19 = (gcnew System::Windows::Forms::Button());
@@ -856,7 +806,6 @@ namespace Project3 {
 			this->lname19 = (gcnew System::Windows::Forms::Label());
 			this->checkBox19 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone19 = (gcnew System::Windows::Forms::Label());
-			this->edit19 = (gcnew System::Windows::Forms::Button());
 			this->fname19 = (gcnew System::Windows::Forms::Label());
 			this->panel21 = (gcnew System::Windows::Forms::Panel());
 			this->Unselect20 = (gcnew System::Windows::Forms::Button());
@@ -865,7 +814,6 @@ namespace Project3 {
 			this->lname20 = (gcnew System::Windows::Forms::Label());
 			this->checkBox20 = (gcnew System::Windows::Forms::CheckBox());
 			this->phone20 = (gcnew System::Windows::Forms::Label());
-			this->edit20 = (gcnew System::Windows::Forms::Button());
 			this->fname20 = (gcnew System::Windows::Forms::Label());
 			this->stories = (gcnew System::Windows::Forms::Panel());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -916,7 +864,6 @@ namespace Project3 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->profile_pic))->BeginInit();
 			this->pn_new_contact->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->pn_show_contact->SuspendLayout();
 			this->flowLayoutPanel1->SuspendLayout();
@@ -1214,6 +1161,7 @@ namespace Project3 {
 			this->ADD->Text = L"Add";
 			this->ADD->UseVisualStyleBackColor = true;
 			this->ADD->Visible = false;
+			this->ADD->Click += gcnew System::EventHandler(this, &chatroom::ADD_Click);
 			// 
 			// The_selected_membersers
 			// 
@@ -1927,6 +1875,7 @@ namespace Project3 {
 			this->pictureBox17->TabIndex = 0;
 			this->pictureBox17->TabStop = false;
 			// 
+			//
 			// panel29
 			// 
 			this->panel29->Controls->Add(this->checkBox28);
@@ -1941,7 +1890,9 @@ namespace Project3 {
 			this->panel29->Visible = false;
 			// 
 			// checkBox28
-			// 
+			//
+
+
 			this->checkBox28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->checkBox28->Location = System::Drawing::Point(669, 32);
@@ -2173,19 +2124,11 @@ namespace Project3 {
 			// 
 			// pn_new_contact
 			// 
-			this->pn_new_contact->Controls->Add(this->edit_contact);
-			this->pn_new_contact->Controls->Add(this->edit_label);
+
 			this->pn_new_contact->Controls->Add(this->add_contact);
 			this->pn_new_contact->Controls->Add(this->add_label);
-			this->pn_new_contact->Controls->Add(this->lname_textBox);
 			this->pn_new_contact->Controls->Add(this->ID_textBox);
-			this->pn_new_contact->Controls->Add(this->phone_textBox);
-			this->pn_new_contact->Controls->Add(this->fname_textBox);
 			this->pn_new_contact->Controls->Add(this->label12);
-			this->pn_new_contact->Controls->Add(this->label11);
-			this->pn_new_contact->Controls->Add(this->label7);
-			this->pn_new_contact->Controls->Add(this->label6);
-			this->pn_new_contact->Controls->Add(this->pictureBox6);
 			this->pn_new_contact->Controls->Add(this->pictureBox5);
 			this->pn_new_contact->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->pn_new_contact->Location = System::Drawing::Point(0, 0);
@@ -2194,32 +2137,32 @@ namespace Project3 {
 			this->pn_new_contact->Size = System::Drawing::Size(724, 552);
 			this->pn_new_contact->TabIndex = 1;
 			// 
-			// edit_contact
-			// 
-			this->edit_contact->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit_contact->Location = System::Drawing::Point(303, 395);
-			this->edit_contact->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit_contact->Name = L"edit_contact";
-			this->edit_contact->Size = System::Drawing::Size(176, 32);
-			this->edit_contact->TabIndex = 13;
-			this->edit_contact->Text = L"Edit the Contact";
-			this->edit_contact->UseVisualStyleBackColor = true;
-			this->edit_contact->Visible = false;
-			//this->edit_contact->Click += gcnew System::EventHandler(this, &chatroom::edit_contact_Click);
-			// 
-			// edit_label
-			// 
-			this->edit_label->AutoSize = true;
-			this->edit_label->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 24, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->edit_label->Location = System::Drawing::Point(248, 38);
-			this->edit_label->Name = L"edit_label";
-			this->edit_label->Size = System::Drawing::Size(311, 39);
-			this->edit_label->TabIndex = 12;
-			this->edit_label->Text = L"Edit Your New Contact";
-			this->edit_label->Visible = false;
-			// 
+			//// edit_contact
+			//// 
+			//this->edit_contact->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			//	static_cast<System::Byte>(0)));
+			//this->edit_contact->Location = System::Drawing::Point(303, 395);
+			//this->edit_contact->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			//this->edit_contact->Name = L"edit_contact";
+			//this->edit_contact->Size = System::Drawing::Size(176, 32);
+			//this->edit_contact->TabIndex = 13;
+			//this->edit_contact->Text = L"Edit the Contact";
+			//this->edit_contact->UseVisualStyleBackColor = true;
+			//this->edit_contact->Visible = false;
+			////this->edit_contact->Click += gcnew System::EventHandler(this, &chatroom::edit_contact_Click);
+			//// 
+			//// edit_label
+			//// 
+			//this->edit_label->AutoSize = true;
+			//this->edit_label->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 24, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			//	System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			//this->edit_label->Location = System::Drawing::Point(248, 38);
+			//this->edit_label->Name = L"edit_label";
+			//this->edit_label->Size = System::Drawing::Size(311, 39);
+			//this->edit_label->TabIndex = 12;
+			//this->edit_label->Text = L"Edit Your New Contact";
+			//this->edit_label->Visible = false;
+			//// 
 			// add_contact
 			// 
 			this->add_contact->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -2253,13 +2196,13 @@ namespace Project3 {
 			this->lname_textBox->TabIndex = 9;
 			// 
 			// ID_textBox
-			// 
-			this->ID_textBox->Location = System::Drawing::Point(294, 242);
+			this->ID_textBox->Font = (gcnew System::Drawing::Font(L"Tahoma", 28.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ID_textBox->Location = System::Drawing::Point(335, 244);
 			this->ID_textBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ID_textBox->Name = L"ID_textBox";
-			this->ID_textBox->Size = System::Drawing::Size(217, 20);
+			this->ID_textBox->Size = System::Drawing::Size(302, 64);
 			this->ID_textBox->TabIndex = 8;
-			// 
 			// phone_textBox
 			// 
 			this->phone_textBox->Location = System::Drawing::Point(294, 314);
@@ -2268,77 +2211,22 @@ namespace Project3 {
 			this->phone_textBox->Size = System::Drawing::Size(217, 20);
 			this->phone_textBox->TabIndex = 7;
 			// 
-			// fname_textBox
-			// 
-			this->fname_textBox->Location = System::Drawing::Point(294, 116);
-			this->fname_textBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->fname_textBox->Name = L"fname_textBox";
-			this->fname_textBox->Size = System::Drawing::Size(217, 20);
-			this->fname_textBox->TabIndex = 6;
-			// 
-			// label12
-			// 
+			// label12 
 			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->label12->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 36, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(147, 238);
+			this->label12->Location = System::Drawing::Point(132, 236);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(50, 26);
+			this->label12->Size = System::Drawing::Size(128, 72);
 			this->label12->TabIndex = 5;
 			this->label12->Text = L"ID :";
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(123, 308);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(153, 26);
-			this->label11->TabIndex = 4;
-			this->label11->Text = L"Phone Number :";
-			this->label11->Click += gcnew System::EventHandler(this, &chatroom::label11_Click);
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(147, 175);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(120, 26);
-			this->label7->TabIndex = 3;
-			this->label7->Text = L"Last Name :";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(147, 112);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(124, 26);
-			this->label6->TabIndex = 2;
-			this->label6->Text = L"First Name :";
-			// 
-			// pictureBox6
-			// 
-			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
-			this->pictureBox6->Location = System::Drawing::Point(21, 292);
-			this->pictureBox6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(83, 70);
-			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox6->TabIndex = 1;
-			this->pictureBox6->TabStop = false;
-			// 
 			// pictureBox5
 			// 
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(21, 117);
+			this->pictureBox5->Location = System::Drawing::Point(25, 200);
 			this->pictureBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(92, 85);
+			this->pictureBox5->Size = System::Drawing::Size(128, 118);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox5->TabIndex = 0;
 			this->pictureBox5->TabStop = false;
@@ -2420,7 +2308,7 @@ namespace Project3 {
 			this->edit_delete2->Name = L"edit_delete2";
 			this->edit_delete2->Size = System::Drawing::Size(105, 28);
 			this->edit_delete2->TabIndex = 2;
-			this->edit_delete2->Text = L"Edit & Delete";
+			this->edit_delete2->Text = L"Delete";
 			this->edit_delete2->UseVisualStyleBackColor = true;
 			this->edit_delete2->Visible = false;
 			this->edit_delete2->Click += gcnew System::EventHandler(this, &chatroom::edit_delete2_Click);
@@ -2434,7 +2322,7 @@ namespace Project3 {
 			this->edit_delete->Name = L"edit_delete";
 			this->edit_delete->Size = System::Drawing::Size(105, 28);
 			this->edit_delete->TabIndex = 1;
-			this->edit_delete->Text = L"Edit & Delete";
+			this->edit_delete->Text = L"Delete";
 			this->edit_delete->UseVisualStyleBackColor = true;
 			this->edit_delete->Click += gcnew System::EventHandler(this, &chatroom::edit_delete_Click);
 			// 
@@ -2459,7 +2347,6 @@ namespace Project3 {
 			this->panel2->Controls->Add(this->lname1);
 			this->panel2->Controls->Add(this->checkBox1);
 			this->panel2->Controls->Add(this->phone1);
-			this->panel2->Controls->Add(this->edit1);
 			this->panel2->Controls->Add(this->fname1);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(3, 47);
@@ -2546,21 +2433,8 @@ namespace Project3 {
 			this->phone1->Size = System::Drawing::Size(98, 17);
 			this->phone1->TabIndex = 1;
 			this->phone1->Text = L"Phonr Number";
-			// 
-			// edit1
-			// 
-			this->edit1->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit1->Location = System::Drawing::Point(513, 15);
-			this->edit1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit1->Name = L"edit1";
-			this->edit1->Size = System::Drawing::Size(75, 27);
-			this->edit1->TabIndex = 2;
-			this->edit1->Text = L"Edit";
-			this->edit1->UseVisualStyleBackColor = true;
-			this->edit1->Visible = false;
-			this->edit1->Click += gcnew System::EventHandler(this, &chatroom::button1_Click);
-			// 
+			// 		
+		
 			// fname1
 			// 
 			this->fname1->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -2582,7 +2456,6 @@ namespace Project3 {
 			this->panel3->Controls->Add(this->lname2);
 			this->panel3->Controls->Add(this->checkBox2);
 			this->panel3->Controls->Add(this->phone2);
-			this->panel3->Controls->Add(this->edit2);
 			this->panel3->Controls->Add(this->fname2);
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel3->Location = System::Drawing::Point(3, 114);
@@ -2668,20 +2541,7 @@ namespace Project3 {
 			this->phone2->TabIndex = 1;
 			this->phone2->Text = L"Phonr Number";
 			// 
-			// edit2
-			// 
-			this->edit2->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit2->Location = System::Drawing::Point(513, 15);
-			this->edit2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit2->Name = L"edit2";
-			this->edit2->Size = System::Drawing::Size(75, 27);
-			this->edit2->TabIndex = 2;
-			this->edit2->Text = L"Edit";
-			this->edit2->UseVisualStyleBackColor = true;
-			this->edit2->Visible = false;
-			this->edit2->Click += gcnew System::EventHandler(this, &chatroom::edit2_Click);
-			// 
+
 			// fname2
 			// 
 			this->fname2->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -2703,7 +2563,6 @@ namespace Project3 {
 			this->panel4->Controls->Add(this->lname3);
 			this->panel4->Controls->Add(this->checkBox3);
 			this->panel4->Controls->Add(this->phone3);
-			this->panel4->Controls->Add(this->edit3);
 			this->panel4->Controls->Add(this->fname3);
 			this->panel4->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel4->Location = System::Drawing::Point(3, 181);
@@ -2789,20 +2648,7 @@ namespace Project3 {
 			this->phone3->TabIndex = 1;
 			this->phone3->Text = L"Phonr Number";
 			// 
-			// edit3
-			// 
-			this->edit3->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit3->Location = System::Drawing::Point(513, 15);
-			this->edit3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit3->Name = L"edit3";
-			this->edit3->Size = System::Drawing::Size(75, 27);
-			this->edit3->TabIndex = 2;
-			this->edit3->Text = L"Edit";
-			this->edit3->UseVisualStyleBackColor = true;
-			this->edit3->Visible = false;
-			this->edit3->Click += gcnew System::EventHandler(this, &chatroom::edit3_Click);
-			// 
+
 			// fname3
 			// 
 			this->fname3->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -2824,7 +2670,6 @@ namespace Project3 {
 			this->panel5->Controls->Add(this->lname4);
 			this->panel5->Controls->Add(this->checkBox4);
 			this->panel5->Controls->Add(this->phone4);
-			this->panel5->Controls->Add(this->edit4);
 			this->panel5->Controls->Add(this->fname4);
 			this->panel5->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel5->Location = System::Drawing::Point(3, 248);
@@ -2910,20 +2755,7 @@ namespace Project3 {
 			this->phone4->TabIndex = 1;
 			this->phone4->Text = L"Phonr Number";
 			// 
-			// edit4
-			// 
-			this->edit4->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit4->Location = System::Drawing::Point(513, 15);
-			this->edit4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit4->Name = L"edit4";
-			this->edit4->Size = System::Drawing::Size(75, 27);
-			this->edit4->TabIndex = 2;
-			this->edit4->Text = L"Edit";
-			this->edit4->UseVisualStyleBackColor = true;
-			this->edit4->Visible = false;
-			this->edit4->Click += gcnew System::EventHandler(this, &chatroom::edit4_Click);
-			// 
+
 			// fname4
 			// 
 			this->fname4->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -2945,7 +2777,6 @@ namespace Project3 {
 			this->panel6->Controls->Add(this->lname5);
 			this->panel6->Controls->Add(this->checkBox5);
 			this->panel6->Controls->Add(this->phone5);
-			this->panel6->Controls->Add(this->edit5);
 			this->panel6->Controls->Add(this->fname5);
 			this->panel6->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel6->Location = System::Drawing::Point(3, 315);
@@ -3031,20 +2862,6 @@ namespace Project3 {
 			this->phone5->TabIndex = 1;
 			this->phone5->Text = L"Phonr Number";
 			// 
-			// edit5
-			// 
-			this->edit5->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit5->Location = System::Drawing::Point(513, 15);
-			this->edit5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit5->Name = L"edit5";
-			this->edit5->Size = System::Drawing::Size(75, 27);
-			this->edit5->TabIndex = 2;
-			this->edit5->Text = L"Edit";
-			this->edit5->UseVisualStyleBackColor = true;
-			this->edit5->Visible = false;
-			this->edit5->Click += gcnew System::EventHandler(this, &chatroom::edit5_Click);
-			// 
 			// fname5
 			// 
 			this->fname5->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -3066,8 +2883,6 @@ namespace Project3 {
 			this->panel7->Controls->Add(this->lname6);
 			this->panel7->Controls->Add(this->checkBox6);
 			this->panel7->Controls->Add(this->phone6);
-			this->panel7->Controls->Add(this->edit6);
-			this->panel7->Controls->Add(this->fname6);
 			this->panel7->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel7->Location = System::Drawing::Point(3, 382);
 			this->panel7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -3152,20 +2967,7 @@ namespace Project3 {
 			this->phone6->TabIndex = 1;
 			this->phone6->Text = L"Phonr Number";
 			// 
-			// edit6
-			// 
-			this->edit6->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit6->Location = System::Drawing::Point(513, 15);
-			this->edit6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit6->Name = L"edit6";
-			this->edit6->Size = System::Drawing::Size(75, 27);
-			this->edit6->TabIndex = 2;
-			this->edit6->Text = L"Edit";
-			this->edit6->UseVisualStyleBackColor = true;
-			this->edit6->Visible = false;
-			this->edit6->Click += gcnew System::EventHandler(this, &chatroom::edit6_Click);
-			// 
+
 			// fname6
 			// 
 			this->fname6->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -3187,7 +2989,6 @@ namespace Project3 {
 			this->panel8->Controls->Add(this->lname7);
 			this->panel8->Controls->Add(this->checkBox7);
 			this->panel8->Controls->Add(this->phone7);
-			this->panel8->Controls->Add(this->edit7);
 			this->panel8->Controls->Add(this->fname7);
 			this->panel8->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel8->Location = System::Drawing::Point(3, 449);
@@ -3273,20 +3074,7 @@ namespace Project3 {
 			this->phone7->TabIndex = 1;
 			this->phone7->Text = L"Phonr Number";
 			// 
-			// edit7
-			// 
-			this->edit7->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit7->Location = System::Drawing::Point(513, 15);
-			this->edit7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit7->Name = L"edit7";
-			this->edit7->Size = System::Drawing::Size(75, 27);
-			this->edit7->TabIndex = 2;
-			this->edit7->Text = L"Edit";
-			this->edit7->UseVisualStyleBackColor = true;
-			this->edit7->Visible = false;
-			this->edit7->Click += gcnew System::EventHandler(this, &chatroom::edit7_Click);
-			// 
+
 			// fname7
 			// 
 			this->fname7->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -3308,7 +3096,6 @@ namespace Project3 {
 			this->panel9->Controls->Add(this->lname8);
 			this->panel9->Controls->Add(this->checkBox8);
 			this->panel9->Controls->Add(this->phone8);
-			this->panel9->Controls->Add(this->edit8);
 			this->panel9->Controls->Add(this->fname8);
 			this->panel9->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel9->Location = System::Drawing::Point(3, 516);
@@ -3394,20 +3181,7 @@ namespace Project3 {
 			this->phone8->TabIndex = 1;
 			this->phone8->Text = L"Phonr Number";
 			// 
-			// edit8
-			// 
-			this->edit8->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit8->Location = System::Drawing::Point(513, 15);
-			this->edit8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit8->Name = L"edit8";
-			this->edit8->Size = System::Drawing::Size(75, 27);
-			this->edit8->TabIndex = 2;
-			this->edit8->Text = L"Edit";
-			this->edit8->UseVisualStyleBackColor = true;
-			this->edit8->Visible = false;
-			this->edit8->Click += gcnew System::EventHandler(this, &chatroom::edit8_Click);
-			// 
+
 			// fname8
 			// 
 			this->fname8->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -3429,7 +3203,6 @@ namespace Project3 {
 			this->panel10->Controls->Add(this->lname9);
 			this->panel10->Controls->Add(this->checkBox9);
 			this->panel10->Controls->Add(this->phone9);
-			this->panel10->Controls->Add(this->edit9);
 			this->panel10->Controls->Add(this->fname9);
 			this->panel10->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel10->Location = System::Drawing::Point(3, 583);
@@ -3516,19 +3289,7 @@ namespace Project3 {
 			this->phone9->Text = L"Phonr Number";
 			// 
 			// edit9
-			// 
-			this->edit9->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit9->Location = System::Drawing::Point(513, 15);
-			this->edit9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit9->Name = L"edit9";
-			this->edit9->Size = System::Drawing::Size(75, 27);
-			this->edit9->TabIndex = 2;
-			this->edit9->Text = L"Edit";
-			this->edit9->UseVisualStyleBackColor = true;
-			this->edit9->Visible = false;
-			this->edit9->Click += gcnew System::EventHandler(this, &chatroom::edit9_Click);
-			// 
+
 			// fname9
 			// 
 			this->fname9->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -3550,7 +3311,6 @@ namespace Project3 {
 			this->panel11->Controls->Add(this->lname10);
 			this->panel11->Controls->Add(this->checkBox10);
 			this->panel11->Controls->Add(this->phone10);
-			this->panel11->Controls->Add(this->edit10);
 			this->panel11->Controls->Add(this->fname10);
 			this->panel11->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel11->Location = System::Drawing::Point(3, 650);
@@ -3636,20 +3396,7 @@ namespace Project3 {
 			this->phone10->TabIndex = 1;
 			this->phone10->Text = L"Phonr Number";
 			// 
-			// edit10
-			// 
-			this->edit10->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit10->Location = System::Drawing::Point(513, 15);
-			this->edit10->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit10->Name = L"edit10";
-			this->edit10->Size = System::Drawing::Size(75, 27);
-			this->edit10->TabIndex = 2;
-			this->edit10->Text = L"Edit";
-			this->edit10->UseVisualStyleBackColor = true;
-			this->edit10->Visible = false;
-			this->edit10->Click += gcnew System::EventHandler(this, &chatroom::edit10_Click);
-			// 
+
 			// fname10
 			// 
 			this->fname10->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -3671,7 +3418,6 @@ namespace Project3 {
 			this->panel12->Controls->Add(this->lname11);
 			this->panel12->Controls->Add(this->checkBox11);
 			this->panel12->Controls->Add(this->phone11);
-			this->panel12->Controls->Add(this->edit11);
 			this->panel12->Controls->Add(this->fname11);
 			this->panel12->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel12->Location = System::Drawing::Point(3, 717);
@@ -3757,20 +3503,7 @@ namespace Project3 {
 			this->phone11->TabIndex = 1;
 			this->phone11->Text = L"Phonr Number";
 			// 
-			// edit11
-			// 
-			this->edit11->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit11->Location = System::Drawing::Point(513, 15);
-			this->edit11->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit11->Name = L"edit11";
-			this->edit11->Size = System::Drawing::Size(75, 27);
-			this->edit11->TabIndex = 2;
-			this->edit11->Text = L"Edit";
-			this->edit11->UseVisualStyleBackColor = true;
-			this->edit11->Visible = false;
-			this->edit11->Click += gcnew System::EventHandler(this, &chatroom::edit11_Click);
-			// 
+	
 			// fname11
 			// 
 			this->fname11->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -3792,7 +3525,6 @@ namespace Project3 {
 			this->panel13->Controls->Add(this->lname12);
 			this->panel13->Controls->Add(this->checkBox12);
 			this->panel13->Controls->Add(this->phone12);
-			this->panel13->Controls->Add(this->edit12);
 			this->panel13->Controls->Add(this->fname12);
 			this->panel13->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel13->Location = System::Drawing::Point(3, 784);
@@ -3878,20 +3610,7 @@ namespace Project3 {
 			this->phone12->TabIndex = 1;
 			this->phone12->Text = L"Phonr Number";
 			// 
-			// edit12
-			// 
-			this->edit12->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit12->Location = System::Drawing::Point(513, 15);
-			this->edit12->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit12->Name = L"edit12";
-			this->edit12->Size = System::Drawing::Size(75, 27);
-			this->edit12->TabIndex = 2;
-			this->edit12->Text = L"Edit";
-			this->edit12->UseVisualStyleBackColor = true;
-			this->edit12->Visible = false;
-			this->edit12->Click += gcnew System::EventHandler(this, &chatroom::edit12_Click);
-			// 
+
 			// fname12
 			// 
 			this->fname12->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -3913,7 +3632,6 @@ namespace Project3 {
 			this->panel14->Controls->Add(this->lname13);
 			this->panel14->Controls->Add(this->checkBox13);
 			this->panel14->Controls->Add(this->phone13);
-			this->panel14->Controls->Add(this->edit13);
 			this->panel14->Controls->Add(this->fname13);
 			this->panel14->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel14->Location = System::Drawing::Point(3, 851);
@@ -3999,20 +3717,7 @@ namespace Project3 {
 			this->phone13->TabIndex = 1;
 			this->phone13->Text = L"Phonr Number";
 			// 
-			// edit13
-			// 
-			this->edit13->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit13->Location = System::Drawing::Point(513, 15);
-			this->edit13->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit13->Name = L"edit13";
-			this->edit13->Size = System::Drawing::Size(75, 27);
-			this->edit13->TabIndex = 2;
-			this->edit13->Text = L"Edit";
-			this->edit13->UseVisualStyleBackColor = true;
-			this->edit13->Visible = false;
-			this->edit13->Click += gcnew System::EventHandler(this, &chatroom::edit13_Click);
-			// 
+
 			// fname13
 			// 
 			this->fname13->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -4034,7 +3739,6 @@ namespace Project3 {
 			this->panel15->Controls->Add(this->lname14);
 			this->panel15->Controls->Add(this->checkBox14);
 			this->panel15->Controls->Add(this->phone14);
-			this->panel15->Controls->Add(this->edit14);
 			this->panel15->Controls->Add(this->fname14);
 			this->panel15->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel15->Location = System::Drawing::Point(3, 918);
@@ -4120,20 +3824,6 @@ namespace Project3 {
 			this->phone14->TabIndex = 1;
 			this->phone14->Text = L"Phonr Number";
 			// 
-			// edit14
-			// 
-			this->edit14->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit14->Location = System::Drawing::Point(513, 15);
-			this->edit14->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit14->Name = L"edit14";
-			this->edit14->Size = System::Drawing::Size(75, 27);
-			this->edit14->TabIndex = 2;
-			this->edit14->Text = L"Edit";
-			this->edit14->UseVisualStyleBackColor = true;
-			this->edit14->Visible = false;
-			this->edit14->Click += gcnew System::EventHandler(this, &chatroom::edit14_Click);
-			// 
 			// fname14
 			// 
 			this->fname14->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -4155,7 +3845,6 @@ namespace Project3 {
 			this->panel16->Controls->Add(this->lname15);
 			this->panel16->Controls->Add(this->checkBox15);
 			this->panel16->Controls->Add(this->phone15);
-			this->panel16->Controls->Add(this->edit15);
 			this->panel16->Controls->Add(this->fname15);
 			this->panel16->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel16->Location = System::Drawing::Point(3, 985);
@@ -4241,20 +3930,7 @@ namespace Project3 {
 			this->phone15->TabIndex = 1;
 			this->phone15->Text = L"Phonr Number";
 			// 
-			// edit15
-			// 
-			this->edit15->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit15->Location = System::Drawing::Point(513, 15);
-			this->edit15->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit15->Name = L"edit15";
-			this->edit15->Size = System::Drawing::Size(75, 27);
-			this->edit15->TabIndex = 2;
-			this->edit15->Text = L"Edit";
-			this->edit15->UseVisualStyleBackColor = true;
-			this->edit15->Visible = false;
-			this->edit15->Click += gcnew System::EventHandler(this, &chatroom::edit15_Click);
-			// 
+
 			// fname15
 			// 
 			this->fname15->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -4276,7 +3952,6 @@ namespace Project3 {
 			this->panel17->Controls->Add(this->lname16);
 			this->panel17->Controls->Add(this->checkBox16);
 			this->panel17->Controls->Add(this->phone16);
-			this->panel17->Controls->Add(this->edit16);
 			this->panel17->Controls->Add(this->fname16);
 			this->panel17->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel17->Location = System::Drawing::Point(3, 1052);
@@ -4362,20 +4037,7 @@ namespace Project3 {
 			this->phone16->TabIndex = 1;
 			this->phone16->Text = L"Phonr Number";
 			// 
-			// edit16
-			// 
-			this->edit16->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit16->Location = System::Drawing::Point(513, 15);
-			this->edit16->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit16->Name = L"edit16";
-			this->edit16->Size = System::Drawing::Size(75, 27);
-			this->edit16->TabIndex = 2;
-			this->edit16->Text = L"Edit";
-			this->edit16->UseVisualStyleBackColor = true;
-			this->edit16->Visible = false;
-			this->edit16->Click += gcnew System::EventHandler(this, &chatroom::edit16_Click);
-			// 
+
 			// fname16
 			// 
 			this->fname16->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -4397,7 +4059,6 @@ namespace Project3 {
 			this->panel18->Controls->Add(this->lname17);
 			this->panel18->Controls->Add(this->checkBox17);
 			this->panel18->Controls->Add(this->phone17);
-			this->panel18->Controls->Add(this->edit17);
 			this->panel18->Controls->Add(this->fname17);
 			this->panel18->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel18->Location = System::Drawing::Point(3, 1119);
@@ -4483,20 +4144,6 @@ namespace Project3 {
 			this->phone17->TabIndex = 1;
 			this->phone17->Text = L"Phonr Number";
 			// 
-			// edit17
-			// 
-			this->edit17->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit17->Location = System::Drawing::Point(513, 15);
-			this->edit17->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit17->Name = L"edit17";
-			this->edit17->Size = System::Drawing::Size(75, 27);
-			this->edit17->TabIndex = 2;
-			this->edit17->Text = L"Edit";
-			this->edit17->UseVisualStyleBackColor = true;
-			this->edit17->Visible = false;
-			this->edit17->Click += gcnew System::EventHandler(this, &chatroom::edit17_Click);
-			// 
 			// fname17
 			// 
 			this->fname17->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -4518,7 +4165,6 @@ namespace Project3 {
 			this->panel19->Controls->Add(this->lname18);
 			this->panel19->Controls->Add(this->checkBox18);
 			this->panel19->Controls->Add(this->phone18);
-			this->panel19->Controls->Add(this->edit18);
 			this->panel19->Controls->Add(this->fname18);
 			this->panel19->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel19->Location = System::Drawing::Point(3, 1186);
@@ -4604,20 +4250,7 @@ namespace Project3 {
 			this->phone18->TabIndex = 1;
 			this->phone18->Text = L"Phonr Number";
 			// 
-			// edit18
-			// 
-			this->edit18->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit18->Location = System::Drawing::Point(513, 15);
-			this->edit18->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit18->Name = L"edit18";
-			this->edit18->Size = System::Drawing::Size(75, 27);
-			this->edit18->TabIndex = 2;
-			this->edit18->Text = L"Edit";
-			this->edit18->UseVisualStyleBackColor = true;
-			this->edit18->Visible = false;
-			this->edit18->Click += gcnew System::EventHandler(this, &chatroom::edit18_Click);
-			// 
+
 			// fname18
 			// 
 			this->fname18->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -4639,7 +4272,6 @@ namespace Project3 {
 			this->panel20->Controls->Add(this->lname19);
 			this->panel20->Controls->Add(this->checkBox19);
 			this->panel20->Controls->Add(this->phone19);
-			this->panel20->Controls->Add(this->edit19);
 			this->panel20->Controls->Add(this->fname19);
 			this->panel20->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel20->Location = System::Drawing::Point(3, 1253);
@@ -4725,20 +4357,7 @@ namespace Project3 {
 			this->phone19->TabIndex = 1;
 			this->phone19->Text = L"Phonr Number";
 			// 
-			// edit19
-			// 
-			this->edit19->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit19->Location = System::Drawing::Point(513, 15);
-			this->edit19->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit19->Name = L"edit19";
-			this->edit19->Size = System::Drawing::Size(75, 27);
-			this->edit19->TabIndex = 2;
-			this->edit19->Text = L"Edit";
-			this->edit19->UseVisualStyleBackColor = true;
-			this->edit19->Visible = false;
-			this->edit19->Click += gcnew System::EventHandler(this, &chatroom::edit19_Click);
-			// 
+
 			// fname19
 			// 
 			this->fname19->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -4760,7 +4379,6 @@ namespace Project3 {
 			this->panel21->Controls->Add(this->lname20);
 			this->panel21->Controls->Add(this->checkBox20);
 			this->panel21->Controls->Add(this->phone20);
-			this->panel21->Controls->Add(this->edit20);
 			this->panel21->Controls->Add(this->fname20);
 			this->panel21->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel21->Location = System::Drawing::Point(3, 1320);
@@ -4846,19 +4464,6 @@ namespace Project3 {
 			this->phone20->TabIndex = 1;
 			this->phone20->Text = L"Phonr Number";
 			// 
-			// edit20
-			// 
-			this->edit20->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->edit20->Location = System::Drawing::Point(513, 15);
-			this->edit20->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->edit20->Name = L"edit20";
-			this->edit20->Size = System::Drawing::Size(75, 27);
-			this->edit20->TabIndex = 2;
-			this->edit20->Text = L"Edit";
-			this->edit20->UseVisualStyleBackColor = true;
-			this->edit20->Visible = false;
-			this->edit20->Click += gcnew System::EventHandler(this, &chatroom::edit20_Click);
 			// 
 			// fname20
 			// 
@@ -5051,7 +4656,6 @@ namespace Project3 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->profile_pic))->EndInit();
 			this->pn_new_contact->ResumeLayout(false);
 			this->pn_new_contact->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->pn_show_contact->ResumeLayout(false);
 			this->flowLayoutPanel1->ResumeLayout(false);
@@ -5194,9 +4798,7 @@ namespace Project3 {
 	}
 	private: System::Void exit_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(0);
-	}
+
 	private: System::Void profile_Click(System::Object^ sender, System::EventArgs^ e) {
 		AddChatRoom->Visible = false;
 		DeleteChatRoom->Visible = false;
@@ -5207,6 +4809,7 @@ namespace Project3 {
 			AddChatRoom->Visible = false;
 			DeleteChatRoom->Visible = false;
 			pn_show_contact->BringToFront();
+			displayMyContacts();
 		}
 		else {
 			AddChatRoom->Visible = false;
@@ -5272,6 +4875,7 @@ namespace Project3 {
 		ofd->Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
 		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		{
+			//hello
 			profile_pic->ImageLocation = ofd->FileName;
 			profile_pic->Image = System::Drawing::Image::FromFile(ofd->FileName);
 		}
@@ -5289,8 +4893,7 @@ namespace Project3 {
 	private: System::Void edit_delete_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		for (int i = 0; i < 20; i++) {
-			Delete[i]->Visible = true;
-			edit[i]->Visible = true;
+			Delete[i]->Visible = true;	
 		}
 		edit_delete->Visible = false;
 		edit_delete2->Visible = true;
@@ -5300,12 +4903,13 @@ namespace Project3 {
 		edit_delete->Visible = true;
 		for (int i = 0; i < 20; i++) {
 			Delete[i]->Visible = false;
-			edit[i]->Visible = false;
 		}
 	}
 	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		edit_delete->Visible = false;
 		choose_->Visible = true;
+		displayMyContacts();
+		addedChat = new ChatData(comboBox1->SelectedIndex);
 		for (int i = 0; i < 20; i++) {
 			select[i]->Visible = true;
 			Unselect[i]->Visible = true;
@@ -5314,6 +4918,7 @@ namespace Project3 {
 		pn_show_contact->BringToFront();
 	}
 	private: System::Void choose__Click(System::Object^ sender, System::EventArgs^ e) {
+        
 		ADD->Visible = true;
 		add_chat->BringToFront();
 		The_selected_membersers->Visible = true;
@@ -5330,44 +4935,36 @@ namespace Project3 {
 	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: void selected(int i) {
+		addedChat->AddMember(contactsDataList[i]->UserId);
 		checkBox[i]->Checked = true;
-		The_selected_membersers->Items->Insert(0, fname[i]->Text + " " + lname[i]->Text);
+		The_selected_membersers->Items->Insert(0, contactsDataList[i]->Fname + " " + contactsDataList[i]->Lname);
 	}
 	private: void unselected(int i) {
 		checkBox[i]->Checked = false;
 		The_selected_membersers->Items->RemoveAt(i);
 	}
-	private: void edited(int i) {
-		add_label->Visible = false;
-		edit_label->Visible = true;
-		edit_contact->Visible = true;
-		add_contact->Visible = false;
-		fname_textBox->Text = fname[i]->Text;
-		lname_textBox->Text = lname[i]->Text;
-		phone_textBox->Text = phone[i]->Text;
-		pn_new_contact->BringToFront();
-		deleted(i);
-
-	}
+	
 	private: void deleted(int i) {
 		int deletedID =contactsDataList[i]->UserId;
 		User* myAccount = new User();
 		myAccount->deleteContact(deletedID);
 
-		if (contactsDataList->Capacity > 0) {
-			for (int j = i + 1; j < contactsDataList->Capacity; j++)
+		if (contactsDataList->Count > 0) {
+			for (int j = i + 1; j < contactsDataList->Count; j++)
 			{
 				fname[i]->Text = fname[j]->Text;
 				lname[i]->Text = lname[j]->Text;
 				phone[i]->Text = phone[j]->Text;
 
 			}
-			panel[contactsDataList->Capacity - 1]->Visible = false;
+			panel[contactsDataList->Count - 1]->Visible = false;
 			
 		}
 		else
 			panel[0]->Visible = false;
+		displayMyContacts();
 	}
+
 	private: System::Void select1_Click(System::Object^ sender, System::EventArgs^ e) {
 		selected(0);
 	}
@@ -5381,29 +4978,51 @@ namespace Project3 {
 		int contactAddedID =stoi(global::cliToSTD(ID_textBox->Text));
 		myAccount->AddContacts(contactAddedID);
 
-	    
-		contactsDataList = myAccount->displayContacts();
-		int length = contactsDataList->Count;
-		for (int i=0 ; i< length ;i++)
-		{ 
-		fname[i]->Text = contactsDataList[i]->Fname;
-		lname[i]->Text = contactsDataList[i]->Lname;
-		phone[i]->Text = contactsDataList[i]->MobileNum;
+		displayMyContacts();
 
-		panel[i]->Visible = true;
-		}
-
-		fname_textBox->Text = L"";
-		lname_textBox->Text = L"";
-		phone_textBox->Text = L"";
 		ID_textBox->Text = L"";
 	}
+
+
+ private: System :: Void displayMyContacts()
+ {
+	 User* myAccount = new User();
+	 contactsDataList = myAccount->displayContacts();
+	 int length = contactsDataList->Count;
+	 for (int i = 0; i < length; i++)
+	 {
+		 fname[i]->Text = contactsDataList[i]->Fname;
+		 lname[i]->Text = contactsDataList[i]->Lname;
+		 phone[i]->Text = contactsDataList[i]->MobileNum;
+
+		 panel[i]->Visible = true;
+	 }
+
+	 ID_textBox->Text = L"";
+ }
+
+
+ private: System::Void displayMyChatRooms()
+ {
+			 User* myAccount = new User();
+			 chatRoomsDataList = myAccount->displayChatRooms();
+			 int length =chatRoomsDataList->Count;
+			 for (int i = 0; i < length; i++)
+			 {
+				 panel[i]->Visible = true;
+			 }
+
+			 
+}
+		   
+
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		ofd->Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
 		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		{
 			pictureBox7->ImageLocation = ofd->FileName;
-			pictureBox7->Image = System::Drawing::Image::FromFile(ofd->FileName);
+		    pictureBox7->Image = System::Drawing::Image::FromFile(ofd->FileName);
+			userStory* photoStory = new userStory(global::cliToSTD(ofd->FileName), 0);
 		}
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -5411,6 +5030,7 @@ namespace Project3 {
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		stories->BringToFront();
+		userStory* textStory = new userStory(global::cliToSTD(richTextBox2->Text), 1);
 	}
 	private: System::Void select2_Click(System::Object^ sender, System::EventArgs^ e) {
 		selected(1);
@@ -5588,75 +5208,7 @@ namespace Project3 {
 	private: System::Void Delete20_Click(System::Object^ sender, System::EventArgs^ e) {
 		deleted(19);
 	}
-	private: System::Void edit2_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(1);
-	}
-	private: System::Void edit3_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(2);
-	}
-	private: System::Void edit4_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(3);
-	}
-	private: System::Void edit5_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(4);
-	}
-	private: System::Void edit6_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(5);
-	}
-	private: System::Void edit7_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(6);
-	}
-	private: System::Void edit8_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(7);
-	}
-	private: System::Void edit9_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(8);
-	}
-	private: System::Void edit10_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(9);
-	}
-	private: System::Void edit11_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(10);
-	}
-	private: System::Void edit12_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(11);
-	}
-	private: System::Void edit13_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(12);
-	}
-	private: System::Void edit14_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(13);
-	}
-	private: System::Void edit15_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(14);
-	}
-	private: System::Void edit16_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(15);
-	}
-	private: System::Void edit17_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(16);
-	}
-	private: System::Void edit18_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(17);
-	}
-	private: System::Void edit19_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(18);
-	}
-	private: System::Void edit20_Click(System::Object^ sender, System::EventArgs^ e) {
-		edited(19);
-	}
-	/*private: System::Void edit_contact_Click(System::Object^ sender, System::EventArgs^ e) {
-		fname[f]->Text = fname_textBox->Text;
-		lname[f]->Text = lname_textBox->Text;
-		phone[f]->Text = phone_textBox->Text;
-		panel[f]->Visible = true;
-		f++;
-		pn_show_contact->BringToFront();
-		edit_contact->Visible = false;
-		edit_label->Visible = false;
-		add_label->Visible = true;
-		add_contact->Visible = true;
-	}*/
+
 
 		   //when clicking on textbox search word deleted
 	private: System::Void textBox7_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -5789,6 +5341,9 @@ namespace Project3 {
 			}
 		}*/
 	}
+	 private: System::Void ADD_Click(System::Object^ sender, System::EventArgs^ e) {
+		     displayMyChatRooms();
+		   }
 
 
 };

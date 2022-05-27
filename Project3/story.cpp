@@ -4,10 +4,10 @@
 #include <ctime>
 #include"Globals.h"
 #define _CRT_SECURE_NO_WARNINGS
-#include "story.h"
+#include "userStory.h"
 
 
-story::story(string storyAdded, bool type)
+userStory::userStory(string storyAdded, bool type)
 {
 
 	userID = global::theUserID;
