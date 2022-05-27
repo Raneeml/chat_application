@@ -2,12 +2,12 @@
 #pragma once
 #include "SqlRepo.h"
 #include "UserData.h"
-#include "chatUsersData.h"
+#include "chatsUsersData.h"
 #include "ChatRoomData.h"
 #include "UserDescData.h"
 #include "statusData.h"
 #include "messageData.h"
-#include "userContactsData.h"
+#include "usersContactsData.h"
 #include "chatMessageData.h"
 #include "storyData.h"
 #include "User.h"
@@ -31,8 +31,8 @@ namespace global {
 	extern gcroot<SqlRepo<statusData^>^> statusRepo;
 	extern gcroot<SqlRepo<messageData^>^> messageRepo;
 	extern gcroot<SqlRepo<chatMessageData^>^> chatMessageRepo;
-	extern gcroot<SqlRepo<userContactsData^>^> userContactsRepo;
-	extern gcroot<SqlRepo<chatUsersData^>^> chatUsersRepo;
+	extern gcroot<SqlRepo<usersContactsData^>^> userContactsRepo;
+	extern gcroot<SqlRepo<chatsUsersData^>^> chatsUsersRepo;
 	extern gcroot<SqlRepo<storyData^>^> storyRepo;
 	//convert .NET String to c++ string
 	extern string cliToSTD(String^ cliString);

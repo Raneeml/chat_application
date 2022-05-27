@@ -156,7 +156,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="chatRoomData.h" />
-    <ClInclude Include="chatUsersData.h" />
+    <ClInclude Include="chatsUsersData.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="messageData.h" />
@@ -176,7 +176,7 @@
     <ClInclude Include="story.h" />
     <ClInclude Include="storyData.h" />
     <ClInclude Include="User.h" />
-    <ClInclude Include="userContactsData.h" />
+    <ClInclude Include="usersContactsData.h" />
     <ClInclude Include="UserData.h" />
     <ClInclude Include="userDescData.h" />
     <ClInclude Include="userProfileDesc.h" />

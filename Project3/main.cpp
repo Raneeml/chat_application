@@ -40,8 +40,8 @@ if (!chatMessageRepo->tableExists()) {
 if (!userContactsRepo->tableExists()) {
 	userContactsRepo->createTable("user_ID,contact_ID");
 }
-if (!chatUsersRepo->tableExists()) {
-	chatUsersRepo->createTable("chatroom_ID,member_ID");
+if (!chatsUsersRepo->tableExists()) {
+	chatsUsersRepo->createTable("chatroom_ID,member_ID");
 }
 if (!storyRepo->tableExists()) {
 	storyRepo->createTable("story_user_id");

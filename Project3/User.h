@@ -49,8 +49,8 @@ public:
 	
 	void addChatRoom(bool type);
 	List<ChatRoomData^>^ displayChatRooms();
-	int displayID();
 
+	int displayID();
 	void calcTime(int storyUserID,time_t time);
 
 

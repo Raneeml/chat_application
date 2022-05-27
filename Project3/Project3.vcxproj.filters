@@ -103,7 +103,7 @@
     <ClInclude Include="chatRoomData.h">
       <Filter>database</Filter>
     </ClInclude>
-    <ClInclude Include="chatUsersData.h">
+    <ClInclude Include="chatsUsersData.h">
       <Filter>database</Filter>
     </ClInclude>
     <ClInclude Include="messageData.h">
@@ -115,7 +115,7 @@
     <ClInclude Include="storyData.h">
       <Filter>database</Filter>
     </ClInclude>
-    <ClInclude Include="userContactsData.h">
+    <ClInclude Include="usersContactsData.h">
       <Filter>database</Filter>
     </ClInclude>
     <ClInclude Include="userDescData.h">
@@ -147,9 +147,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>

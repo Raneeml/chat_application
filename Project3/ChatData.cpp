@@ -25,9 +25,12 @@ void ChatData::AddMember(int addedID) {
 
 
 	//theChatID change when you create or enter chatroom 
-	chatUsersData^ newMember = gcnew chatUsersData();
+	chatsUsersData^ newMember = gcnew chatsUsersData();
 	newMember->chatroom_ID = global::theChatID;
 	newMember->member_ID = addedID;
+	newMember->timeOfLastMsgINChat = getChatRoomTime();
+
+	global::chatsUsersRepo->insert(newMember);
 
 }
 

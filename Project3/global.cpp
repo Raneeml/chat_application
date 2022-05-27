@@ -17,8 +17,8 @@ namespace global {
 	extern gcroot<SqlRepo<statusData^>^> statusRepo = gcnew SqlRepo<statusData^>("statusData");
 	extern gcroot<SqlRepo<messageData^>^> messageRepo = gcnew SqlRepo<messageData^>("messageData", true);
 	extern gcroot<SqlRepo<chatMessageData^>^> chatMessageRepo = gcnew SqlRepo<chatMessageData^>("chatMessageData");
-	extern gcroot<SqlRepo<userContactsData^>^> userContactsRepo = gcnew SqlRepo<userContactsData^>("userContactsData");
-	extern gcroot<SqlRepo<chatUsersData^>^> chatUsersRepo = gcnew SqlRepo<chatUsersData^>("chatUsersData");
+	extern gcroot<SqlRepo<usersContactsData^>^> userContactsRepo = gcnew SqlRepo<usersContactsData^>("usersContactsData");
+	extern gcroot<SqlRepo<chatsUsersData^>^> chatsUsersRepo = gcnew SqlRepo<chatsUsersData^>("chatsUsersData");
 	extern gcroot<SqlRepo<storyData^>^> storyRepo = gcnew SqlRepo<storyData^>("storyData");
 
 	string cliToSTD(String^ cliString) {

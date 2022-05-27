@@ -22,9 +22,11 @@ void User::AddContacts(int contactID) {
 	contactsIDs.push_back(contactID);
 
 	//database will find the ID of that number
-	userContactsData^ userContact = gcnew userContactsData();
+	usersContactsData^ userContact = gcnew usersContactsData();
 	userContact->user_ID = global::theUserID;
 	userContact->contact_ID = contactID;
+	UserData^ contactAdded = global::usersRepo->getItem(contactID);
+	userContact->contact_fName = contactAdded->Fname;
 	global::userContactsRepo->insert(userContact);
 }
 
@@ -38,10 +40,13 @@ List<UserData^>^ User::displayContacts() {
 	QueryFilter^ filter = gcnew QueryFilter();
 	filter = filter->whereColumn("user_ID")
 		->isEqualTo(global::theUserID)
+		->orderBy("contact_fName", false)
 		->build();
 
 	// return a List of contacts of the current user
-	List<userContactsData^>^ filteredContacts = global::userContactsRepo->getFiltered(filter);
+	List<usersContactsData^>^ filteredContacts = global::userContactsRepo->getFiltered(filter);
+
+
 
 	List<UserData^>^ contacts = gcnew List<UserData^>();
 
@@ -50,14 +55,6 @@ List<UserData^>^ User::displayContacts() {
 		contacts->Add(global::usersRepo->getItem(filteredContacts[i]->contact_ID));
 
 	}
-
-	//sort the contacts by first name
-	QueryFilter^ sort = gcnew QueryFilter();
-	sort = sort->orderBy("Fname", false)
-		->build();
-	contacts = global::usersRepo->getFiltered(sort);
-	
-	//sort(contacts[0], contacts[contacts->Count], sortbyName);
 
 	return contacts;
 }
@@ -95,7 +92,7 @@ List<storyData^>^ User::displayContactsStories() {
 		->build();
 
 	// return a List of contacts of the current user
-	List<userContactsData^>^ filteredContacts = global::userContactsRepo->getFiltered(filter);
+	List<usersContactsData^>^ filteredContacts = global::userContactsRepo->getFiltered(filter);
 
 	List<storyData^>^ contactsStories = {};
 	for (int i = 0; i < filteredContacts->Count; i++)
@@ -120,26 +117,6 @@ void User::deleteMyStory()
 }
 
 
-
-
-int User::displayID()
-{
-	return UserId;
-}
-
-
-
-bool sortbysec(const pair<int, int>& a,const pair<int, int>& b)
-{
-	return (a.second < b.second);
-}
-
-//bool sortbyName( UserData^ a, UserData^ b)
-//{
-//	return (global::cliToSTD(a->Fname) < global::cliToSTD(b->Fname));
-//}
-
-
 void User::addChatRoom(bool type) {
 	ChatData newChat = new ChatData(type);
 	newChat.AddMember(global::theUserID);
@@ -152,10 +129,11 @@ List<ChatRoomData^>^ User::displayChatRooms() {
 	QueryFilter^ filter = gcnew QueryFilter();
 	filter = filter->whereColumn("member_ID")
 		->isEqualTo(global::theUserID)
+		->orderBy("timeOfLastMsgINChat",true)
 		->build();
 
-	// return a List of contacts of the current user
-	List<chatUsersData^>^ filteredChatRooms = global::chatUsersRepo->getFiltered(filter);
+	// return a List of chats of the current user
+	List<chatsUsersData^>^ filteredChatRooms = global::chatsUsersRepo->getFiltered(filter);
 
 	List<ChatRoomData^>^ chatRooms = {};
 	for (int i = 0; i < filteredChatRooms->Count; i++)
@@ -164,15 +142,13 @@ List<ChatRoomData^>^ User::displayChatRooms() {
 
 	}
 
-	//sort the contacts by first name
-	QueryFilter^ sort = gcnew QueryFilter();
-	sort = sort->orderBy("timeOfLastMsg", true)
-		->build();
-
-	chatRooms = global::chatRoomsRepo->getFiltered(sort);
 
 	return chatRooms;
 
 }
 
 
+int User::displayID()
+{
+	return UserId;
+}
