@@ -8,7 +8,7 @@ using namespace DBRepository;
 
 namespace global {
 
-	extern int theUserID = 2;
+	extern int theUserID = 8;
 	extern int theChatID = 1;
 
 	extern gcroot<SqlRepo<UserData^>^> usersRepo = gcnew SqlRepo<UserData^>("UserData", true);

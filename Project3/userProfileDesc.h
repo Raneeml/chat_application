@@ -19,6 +19,7 @@ class userProfileDesc
 public:
 	userProfileDesc();
 	void changeProfilePhoto(string newPhoto);
+	string getProfilePhoto();
 	void changeVisibility();
 	void editAboutDescription(string newAbout);
 	

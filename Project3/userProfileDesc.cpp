@@ -14,6 +14,7 @@ userProfileDesc::userProfileDesc() {
 	 global::descRepo->insert(desc);
 
 }
+
 void userProfileDesc ::changeVisibility() {
 	visibility = !visibility;
 	UserDescData^ desc = gcnew UserDescData();
@@ -35,4 +36,8 @@ void userProfileDesc::changeProfilePhoto(string newPhoto) {
 	desc = global::descRepo->getItem(global::theUserID);
 	desc->photo = global::stdToCLI(personalPhoto);
 	bool updated = global::descRepo->update(global::theUserID, desc);
+}
+
+string userProfileDesc::getProfilePhoto() {
+	return personalPhoto;
 }

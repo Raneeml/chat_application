@@ -10,7 +10,7 @@ public:
 	String^ Lname;
 	String^ MobileNum;
 	String^ password;
-	String^ desc_;
+	
 };
 
 

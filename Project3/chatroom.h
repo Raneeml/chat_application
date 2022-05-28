@@ -33,18 +33,20 @@ namespace Project3 {
 		List<Panel^> Pn_messages;
 		List<CheckBox^> Ch_chatrooms;
 
-		
+		User* myAccount;
+		userProfileDesc* myAccountDesc;
 		List<UserData^>^ contactsDataList;
 		List<ChatRoomData^>^ chatRoomsDataList;
 		ChatData* addedChat;
 
     UserData^ user;
+	UserDescData^ userDesc;
 	String^ ID;
 	String^ fName;
 	String^ lName;
 	String^ desc;
 
-
+	
 	private: System::Windows::Forms::Label^ edit_label;
 	private: System::Windows::Forms::Button^ edit_contact;
 	private: System::Windows::Forms::PictureBox^ pictureBox21;
@@ -116,11 +118,14 @@ namespace Project3 {
 		chatroom(void)
 		{
 			user = gcnew UserData();
+			userDesc = gcnew UserDescData();
+			//myAccountDesc = new userProfileDesc();
 			user = global::usersRepo->getItem(global::theUserID);
+			userDesc = global::descRepo->getItem(global::theUserID);
 			ID = global::stdToCLI(to_string(user->UserId));
 			fName = user->Fname;
 			lName = user->Lname;
-			desc = user->desc_;
+			desc = userDesc->about;
 
 			InitializeComponent();
 			//
@@ -2112,7 +2117,11 @@ namespace Project3 {
 			this->profile_pic->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->profile_pic->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->profile_pic->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->profile_pic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"profile_pic.Image")));
+			if (userDesc->photo == "")
+				this->profile_pic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"profile_pic.Image")));
+			else
+			profile_pic->ImageLocation = userDesc->photo;
+
 			this->profile_pic->Location = System::Drawing::Point(247, 2);
 			this->profile_pic->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->profile_pic->Name = L"profile_pic";
@@ -4878,6 +4887,8 @@ namespace Project3 {
 			//hello
 			profile_pic->ImageLocation = ofd->FileName;
 			profile_pic->Image = System::Drawing::Image::FromFile(ofd->FileName);
+			userProfileDesc* myAccountDesc = new userProfileDesc();
+			myAccountDesc->changeProfilePhoto(global::cliToSTD(ofd->FileName));
 		}
 	}
 	private: System::Void profile_pic_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -4986,7 +4997,7 @@ namespace Project3 {
 
  private: System :: Void displayMyContacts()
  {
-	 User* myAccount = new User();
+     myAccount = new User();
 	 contactsDataList = myAccount->displayContacts();
 	 int length = contactsDataList->Count;
 	 for (int i = 0; i < length; i++)
@@ -5004,7 +5015,6 @@ namespace Project3 {
 
  private: System::Void displayMyChatRooms()
  {
-			 User* myAccount = new User();
 			 chatRoomsDataList = myAccount->displayChatRooms();
 			 int length =chatRoomsDataList->Count;
 			 for (int i = 0; i < length; i++)

@@ -1,5 +1,6 @@
 #pragma once
 #include "UserData.h"
+#include "userDescData.h"
 #include "SignIn.h"
 #include "global.h"
 #include "SqlRepo.h"
@@ -206,6 +207,7 @@ namespace Project3 {
 			this->desc->Name = L"desc";
 			this->desc->Size = System::Drawing::Size(169, 20);
 			this->desc->TabIndex = 12;
+			this->desc->TextChanged += gcnew System::EventHandler(this, &SignUp::desc_TextChanged);
 			// 
 			// button1
 			// 
@@ -306,15 +308,16 @@ namespace Project3 {
 		String^ password = this->pass1->Text;
 
 		String^ confirm = this->confirm->Text;
+
 		String^ desc = this->desc->Text;
-
-
-		//user->UserId = System::Convert::ToInt32(id);
+		
 		user->Fname = fn;
 		user->Lname = ln;
 		user->MobileNum = pn;
 		user->password = password;
-		user->desc_ = desc;
+		
+
+		
 
 
 		if ( fn->Length == 0 || ln->Length == 0 || pn->Length == 0 || password->Length == 0 || confirm->Length == 0 || desc->Length == 0) {
@@ -323,22 +326,32 @@ namespace Project3 {
 		}
 
 		if (String::Compare(password, confirm) != 0) {
-			MessageBox::Show("Password and Confirm password do not match", "Password Ereor", MessageBoxButtons::OK);
+			MessageBox::Show("Password and Confirm password do not match", "Password Error", MessageBoxButtons::OK);
 			return;
 		}
-		try {
+		//try {
 
+			//add to data base
 			bool inserted = usersRepo->insert(user);
+
+			//update the global ID
+			int IDindx = usersRepo->getAll()->Count - 1;
+			List<UserData^>^ Users = usersRepo->getAll();
+			global::theUserID = Users[IDindx]->UserId;
+
+			//add desc to the profile
+			User* myaccount = new User();
+			userProfileDesc* myAccountDesc = new userProfileDesc();
+			myAccountDesc->editAboutDescription(global::cliToSTD(desc));
+
 			if (inserted) {
-
-
 
 				this->Close();
 			}
-		}
-		catch (Exception^ ex) {
+	/*	}*/
+	/*	catch (Exception^ ex) {
 			MessageBox::Show("Exist Phone number or ID", "Failed to register new user", MessageBoxButtons::OK);
-		}
+		}*/
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
@@ -353,5 +366,7 @@ namespace Project3 {
 	}
 	private: System::Void ID_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void desc_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
