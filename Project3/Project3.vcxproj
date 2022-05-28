@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="ChatData.cpp" />
+    <ClCompile Include="chatroom.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Messages.cpp" />

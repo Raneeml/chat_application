@@ -71,6 +71,9 @@
     <ClCompile Include="global.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="chatroom.cpp">
+      <Filter>formsCPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="signIn.h">

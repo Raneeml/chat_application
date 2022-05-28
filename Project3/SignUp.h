@@ -289,6 +289,7 @@ namespace Project3 {
 			this->Controls->Add(this->label1);
 			this->Name = L"SignUp";
 			this->Text = L"SignUp";
+			this->Load += gcnew System::EventHandler(this, &SignUp::SignUp_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -359,7 +360,7 @@ namespace Project3 {
 	public: bool switchToLogin = false;
 	private: System::Void lllogin_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		this->switchToLogin = true;
-		//Project3::SignIn f;
+		//Project3::chatroom f;
 		//f.ShowDialog();
 		this->Close();
 
@@ -368,5 +369,7 @@ namespace Project3 {
 	}
 	private: System::Void desc_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void SignUp_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

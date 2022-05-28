@@ -1,4 +1,5 @@
 #pragma once
+#include "User.h"
 
 namespace Project3 {
 
@@ -41,10 +42,10 @@ namespace Project3 {
 
     UserData^ user;
 	UserDescData^ userDesc;
-	String^ ID;
-	String^ fName;
-	String^ lName;
-	String^ desc;
+//	String^ ID;
+//	String^ fName;
+//	String^ lName;
+//	String^ desc;
 
 	
 	private: System::Windows::Forms::Label^ edit_label;
@@ -115,93 +116,7 @@ namespace Project3 {
 	private: System::Windows::Forms::Button^ ADD;
 		   List<Panel^>panelf;
 	public:
-		chatroom(void)
-		{
-			user = gcnew UserData();
-			userDesc = gcnew UserDescData();
-			//myAccountDesc = new userProfileDesc();
-			user = global::usersRepo->getItem(global::theUserID);
-			userDesc = global::descRepo->getItem(global::theUserID);
-			ID = global::stdToCLI(to_string(user->UserId));
-			fName = user->Fname;
-			lName = user->Lname;
-			desc = userDesc->about;
-
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			// 
-		
-			//
-			Unselect.Add(Unselect1); Unselect.Add(Unselect2); Unselect.Add(Unselect3); Unselect.Add(Unselect4);
-			Unselect.Add(Unselect5); Unselect.Add(Unselect6); Unselect.Add(Unselect7); Unselect.Add(Unselect8);
-			Unselect.Add(Unselect9); Unselect.Add(Unselect10); Unselect.Add(Unselect11); Unselect.Add(Unselect12);
-			Unselect.Add(Unselect13); Unselect.Add(Unselect14); Unselect.Add(Unselect15); Unselect.Add(Unselect16);
-			Unselect.Add(Unselect17); Unselect.Add(Unselect18); Unselect.Add(Unselect19); Unselect.Add(Unselect20);
-
-			select.Add(select1); select.Add(select2); select.Add(select3); select.Add(select4);
-			select.Add(select5); select.Add(select6); select.Add(select7); select.Add(select8);
-			select.Add(select9); select.Add(select10); select.Add(select11); select.Add(select12);
-			select.Add(select13); select.Add(select14); select.Add(select15); select.Add(select16);
-			select.Add(select17); select.Add(select18); select.Add(select19); select.Add(select20);
-
-			Delete.Add(Delete1); Delete.Add(Delete2); Delete.Add(Delete3); Delete.Add(Delete4);
-			Delete.Add(Delete5); Delete.Add(Delete6); Delete.Add(Delete7); Delete.Add(Delete8);
-			Delete.Add(Delete9); Delete.Add(Delete10); Delete.Add(Delete11); Delete.Add(Delete12);
-			Delete.Add(Delete13); Delete.Add(Delete14); Delete.Add(Delete15); Delete.Add(Delete16);
-			Delete.Add(Delete17); Delete.Add(Delete18); Delete.Add(Delete19); Delete.Add(Delete20);
-
-
-			lname.Add(lname1); lname.Add(lname2); lname.Add(lname3); lname.Add(lname4);
-			lname.Add(lname5); lname.Add(lname6); lname.Add(lname7); lname.Add(lname8);
-			lname.Add(lname9); lname.Add(lname10); lname.Add(lname11); lname.Add(lname12);
-			lname.Add(lname13); lname.Add(lname14); lname.Add(lname15); lname.Add(lname16);
-			lname.Add(lname17); lname.Add(lname18); lname.Add(lname19); lname.Add(lname20);
-
-
-			fname.Add(fname1); fname.Add(fname2); fname.Add(fname3); fname.Add(fname4);
-			fname.Add(fname5); fname.Add(fname6); fname.Add(fname7); fname.Add(fname8);
-			fname.Add(fname9); fname.Add(fname10); fname.Add(fname11); fname.Add(fname12);
-			fname.Add(fname13); fname.Add(fname14); fname.Add(fname15); fname.Add(fname16);
-			fname.Add(fname17); fname.Add(fname18); fname.Add(fname19); fname.Add(fname20);
-
-			phone.Add(phone1); phone.Add(phone2); phone.Add(phone3); phone.Add(phone4);
-			phone.Add(phone5); phone.Add(phone6); phone.Add(phone7); phone.Add(phone8);
-			phone.Add(phone9); phone.Add(phone10); phone.Add(phone11); phone.Add(phone12);
-			phone.Add(phone13); phone.Add(phone14); phone.Add(phone15); phone.Add(phone16);
-			phone.Add(phone17); phone.Add(phone18); phone.Add(phone19); phone.Add(phone20);
-
-			checkBox.Add(checkBox1); checkBox.Add(checkBox2); checkBox.Add(checkBox3); checkBox.Add(checkBox4);
-			checkBox.Add(checkBox5); checkBox.Add(checkBox6); checkBox.Add(checkBox7); checkBox.Add(checkBox8);
-			checkBox.Add(checkBox9); checkBox.Add(checkBox10); checkBox.Add(checkBox11); checkBox.Add(checkBox12);
-			checkBox.Add(checkBox13); checkBox.Add(checkBox14); checkBox.Add(checkBox15); checkBox.Add(checkBox16);
-			checkBox.Add(checkBox17); checkBox.Add(checkBox18); checkBox.Add(checkBox19); checkBox.Add(checkBox20);
-
-			panel.Add(panel2); panel.Add(panel3); panel.Add(panel4); panel.Add(panel5);
-			panel.Add(panel6); panel.Add(panel7); panel.Add(panel8); panel.Add(panel9);
-			panel.Add(panel10); panel.Add(panel11); panel.Add(panel12); panel.Add(panel13);
-			panel.Add(panel14); panel.Add(panel15); panel.Add(panel16); panel.Add(panel17);
-			panel.Add(panel18); panel.Add(panel19); panel.Add(panel20); panel.Add(panel21);
-
-			L_chatrooms.Add(label21); L_chatrooms.Add(label22); L_chatrooms.Add(label23); L_chatrooms.Add(label24);
-			L_chatrooms.Add(label25); L_chatrooms.Add(label26); L_chatrooms.Add(label27); L_chatrooms.Add(label28);
-			L_chatrooms.Add(label29); L_chatrooms.Add(label30); L_chatrooms.Add(label31); L_chatrooms.Add(label32);
-			L_chatrooms.Add(label33); L_chatrooms.Add(label34); L_chatrooms.Add(label35); L_chatrooms.Add(label36);
-			L_chatrooms.Add(label37); L_chatrooms.Add(label38); L_chatrooms.Add(label39); L_chatrooms.Add(label40);
-			L_chatrooms.Add(label41); L_chatrooms.Add(label42);	L_chatrooms.Add(label43); L_chatrooms.Add(label44);
-
-			P_chatrooms.Add(pictureBox11); P_chatrooms.Add(pictureBox12); P_chatrooms.Add(pictureBox13);
-			P_chatrooms.Add(pictureBox14); P_chatrooms.Add(pictureBox15); P_chatrooms.Add(pictureBox16);
-			P_chatrooms.Add(pictureBox17); P_chatrooms.Add(pictureBox18);
-
-			Pn_chatrooms.Add(panel22); Pn_chatrooms.Add(panel23); Pn_chatrooms.Add(panel24); Pn_chatrooms.Add(panel25);
-			Pn_chatrooms.Add(panel26); Pn_chatrooms.Add(panel27); Pn_chatrooms.Add(panel28); Pn_chatrooms.Add(panel29);
-
-			Ch_chatrooms.Add(checkBox21); Ch_chatrooms.Add(checkBox22); Ch_chatrooms.Add(checkBox23);
-			Ch_chatrooms.Add(checkBox24); Ch_chatrooms.Add(checkBox25); Ch_chatrooms.Add(checkBox26);
-			Ch_chatrooms.Add(checkBox27); Ch_chatrooms.Add(checkBox28);
-
-		}
+		chatroom(void);
 
 	protected:
 		/// <summary>
@@ -2036,7 +1951,7 @@ namespace Project3 {
 			this->richTextBox1->Location = System::Drawing::Point(243, 408);
 			this->richTextBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Text = desc;
+  	//  this->richTextBox1->Text = userDesc->about;
 			this->richTextBox1->Size = System::Drawing::Size(335, 76);
 			this->richTextBox1->TabIndex = 8;
 			// 
@@ -2056,7 +1971,7 @@ namespace Project3 {
 			this->fname_text->Location = System::Drawing::Point(243, 315);
 			this->fname_text->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->fname_text->Name = L"fname_text";
-			this->fname_text->Text = fName;
+		//	this->fname_text->Text = user->Fname;
 			this->fname_text->Size = System::Drawing::Size(274, 20);
 			this->fname_text->TabIndex = 6;
 			// 
@@ -2065,7 +1980,7 @@ namespace Project3 {
 			this->lname_text->Location = System::Drawing::Point(243, 361);
 			this->lname_text->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->lname_text->Name = L"lname_text";
-			this->lname_text->Text = lName;
+		//	this->lname_text->Text = user->Lname;
 			this->lname_text->Size = System::Drawing::Size(274, 20);
 			this->lname_text->TabIndex = 5;
 			// 
@@ -2074,7 +1989,7 @@ namespace Project3 {
 			this->id_text->Location = System::Drawing::Point(243, 270);
 			this->id_text->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->id_text->Name = L"id_text";
-			this->id_text->Text = ID;
+		//	this->id_text->Text = global::stdToCLI(to_string(user->UserId));
 			this->id_text->Size = System::Drawing::Size(274, 20);
 			this->id_text->TabIndex = 4;
 			
@@ -2117,10 +2032,9 @@ namespace Project3 {
 			this->profile_pic->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->profile_pic->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->profile_pic->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			if (userDesc->photo == "")
-				this->profile_pic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"profile_pic.Image")));
-			else
-			profile_pic->ImageLocation = userDesc->photo;
+		    this->profile_pic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"profile_pic.Image")));
+				/*	if (userDesc->photo == "")
+		//	profile_pic->ImageLocation = userDesc->photo;*/
 
 			this->profile_pic->Location = System::Drawing::Point(247, 2);
 			this->profile_pic->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -4722,639 +4636,154 @@ namespace Project3 {
 		}
 #pragma endregion
 	private: int countDown = 0;
-	private: void message_panel(bool new_message, String^ text, String^ name, String^ date_time, String^ seen) {
-		FlowLayoutPanel^ panel = gcnew FlowLayoutPanel;
-		Label^ Name = gcnew Label;
-		Label^ Text = gcnew Label;
-		Label^ Date_Time = gcnew Label;
-		Label^ Seen = gcnew Label;
+	private: void message_panel(bool new_message, String^ text, String^ name, String^ date_time, String^ seen);
 
-		panel->AutoSize = true;
-		Name->AutoSize = true;
-		Text->AutoSize = true;
-		Date_Time->AutoSize = true;
-		Seen->AutoSize = true;
-
-		Text->MaximumSize = System::Drawing::Size(690, 0);
-		Date_Time->Dock = System::Windows::Forms::DockStyle::Right;
-		Seen->Dock = System::Windows::Forms::DockStyle::Right;
-		Date_Time->TextAlign = System::Drawing::ContentAlignment::TopRight;
-		Seen->TextAlign = System::Drawing::ContentAlignment::TopRight;
-		Name->Text = name;
-		Text->Text = text;
-		Date_Time->Text = date_time;
-		Seen->Text = seen;
-
-		tableLayoutPanel1->Controls->Add(panel);
-		panel->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
-		panel->Controls->Add(Name);
-		panel->Controls->Add(Text);
-		panel->Controls->Add(Date_Time);
-		panel->Controls->Add(Seen);
-
-		if (new_message) {
-			if (Pn_messages.Count > 0) {
-				Pn_messages[Pn_messages.Count - 1]->Click -= gcnew System::EventHandler(this, &chatroom::message_Click);
-			}
-			Pn_messages.Add(panel);
-			Pn_messages[Pn_messages.Count - 1]->Click += gcnew System::EventHandler(this, &chatroom::message_Click);
-		}
-	}
-
-	private: System::Void message_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (MessageBox::Show("Do you want to undo this message ?", "Do you want to delete this message ?", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-			tableLayoutPanel1->Controls->Remove(Pn_messages[Pn_messages.Count - 1]);
-			Pn_messages.RemoveAt(Pn_messages.Count - 1);
-			if (Pn_messages.Count > 0) {
-				Pn_messages[Pn_messages.Count - 1]->Click += gcnew System::EventHandler(this, &chatroom::message_Click);
-			}
-		}
-	}
+	private: System::Void message_Click(System::Object^ sender, System::EventArgs^ e);
 
 
-	private: void open_chatroom(int i) {
-		AddChatRoom->Visible = false;
-		DeleteChatRoom->Visible = false;
-		pn_chatroom->BringToFront();
-		label4->Text = L_chatrooms[i * 3 - 1]->Text;
-		pictureBox24->Image = P_chatrooms[i - 1]->Image;
-		//show message
-	}
-	private: void delete_chatroom(int i) {
-		if (Ch_chatrooms[i - 1]->Checked == true && MessageBox::Show("Do you want to delete " + L_chatrooms[i * 3 - 1]->Text + "'s chatroom ?", "Do you want to delete this chatroom ?", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-			//Pn_chatrooms[i-1]->Visible = false;
-			for (int j = i - 1; j < 7; j++) {
-				if (Pn_chatrooms[j + 1]->Visible == true) {
-					L_chatrooms[j * 3]->Text = L_chatrooms[(j + 1) * 3]->Text;
-					L_chatrooms[j * 3 + 1]->Text = L_chatrooms[(j + 1) * 3 + 1]->Text;
-					L_chatrooms[j * 3 + 2]->Text = L_chatrooms[(j + 1) * 3 + 2]->Text;
-				}
-				else {
-					/*if (chatrooms.Count > 8) {
+	private: void open_chatroom(int i);
+	private: void delete_chatroom(int i);
+	private: System::Void exit_Click(System::Object^ sender, System::EventArgs^ e);
 
-					}*/
-					//else
-					Pn_chatrooms[j]->Visible = false;
-					break;
-				}
-			}
-			//deleting chatroom from database and data structure
-		}
-		Ch_chatrooms[i - 1]->Checked = false;
-		for (int i = 0; i < 8; i++) {
-			Ch_chatrooms[i]->Visible = false;
-		}
-	}
-	private: System::Void exit_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+	private: System::Void profile_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void contacts_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void chat_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void DeleteChatRoom_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void AddChatRoom_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void delete_chat_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);
+	private: System::Void add_chat_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void story_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void profile_Click(System::Object^ sender, System::EventArgs^ e) {
-		AddChatRoom->Visible = false;
-		DeleteChatRoom->Visible = false;
-		pn_profile->BringToFront();
-	}
-	private: System::Void contacts_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (contacts->SelectedIndex == 1) {
-			AddChatRoom->Visible = false;
-			DeleteChatRoom->Visible = false;
-			pn_show_contact->BringToFront();
-			displayMyContacts();
-		}
-		else {
-			AddChatRoom->Visible = false;
-			DeleteChatRoom->Visible = false;
-			pn_new_contact->BringToFront();
-		}
-	}
-	private: System::Void chat_Click(System::Object^ sender, System::EventArgs^ e) {
-		AddChatRoom->Visible = true;
-		DeleteChatRoom->Visible = true;
-		pn_chat->BringToFront();
-	}
-	private: System::Void DeleteChatRoom_Click(System::Object^ sender, System::EventArgs^ e) {
-		for (int i = 0; i < 8; i++) {
-			if (P_chatrooms[i]->Visible == true) {
-				Ch_chatrooms[i]->Visible = true;
-			}
-		}
-	}
-	private: System::Void AddChatRoom_Click(System::Object^ sender, System::EventArgs^ e) {
-		add_chat->BringToFront();
-	}
+	private: System::Void change_photo_bu_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void profile_pic_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void ofd_FileOk(System::Object^ sender, System::ComponentModel::CancelEventArgs^ e);
+	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);
 
-	private: System::Void delete_chat_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-	private: System::Void add_chat_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void story_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (story->SelectedIndex == 0)
-		{
-			AddChatRoom->Visible = false;
-			DeleteChatRoom->Visible = false;
-			pn_sphoto->BringToFront();
-		}
-		else if (story->SelectedIndex == 1)
-		{
-			AddChatRoom->Visible = false;
-			DeleteChatRoom->Visible = false;
-			pn_stext->BringToFront();
-		}
-		else if (story->SelectedIndex == 2)
-		{
-			AddChatRoom->Visible = false;
-			DeleteChatRoom->Visible = false;
-			pn_shows->BringToFront();
-		}
-		else
-		{
-			AddChatRoom->Visible = false;
-			DeleteChatRoom->Visible = false;
-			stories->BringToFront();
-		}
+	private: System::Void edit_delete_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void edit_delete2_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void choose__Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
-
-
-	}
-	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-
-	private: System::Void change_photo_bu_Click(System::Object^ sender, System::EventArgs^ e) {
-		ofd->Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
-		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
-		{
-			//hello
-			profile_pic->ImageLocation = ofd->FileName;
-			profile_pic->Image = System::Drawing::Image::FromFile(ofd->FileName);
-			userProfileDesc* myAccountDesc = new userProfileDesc();
-			myAccountDesc->changeProfilePhoto(global::cliToSTD(ofd->FileName));
-		}
-	}
-	private: System::Void profile_pic_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void ofd_FileOk(System::Object^ sender, System::ComponentModel::CancelEventArgs^ e) {
-	}
-	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {}
-	private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-
-	private: System::Void edit_delete_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		for (int i = 0; i < 20; i++) {
-			Delete[i]->Visible = true;	
-		}
-		edit_delete->Visible = false;
-		edit_delete2->Visible = true;
-	}
-	private: System::Void edit_delete2_Click(System::Object^ sender, System::EventArgs^ e) {
-		edit_delete2->Visible = false;
-		edit_delete->Visible = true;
-		for (int i = 0; i < 20; i++) {
-			Delete[i]->Visible = false;
-		}
-	}
-	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-		edit_delete->Visible = false;
-		choose_->Visible = true;
-		displayMyContacts();
-		addedChat = new ChatData(comboBox1->SelectedIndex);
-		for (int i = 0; i < 20; i++) {
-			select[i]->Visible = true;
-			Unselect[i]->Visible = true;
-			checkBox[i]->Visible = true;
-		}
-		pn_show_contact->BringToFront();
-	}
-	private: System::Void choose__Click(System::Object^ sender, System::EventArgs^ e) {
-        
-		ADD->Visible = true;
-		add_chat->BringToFront();
-		The_selected_membersers->Visible = true;
-		choose_->Visible = false;
-		edit_delete->Visible = true;
-		choose->Visible = false;
-		for (int i = 0; i < 20; i++) {
-			select[i]->Visible = false;
-			Unselect[i]->Visible = false;
-			checkBox[i]->Visible = false;
-		}
-
-	}
-	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: void selected(int i) {
-		addedChat->AddMember(contactsDataList[i]->UserId);
-		checkBox[i]->Checked = true;
-		The_selected_membersers->Items->Insert(0, contactsDataList[i]->Fname + " " + contactsDataList[i]->Lname);
-	}
-	private: void unselected(int i) {
-		checkBox[i]->Checked = false;
-		The_selected_membersers->Items->RemoveAt(i);
-	}
+	private:void selected(int i);
+		
+	private: void unselected(int i);
 	
-	private: void deleted(int i) {
-		int deletedID =contactsDataList[i]->UserId;
-		User* myAccount = new User();
-		myAccount->deleteContact(deletedID);
+	private: void deleted(int i);
 
-		if (contactsDataList->Count > 0) {
-			for (int j = i + 1; j < contactsDataList->Count; j++)
-			{
-				fname[i]->Text = fname[j]->Text;
-				lname[i]->Text = lname[j]->Text;
-				phone[i]->Text = phone[j]->Text;
-
-			}
-			panel[contactsDataList->Count - 1]->Visible = false;
-			
-		}
-		else
-			panel[0]->Visible = false;
-		displayMyContacts();
-	}
-
-	private: System::Void select1_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(0);
-	}
-	private: System::Void Unselect_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(0);
-	}
+	private: System::Void select1_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect_Click(System::Object^ sender, System::EventArgs^ e);
 		   
-	private: System::Void add_contact_Click(System::Object^ sender, System::EventArgs^ e) {
-		User* myAccount = new User();
+	private: System::Void add_contact_Click(System::Object^ sender, System::EventArgs^ e);
 
-		int contactAddedID =stoi(global::cliToSTD(ID_textBox->Text));
-		myAccount->AddContacts(contactAddedID);
-
-		displayMyContacts();
-
-		ID_textBox->Text = L"";
-	}
-
-
- private: System :: Void displayMyContacts()
- {
-     myAccount = new User();
-	 contactsDataList = myAccount->displayContacts();
-	 int length = contactsDataList->Count;
-	 for (int i = 0; i < length; i++)
-	 {
-		 fname[i]->Text = contactsDataList[i]->Fname;
-		 lname[i]->Text = contactsDataList[i]->Lname;
-		 phone[i]->Text = contactsDataList[i]->MobileNum;
-
-		 panel[i]->Visible = true;
-	 }
-
-	 ID_textBox->Text = L"";
- }
-
-
- private: System::Void displayMyChatRooms()
- {
-			 chatRoomsDataList = myAccount->displayChatRooms();
-			 int length =chatRoomsDataList->Count;
-			 for (int i = 0; i < length; i++)
-			 {
-				 panel[i]->Visible = true;
-			 }
-
-			 
-}
+ private: System::Void displayMyContacts();
+ private: System::Void displayMyChatRooms();
+ 
 		   
 
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		ofd->Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
-		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
-		{
-			pictureBox7->ImageLocation = ofd->FileName;
-		    pictureBox7->Image = System::Drawing::Image::FromFile(ofd->FileName);
-			userStory* photoStory = new userStory(global::cliToSTD(ofd->FileName), 0);
-		}
-	}
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		stories->BringToFront();
-	}
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		stories->BringToFront();
-		userStory* textStory = new userStory(global::cliToSTD(richTextBox2->Text), 1);
-	}
-	private: System::Void select2_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(1);
-	}
-	private: System::Void select3_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(2);
-	}
-	private: System::Void select4_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(3);
-	}
-	private: System::Void select5_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(4);
-	}
-	private: System::Void select6_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(5);
-	}
-	private: System::Void select7_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(6);
-	}
-	private: System::Void select8_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(7);
-	}
-	private: System::Void select9_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(8);
-	}
-	private: System::Void select10_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(9);
-	}
-	private: System::Void select11_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(10);
-	}
-	private: System::Void select12_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(11);
-	}
-	private: System::Void select13_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(12);
-	}
-	private: System::Void select14_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(13);
-	}
-	private: System::Void select15_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(14);
-	}
-	private: System::Void select16_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(15);
-	}
-	private: System::Void select17_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(16);
-	}
-	private: System::Void select18_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(17);
-	}
-	private: System::Void select19_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(18);
-	}
-	private: System::Void select20_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(19);
-	}
-	private: System::Void Unselect2_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(1);
-	}
-	private: System::Void Unselect3_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(2);
-	}
-	private: System::Void Unselect4_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(3);
-	}
-	private: System::Void Unselect5_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(4);
-	}
-	private: System::Void Unselect6_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(5);
-	}
-	private: System::Void Unselect7_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(6);
-	}
-	private: System::Void Unselect8_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(7);
-	}
-	private: System::Void Unselect9_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(8);
-	}
-	private: System::Void Unselect10_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(9);
-	}
-	private: System::Void Unselect11_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(10);
-	}
-	private: System::Void Unselect12_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(11);
-	}
-	private: System::Void Unselect13_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(12);
-	}
-	private: System::Void Unselect14_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(13);
-	}
-	private: System::Void Unselect15_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(14);
-	}
-	private: System::Void Unselect16_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(15);
-	}
-	private: System::Void Unselect17_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(16);
-	}
-	private: System::Void Unselect18_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(17);
-	}
-	private: System::Void Unselect19_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(18);
-	}
-	private: System::Void Unselect20_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(19);
-	}
-	private: System::Void Delete2_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(1);
-	}
-	private: System::Void Delete1_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(0);
-	}
-	private: System::Void Delete3_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(2);
-	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select2_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select3_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select4_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select5_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select6_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select7_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select8_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select9_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select10_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select11_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select12_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select13_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select14_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select15_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select16_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select17_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select18_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select19_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select20_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect2_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect3_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect4_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect5_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect6_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect7_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect8_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect9_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect10_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect11_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect12_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect13_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect14_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect15_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect16_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect17_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect18_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect19_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Unselect20_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete2_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete1_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete3_Click(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void Delete4_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(3);
-	}
+	private: System::Void Delete4_Click(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void Delete5_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(4);
-	}
-	private: System::Void Delete6_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(5);
-	}
-	private: System::Void Delete7_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(6);
-	}
-	private: System::Void Delete8_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(7);
-	}
-	private: System::Void Delete9_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(8);
-	}
-	private: System::Void Delete10_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(9);
-	}
-	private: System::Void Delete11_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(10);
-	}
-	private: System::Void Delete12_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(11);
-	}
-	private: System::Void Delete13_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(12);
-	}
-	private: System::Void Delete14_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(13);
-	}
-	private: System::Void Delete15_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(14);
-	}
-	private: System::Void Delete16_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(15);
-	}
-	private: System::Void Delete17_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(16);
-	}
-	private: System::Void Delete18_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(17);
-	}
-	private: System::Void Delete19_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(18);
-	}
-	private: System::Void Delete20_Click(System::Object^ sender, System::EventArgs^ e) {
-		deleted(19);
-	}
+	private: System::Void Delete5_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete6_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete7_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete8_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete9_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete10_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete11_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete12_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete13_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete14_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete15_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete16_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete17_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete18_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete19_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Delete20_Click(System::Object^ sender, System::EventArgs^ e);
 
 
 		   //when clicking on textbox search word deleted
-	private: System::Void textBox7_Click(System::Object^ sender, System::EventArgs^ e) {
-		textBox7->Text = "";
-	}
+	private: System::Void textBox7_Click(System::Object^ sender, System::EventArgs^ e);
 
 		   //search in chatrooms
-	private: System::Void pictureBox9_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ text = this->textBox7->Text;
-
-		if (!String::IsNullOrWhiteSpace(text)) {
-			for (int i = 0; i < 8; i++) {
-				if (Pn_chatrooms[i]->Visible == true && !L_chatrooms[i * 3 + 2]->Text->Equals(text)) {
-					Pn_chatrooms[i]->Visible = false;
-				}
-				else if (Pn_chatrooms[i]->Visible != true) {
-					break;
-				}
-			}
-			//find this name database or data structure
-		}
-	}
-
+	private: System::Void pictureBox9_Click(System::Object^ sender, System::EventArgs^ e);
 		   //sending message
-	private: System::Void pictureBox22_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ text = this->richTextBox3->Text;
-		richTextBox3->Text = "";
-		if (!String::IsNullOrWhiteSpace(text)) {
-			message_panel(true, text->TrimEnd(), "name", "20/05/2022", "seen");
-			/*Pn_messages[messages]->Visible = true;
-			L_messages[messages*2+1]->Text = text->TrimEnd();
-			//L_messages[messages * 2]->Text = name;
-			messages++;
-			//add it in database and data structure*/
-		}
-
-	}
-
+	private: System::Void pictureBox22_Click(System::Object^ sender, System::EventArgs^ e);
 		   //return from chatroom to chatrooms
-	private: System::Void pictureBox23_Click(System::Object^ sender, System::EventArgs^ e) {
-		AddChatRoom->Visible = true;
-		DeleteChatRoom->Visible = true;
-		tableLayoutPanel1->Controls->Clear();
-		pn_chat->BringToFront();
-	}
+	private: System::Void pictureBox23_Click(System::Object^ sender, System::EventArgs^ e);
 
 		   //open chatroom
-	private: System::Void label23_Click(System::Object^ sender, System::EventArgs^ e) {
-		open_chatroom(1);
-	}
-	private: System::Void label26_Click(System::Object^ sender, System::EventArgs^ e) {
-		open_chatroom(2);
-	}
-	private: System::Void label29_Click(System::Object^ sender, System::EventArgs^ e) {
-		open_chatroom(3);
-	}
-	private: System::Void label32_Click(System::Object^ sender, System::EventArgs^ e) {
-		open_chatroom(4);
-	}
-	private: System::Void label35_Click(System::Object^ sender, System::EventArgs^ e) {
-		open_chatroom(5);
-	}
-	private: System::Void label38_Click(System::Object^ sender, System::EventArgs^ e) {
-		open_chatroom(6);
-	}
-	private: System::Void label41_Click(System::Object^ sender, System::EventArgs^ e) {
-		open_chatroom(7);
-	}
-	private: System::Void label44_Click(System::Object^ sender, System::EventArgs^ e) {
-		open_chatroom(8);
-	}
+	private: System::Void label23_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label26_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label29_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label32_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label35_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label38_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label41_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void label44_Click(System::Object^ sender, System::EventArgs^ e);
 
 		   //deleting chatroom
-	private: System::Void checkBox21_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		delete_chatroom(1);
-	}
-	private: System::Void checkBox22_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		delete_chatroom(2);
-	}
-	private: System::Void checkBox23_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		delete_chatroom(3);
-	}
-	private: System::Void checkBox24_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		delete_chatroom(4);
-	}
-	private: System::Void checkBox25_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		delete_chatroom(5);
-	}
-	private: System::Void checkBox26_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		delete_chatroom(6);
-	}
-	private: System::Void checkBox27_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		delete_chatroom(7);
-	}
-	private: System::Void checkBox28_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		delete_chatroom(8);
-	}
+	private: System::Void checkBox21_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void checkBox22_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void checkBox23_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void checkBox24_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void checkBox25_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void checkBox26_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void checkBox27_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void checkBox28_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void pictureBox20_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*if (countDown > 0) {
-			for (int i = 0; i < 8; i++) {
-				L_chatrooms[i * 3]->Text = chatrooms[i + countDown - 1]->time;
-				L_chatrooms[i * 3 + 1]->Text = chatrooms[i + countDown - 1]->message[chatrooms[i + countDown - 1]->message.Count - 1]->text;
-				L_chatrooms[i * 3 + 2]->Text = chatrooms[i + countDown - 1]->name;
-				P_chatrooms[i]->Image = chatrooms[i + countDown - 1]->image;
-			}
-			countDown--;
-			if (chatrooms.Count - countDown - 8 == 1) {
-				pictureBox19->Visible = true;
-			}
-			if (countDown == 0) {
-				pictureBox20->Visible = false;
-			}
-		}*/
-	}
-	private: System::Void pictureBox19_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*if (chatrooms.Count - countDown - 8 > 0) {
-			for (int i = 0; i < 8; i++) {
-				L_chatrooms[i * 3]->Text = chatrooms[i + countDown + 1]->time;
-				L_chatrooms[i * 3 + 1]->Text = chatrooms[i + countDown + 1]->message[chatrooms[i + countDown + 1]->message.Count - 1]->text;
-				L_chatrooms[i * 3 + 2]->Text = chatrooms[i + countDown + 1]->name;
-				P_chatrooms[i]->Image = chatrooms[i + countDown + 1]->image;
-			}
-			countDown++;
-			if (countDown == 1) {
-				pictureBox20->Visible = true;
-			}
-			if (L_chatrooms.Count - countDown - 8 == 0) {
-				pictureBox19->Visible = false;
-			}
-		}*/
-	}
-	 private: System::Void ADD_Click(System::Object^ sender, System::EventArgs^ e) {
-		     displayMyChatRooms();
-		   }
-
+	private: System::Void pictureBox20_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void pictureBox19_Click(System::Object^ sender, System::EventArgs^ e);
+	 private: System::Void ADD_Click(System::Object^ sender, System::EventArgs^ e);
+			
 
 };
 }
