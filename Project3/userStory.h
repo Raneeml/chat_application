@@ -12,7 +12,6 @@ class userStory
 	string storyPhoto;
 	string storyText;
 	bool storyType;
-
 	time_t timeOfaddingStory;
 
 public:

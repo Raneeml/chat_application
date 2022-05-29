@@ -135,6 +135,22 @@ void User::addChatRoom(bool type) {
 	
 }
 
+void User::deleteChatRoom(int chatRoomID) {
+	//list<int> pKey = { global::theUserID,contactID };
+	QueryFilter^ DeleteFilter = gcnew QueryFilter();
+	DeleteFilter = DeleteFilter->whereColumn("chatroomID")
+		->isEqualTo(chatRoomID)
+		->build();
+	global::chatRoomsRepo->removeFiltered(DeleteFilter);
+
+	QueryFilter^ DeleteFilter2 = gcnew QueryFilter();
+	DeleteFilter2 = DeleteFilter2->whereColumn("chatroom_ID")
+		->isEqualTo(chatRoomID)
+		->build();
+	global::chatsUsersRepo->removeFiltered(DeleteFilter2);
+
+}
+
 List<chatRoomsData^>^ User::displayChatRooms() {
 	QueryFilter^ filter = gcnew QueryFilter();
 	filter = filter->whereColumn("member_ID")
@@ -148,7 +164,7 @@ List<chatRoomsData^>^ User::displayChatRooms() {
 	List<chatRoomsData^>^ chatRooms = gcnew List<chatRoomsData^>();
 	for (int i = 0; i < filteredChatRooms->Count; i++)
 	{
-		chatRooms[i] = global::chatRoomsRepo->getItem(filteredChatRooms[i]->member_ID);
+		chatRooms->Add(global::chatRoomsRepo->getItem(filteredChatRooms[i]->chatroom_ID));
 
 	}
 

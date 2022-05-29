@@ -21,10 +21,10 @@ class Messages
 
 public:
 	Messages();
+	Messages(int msgID);
 	Messages( string Text);
 	int getUserID();
 	int getMessageID();
-	//Status getStatus();
 	string getText();
 
 

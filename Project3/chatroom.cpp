@@ -7,11 +7,8 @@ Project3::chatroom::chatroom(void)
 	//myAccountDesc = new userProfileDesc();
 	user = global::usersRepo->getItem(global::theUserID);
 	userDesc = global::descRepo->getItem(global::theUserID);
-	//ID = global::stdToCLI(to_string(user->UserId));
-	//fName = user->Fname;
-	//lName = user->Lname;
-	//desc = userDesc->about;
 
+	
 	InitializeComponent();
 	//
 	//TODO: Add the constructor code here
@@ -90,7 +87,7 @@ Project3::chatroom::chatroom(void)
 
 
 
-void::Project3::chatroom::message_panel(bool new_message, String^ text, String^ name, String^ date_time, String^ seen) {
+void::Project3::chatroom::message_panel( String^ text, String^ name, String^ date_time, String^ seen) {
 		FlowLayoutPanel^ panel = gcnew FlowLayoutPanel;
 		Label^ Name = gcnew Label;
 		Label^ Text = gcnew Label;
@@ -119,19 +116,24 @@ void::Project3::chatroom::message_panel(bool new_message, String^ text, String^ 
 		panel->Controls->Add(Date_Time);
 		panel->Controls->Add(Seen);
 
-		if (new_message) {
-			if (Pn_messages.Count > 0) {
-				Pn_messages[Pn_messages.Count - 1]->Click -= gcnew System::EventHandler(this, &chatroom::message_Click);
-			}
+		
+			//if (Pn_messages.Count > 0) {
+			//	Pn_messages[Pn_messages.Count - 1]->Click -= gcnew System::EventHandler(this, &chatroom::message_Click);
+			//}
 			Pn_messages.Add(panel);
+
+			UserData^ lastMsgSender = global::usersRepo->getItem(messagesDataList[messagesDataList->Count - 1]->userID);
+			if (lastMsgSender->UserId == global::theUserID)
 			Pn_messages[Pn_messages.Count - 1]->Click += gcnew System::EventHandler(this, &chatroom::message_Click);
-		}
+		
 	}
 
 void::Project3::chatroom::message_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (MessageBox::Show("Do you want to undo this message ?", "Do you want to delete this message ?", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 			tableLayoutPanel1->Controls->Remove(Pn_messages[Pn_messages.Count - 1]);
 			Pn_messages.RemoveAt(Pn_messages.Count - 1);
+			currentChat = new ChatData(global::theChatID);
+			currentChat->undoMessage();
 			if (Pn_messages.Count > 0) {
 				Pn_messages[Pn_messages.Count - 1]->Click += gcnew System::EventHandler(this, &chatroom::message_Click);
 			}
@@ -140,32 +142,28 @@ void::Project3::chatroom::message_Click(System::Object^ sender, System::EventArg
 
 
 void::Project3::chatroom::open_chatroom(int i) {
+	global::theChatID = chatRoomsDataList[i-1]->chatroomID;
+	currentChat = new ChatData(global::theChatID);
 		AddChatRoom->Visible = false;
 		DeleteChatRoom->Visible = false;
 		pn_chatroom->BringToFront();
 		label4->Text = L_chatrooms[i * 3 - 1]->Text;
 		pictureBox24->Image = P_chatrooms[i - 1]->Image;
 		//show message
+		displayMessages();
 	}
 void::Project3::chatroom::delete_chatroom(int i) {
 		if (Ch_chatrooms[i - 1]->Checked == true && MessageBox::Show("Do you want to delete " + L_chatrooms[i * 3 - 1]->Text + "'s chatroom ?", "Do you want to delete this chatroom ?", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-			//Pn_chatrooms[i-1]->Visible = false;
-			for (int j = i - 1; j < 7; j++) {
-				if (Pn_chatrooms[j + 1]->Visible == true) {
-					L_chatrooms[j * 3]->Text = L_chatrooms[(j + 1) * 3]->Text;
-					L_chatrooms[j * 3 + 1]->Text = L_chatrooms[(j + 1) * 3 + 1]->Text;
-					L_chatrooms[j * 3 + 2]->Text = L_chatrooms[(j + 1) * 3 + 2]->Text;
-				}
-				else {
-					/*if (chatrooms.Count > 8) {
 
-					}*/
-					//else
-					Pn_chatrooms[j]->Visible = false;
-					break;
-				}
-			}
+			for(int j = 0; j < 7; j++)
+			Pn_chatrooms[j]->Visible = false;
+			//		break;
+			//	}
+			//}
 			//deleting chatroom from database and data structure
+			myAccount->deleteChatRoom(chatRoomsDataList[i-1]->chatroomID);
+			displayMyChatRooms();
+			   
 		}
 		Ch_chatrooms[i - 1]->Checked = false;
 		for (int i = 0; i < 8; i++) {
@@ -202,7 +200,7 @@ void::Project3::chatroom::contacts_SelectedIndexChanged(System::Object^ sender, 
 void::Project3::chatroom::chat_Click(System::Object^ sender, System::EventArgs^ e) {
 		AddChatRoom->Visible = true;
 		DeleteChatRoom->Visible = true;
-		pn_chat->BringToFront();
+		displayMyChatRooms();
 	}
 void::Project3::chatroom::DeleteChatRoom_Click(System::Object^ sender, System::EventArgs^ e) {
 		for (int i = 0; i < 8; i++) {
@@ -391,6 +389,31 @@ void::Project3::chatroom::displayMyContacts()
 	 ID_textBox->Text = L"";
  }
 
+void::Project3::chatroom::displayMessages()
+{
+	myAccount = new User();
+	currentChat= new ChatData(global::theChatID);
+	messagesDataList = currentChat->DisplayMessages();
+	int length = messagesDataList->Count;
+	for (int i = length -1; i >=0; i--)
+	{
+		messageData^ msg = messagesDataList[i];
+		statusData^ msgStatus = global::statusRepo->getItem(msg->messageID);
+		UserData^ msgSender =  global::usersRepo->getItem(msg->userID);
+		String^ senderName = msgSender->Fname;
+		String^ seen;
+		if (msgStatus->statusType == 0)
+			seen = "Unseen";
+		else 
+			seen = "Seen";
+
+
+		message_panel( msg->text, senderName , msgStatus->dateAndtime, seen);
+	}
+
+}
+
+
 
 void::Project3::chatroom::displayMyChatRooms()
  {
@@ -399,8 +422,29 @@ void::Project3::chatroom::displayMyChatRooms()
 	 int length = chatRoomsDataList->Count;
 	 for (int i = 0; i < length; i++)
 	 {
-		 panel[i]->Visible = true;
+		 ChatData* myChat = new ChatData(chatRoomsDataList[i]->chatroomID);
+		 List<messageData^>^ chatMsgs= myChat->DisplayMessages();
+		 int count = chatMsgs->Count;
+		 if (count == 0) // if chat room is empty
+		 {
+			 L_chatrooms[i * 3 + 1]->Text = "";		
+			 time_t now = time(0);
+			 char* date_time = ctime(&now);
+			 L_chatrooms[i * 3]->Text = global::stdToCLI(date_time);
+		 }
+		 else {
+			 L_chatrooms[i * 3 + 1]->Text = chatMsgs[count - 1]->text;
+			 L_chatrooms[i * 3]->Text = global::stdToCLI(myChat->getAndUpdateDateAndTime());
+		 }
+
+
+	     L_chatrooms[i * 3 + 2]->Text = global::stdToCLI(to_string(chatRoomsDataList[i]->chatroomID));
+
+		
+
+		 Pn_chatrooms[i]->Visible = true;
 	 }
+	 pn_chat->BringToFront();
 
  }
 
@@ -627,15 +671,16 @@ void::Project3::chatroom::select8_Click(System::Object^ sender, System::EventArg
 		   //sending message
 	void::Project3::chatroom::pictureBox22_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ text = this->richTextBox3->Text;
+		string textAdded = global::cliToSTD(this->richTextBox3->Text);
 		richTextBox3->Text = "";
 		if (!String::IsNullOrWhiteSpace(text)) {
-			message_panel(true, text->TrimEnd(), "name", "20/05/2022", "seen");
-			/*Pn_messages[messages]->Visible = true;
-			L_messages[messages*2+1]->Text = text->TrimEnd();
-			//L_messages[messages * 2]->Text = name;
-			messages++;
-			//add it in database and data structure*/
+			currentChat->AddMessage(textAdded);
+
 		}
+		for (int i = 0; i < Pn_messages.Count;i++) {
+			tableLayoutPanel1->Controls->Remove(Pn_messages[i]);
+		}
+		displayMessages();
 
 	}
 
@@ -735,4 +780,5 @@ void::Project3::chatroom::select8_Click(System::Object^ sender, System::EventArg
 	}
 	void::Project3::chatroom::ADD_Click(System::Object^ sender, System::EventArgs^ e) {
 		 displayMyChatRooms();
+		 
 	 }

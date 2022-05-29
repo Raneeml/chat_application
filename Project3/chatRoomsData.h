@@ -9,5 +9,5 @@ public:
 	int chatroomID;
 	bool type;
 	time_t timeOfLastMsg;
-};
 
+};

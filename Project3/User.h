@@ -25,9 +25,7 @@ class User {
 	string Lname;
 	vector <int> chatRoomsIDs;
 	vector <int> contactsIDs;
-	//stack<Story>stories;
-	//story * userStory;
-	//userProfileDesc * desc;
+
 
 public:
 
@@ -47,6 +45,7 @@ public:
 	
 	void addChatRoom(bool type);
 	List<chatRoomsData^>^ displayChatRooms();
+	void deleteChatRoom(int chatRoomID);
 
 	int displayID();
 	void calcTime(int storyUserID,time_t time);

@@ -26,6 +26,7 @@ public:
 	void AddMember(int addedID);
 	void AddMessage(string msg);
 	List<messageData^>^ DisplayMessages();
+	void undoMessage();
 	int getChatID();
 	string getAndUpdateDateAndTime();
 	//time_t getChatRoomTime();

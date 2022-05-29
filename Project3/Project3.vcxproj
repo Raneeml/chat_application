@@ -145,7 +145,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SqlRepo.cpp" />
     <ClCompile Include="Status.cpp" />
-    <ClCompile Include="story.cpp" />
+    <ClCompile Include="userStory.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="userProfileDesc.cpp" />
   </ItemGroup>

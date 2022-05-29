@@ -35,9 +35,11 @@ namespace Project3 {
 		List<CheckBox^> Ch_chatrooms;
 
 		User* myAccount;
+		ChatData* currentChat;
 		userProfileDesc* myAccountDesc;
 		List<UserData^>^ contactsDataList;
 		List<chatRoomsData^>^ chatRoomsDataList;
+		List<messageData^>^ messagesDataList;
 		ChatData* addedChat;
 
     UserData^ user;
@@ -1280,6 +1282,7 @@ namespace Project3 {
 			this->panel22->Name = L"panel22";
 			this->panel22->Size = System::Drawing::Size(715, 58);
 			this->panel22->TabIndex = 4;
+			this->panel22->Visible = false;
 			// 
 			// checkBox21
 			// 
@@ -4328,11 +4331,11 @@ namespace Project3 {
 			// 
 			// pn_con
 			// 
+			this->pn_con->Controls->Add(this->pn_chatroom);
+			this->pn_con->Controls->Add(this->pn_chat);
 			this->pn_con->Controls->Add(this->add_chat);
 			this->pn_con->Controls->Add(this->pn_show_contact);
-			this->pn_con->Controls->Add(this->pn_chatroom);
 			this->pn_con->Controls->Add(this->pn_profile);
-			this->pn_con->Controls->Add(this->pn_chat);
 			this->pn_con->Controls->Add(this->pn_new_contact);
 			this->pn_con->Controls->Add(this->pn_stext);
 			this->pn_con->Controls->Add(this->pn_sphoto);
@@ -4541,7 +4544,7 @@ namespace Project3 {
 		}
 #pragma endregion
 	private: int countDown = 0;
-	private: void message_panel(bool new_message, String^ text, String^ name, String^ date_time, String^ seen);
+	private: void message_panel(String^ text, String^ name, String^ date_time, String^ seen);
 
 	private: System::Void message_Click(System::Object^ sender, System::EventArgs^ e);
 
@@ -4587,6 +4590,7 @@ namespace Project3 {
 
  private: System::Void displayMyContacts();
  private: System::Void displayMyChatRooms();
+private: System::Void displayMessages();
  
 		   
 

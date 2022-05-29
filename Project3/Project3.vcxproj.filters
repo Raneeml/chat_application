@@ -56,7 +56,7 @@
     <ClCompile Include="Status.cpp">
       <Filter>dataStructure</Filter>
     </ClCompile>
-    <ClCompile Include="story.cpp">
+    <ClCompile Include="userStory.cpp">
       <Filter>dataStructure</Filter>
     </ClCompile>
     <ClCompile Include="User.cpp">
