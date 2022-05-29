@@ -137,7 +137,6 @@
     <ClCompile Include="ChatData.cpp" />
     <ClCompile Include="chatroom.cpp" />
     <ClCompile Include="global.cpp" />
-    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Messages.cpp" />
     <ClCompile Include="signIn.cpp" />
     <ClCompile Include="pch.cpp" />
@@ -156,10 +155,9 @@
     <ClInclude Include="chatroom.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="chatRoomData.h" />
+    <ClInclude Include="chatRoomsData.h" />
     <ClInclude Include="chatsUsersData.h" />
     <ClInclude Include="global.h" />
-    <ClInclude Include="Globals.h" />
     <ClInclude Include="messageData.h" />
     <ClInclude Include="Messages.h" />
     <ClInclude Include="signIn.h">

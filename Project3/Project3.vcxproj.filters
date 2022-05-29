@@ -35,9 +35,6 @@
     <ClCompile Include="QueryFilter.cpp">
       <Filter>repository</Filter>
     </ClCompile>
-    <ClCompile Include="Globals.cpp">
-      <Filter>main</Filter>
-    </ClCompile>
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -88,9 +85,6 @@
     <ClInclude Include="QueryFilter.h">
       <Filter>repository</Filter>
     </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>main</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>core</Filter>
     </ClInclude>
@@ -101,9 +95,6 @@
       <Filter>repository</Filter>
     </ClInclude>
     <ClInclude Include="chatMessageData.h">
-      <Filter>database</Filter>
-    </ClInclude>
-    <ClInclude Include="chatRoomData.h">
       <Filter>database</Filter>
     </ClInclude>
     <ClInclude Include="chatsUsersData.h">
@@ -147,6 +138,9 @@
     </ClInclude>
     <ClInclude Include="global.h">
       <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="chatRoomsData.h">
+      <Filter>database</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

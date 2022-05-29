@@ -12,7 +12,7 @@ namespace global {
 	extern int theChatID = 1;
 
 	extern gcroot<SqlRepo<UserData^>^> usersRepo = gcnew SqlRepo<UserData^>("UserData", true);
-	extern gcroot<SqlRepo<ChatRoomData^>^> chatRoomsRepo = gcnew SqlRepo<ChatRoomData^>("ChatRoomData", true);
+	extern gcroot<SqlRepo<chatRoomsData^>^> chatRoomsRepo = gcnew SqlRepo<chatRoomsData^>("chatRoomsData",true);
 	extern gcroot<SqlRepo<UserDescData^>^> descRepo = gcnew SqlRepo<UserDescData^>("UserDescData");
 	extern gcroot<SqlRepo<statusData^>^> statusRepo = gcnew SqlRepo<statusData^>("statusData");
 	extern gcroot<SqlRepo<messageData^>^> messageRepo = gcnew SqlRepo<messageData^>("messageData", true);

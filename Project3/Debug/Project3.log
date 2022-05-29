@@ -1,13 +1,1 @@
-﻿  global.cpp
-D:\github\chat28\Project3\QueryFilter.h(33,20): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::Column' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat28\Project3\QueryFilter.h(12): message : see declaration of 'DBRepository::QueryFilter::Column'
-D:\github\chat28\Project3\QueryFilter.h(62,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::OrderResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat28\Project3\QueryFilter.h(14): message : see declaration of 'DBRepository::QueryFilter::OrderResult'
-D:\github\chat28\Project3\QueryFilter.h(79,26): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::FilterResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat28\Project3\QueryFilter.h(13): message : see declaration of 'DBRepository::QueryFilter::FilterResult'
-D:\github\chat28\Project3\QueryFilter.h(101,25): warning C4240: nonstandard extension used: access to 'DBRepository::QueryFilter::AndOrResult' now defined to be 'public', previously it was defined to be 'protected'
-D:\github\chat28\Project3\QueryFilter.h(15): message : see declaration of 'DBRepository::QueryFilter::AndOrResult'
-D:\github\chat28\Project3\global.cpp(27,18): warning C4477: 'sprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'System::String ^'
-D:\github\chat28\Project3\global.cpp(27,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Project3.vcxproj -> D:\github\chat28\Debug\Project3.exe
+﻿  Project3.vcxproj -> D:\github\chat_application\Debug\Project3.exe

@@ -3,7 +3,7 @@
 #include "SqlRepo.h"
 #include "UserData.h"
 #include "chatsUsersData.h"
-#include "ChatRoomData.h"
+#include "chatRoomsData.h"
 #include "UserDescData.h"
 #include "statusData.h"
 #include "messageData.h"
@@ -26,7 +26,7 @@ namespace global {
 	extern int theUserID;// global variable for the current account ID
 	extern int theChatID;// global variable for the current chatroom ID
 	extern gcroot<SqlRepo<UserData^>^> usersRepo;
-	extern gcroot<SqlRepo<ChatRoomData^>^> chatRoomsRepo;
+	extern gcroot<SqlRepo<chatRoomsData^>^> chatRoomsRepo;
 	extern gcroot<SqlRepo<UserDescData^>^> descRepo;
 	extern gcroot<SqlRepo<statusData^>^> statusRepo;
 	extern gcroot<SqlRepo<messageData^>^> messageRepo;

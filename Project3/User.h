@@ -1,9 +1,7 @@
 #pragma once
 #include "userProfileDesc.h"
 #include"ChatData.h"
-#include"chatRoomData.h"
-//#include"Story.h"
-#include"Globals.h"
+#include"chatRoomsData.h"
 #include "SqlRepo.h"
 #include"Messages.h"
 #include "Status.h"
@@ -26,9 +24,9 @@ class User {
 	string Fname;
 	string Lname;
 	vector <int> chatRoomsIDs;
+	vector <int> contactsIDs;
 	//stack<Story>stories;
 	//story * userStory;
-	vector <int> contactsIDs;
 	//userProfileDesc * desc;
 
 public:
@@ -48,7 +46,7 @@ public:
 	
 	
 	void addChatRoom(bool type);
-	List<ChatRoomData^>^ displayChatRooms();
+	List<chatRoomsData^>^ displayChatRooms();
 
 	int displayID();
 	void calcTime(int storyUserID,time_t time);

@@ -90,7 +90,6 @@ Project3::chatroom::chatroom(void)
 
 
 
-
 void::Project3::chatroom::message_panel(bool new_message, String^ text, String^ name, String^ date_time, String^ seen) {
 		FlowLayoutPanel^ panel = gcnew FlowLayoutPanel;
 		Label^ Name = gcnew Label;
@@ -103,7 +102,6 @@ void::Project3::chatroom::message_panel(bool new_message, String^ text, String^ 
 		Text->AutoSize = true;
 		Date_Time->AutoSize = true;
 		Seen->AutoSize = true;
-
 		Text->MaximumSize = System::Drawing::Size(690, 0);
 		Date_Time->Dock = System::Windows::Forms::DockStyle::Right;
 		Seen->Dock = System::Windows::Forms::DockStyle::Right;
@@ -259,11 +257,12 @@ void::Project3::chatroom::change_photo_bu_Click(System::Object^ sender, System::
 		ofd->Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
 		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		{
-			//hello
+			
 			profile_pic->ImageLocation = ofd->FileName;
 			profile_pic->Image = System::Drawing::Image::FromFile(ofd->FileName);
 			userProfileDesc* myAccountDesc = new userProfileDesc();
 			myAccountDesc->changeProfilePhoto(global::cliToSTD(ofd->FileName));
+		     userDesc->photo = ofd->FileName;
 		}
 	}
 void::Project3::chatroom::profile_pic_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -291,11 +290,16 @@ void::Project3::chatroom::edit_delete2_Click(System::Object^ sender, System::Eve
 			Delete[i]->Visible = false;
 		}
 	}
+
 void::Project3::chatroom::button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		edit_delete->Visible = false;
 		choose_->Visible = true;
+		//bool indx = comboBox1->SelectedIndex;
+		myAccount = new User();
+		myAccount->addChatRoom(true);
 		displayMyContacts();
-		addedChat = new ChatData(comboBox1->SelectedIndex);
+
+		
 		for (int i = 0; i < 20; i++) {
 			select[i]->Visible = true;
 			Unselect[i]->Visible = true;
@@ -304,7 +308,7 @@ void::Project3::chatroom::button1_Click_1(System::Object^ sender, System::EventA
 		pn_show_contact->BringToFront();
 	}
 void::Project3::chatroom::choose__Click(System::Object^ sender, System::EventArgs^ e) {
-
+	
 		ADD->Visible = true;
 		add_chat->BringToFront();
 		The_selected_membersers->Visible = true;
@@ -320,11 +324,14 @@ void::Project3::chatroom::choose__Click(System::Object^ sender, System::EventArg
 	}
 void::Project3::chatroom::checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+
 void::Project3::chatroom::selected(int i) {
-		addedChat->AddMember(contactsDataList[i]->UserId);
+	addedChat = new ChatData(global::theChatID);
+	addedChat->AddMember(contactsDataList[i]->UserId);
 		checkBox[i]->Checked = true;
 		The_selected_membersers->Items->Insert(0, contactsDataList[i]->Fname + " " + contactsDataList[i]->Lname);
 	}
+
 void::Project3::chatroom::unselected(int i) {
 		checkBox[i]->Checked = false;
 		The_selected_membersers->Items->RemoveAt(i);
@@ -351,9 +358,7 @@ void::Project3::chatroom::deleted(int i) {
 		displayMyContacts();
 	}
 
-void::Project3::chatroom::select1_Click(System::Object^ sender, System::EventArgs^ e) {
-		selected(0);
-	}
+
 void::Project3::chatroom::Unselect_Click(System::Object^ sender, System::EventArgs^ e) {
 		unselected(0);
 	}
@@ -416,6 +421,9 @@ void::Project3::chatroom::button4_Click(System::Object^ sender, System::EventArg
 		stories->BringToFront();
 		userStory* textStory = new userStory(global::cliToSTD(richTextBox2->Text), 1);
 	}
+void::Project3::chatroom::select1_Click(System::Object^ sender, System::EventArgs^ e) {
+	selected(0);
+}
 void::Project3::chatroom::select2_Click(System::Object^ sender, System::EventArgs^ e) {
 		selected(1);
 	}

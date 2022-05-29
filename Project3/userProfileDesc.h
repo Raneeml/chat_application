@@ -1,7 +1,6 @@
 #pragma once
 #include<iostream>
 #include<string>
-#include"Globals.h"
 #include"SqlRepo.h"
 using namespace std;
 //using namespace Globals;

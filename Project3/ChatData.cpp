@@ -1,34 +1,40 @@
 #include "ChatData.h"
-#include"Globals.h"
+
 
 
 
 ChatData::ChatData(bool type) {
 	ChatRoom_Type = type;
-    // lastSeen = getAndUpdateDateAndTime();
+	chatRoomsData^ chat = gcnew chatRoomsData();
+	chat->type = ChatRoom_Type;
+	chat->timeOfLastMsg = time(0);
 
-	ChatRoomData^ chat = gcnew ChatRoomData();
-		ChatRoomID =chat->chatroomID ;
-		chat->type = ChatRoom_Type;
-		chat->lastSeen = global::stdToCLI(lastSeen);
-		
-		global::chatRoomsRepo->insert(chat);
+	global::chatRoomsRepo->insert(chat);
+	List<chatRoomsData^>^ chatsAdded = global::chatRoomsRepo->getAll();
+	ChatRoomID = chatsAdded[chatsAdded->Count - 1]->chatroomID;
 
 
-		global::theChatID = ChatRoomID;
+	global::theChatID = ChatRoomID;
 
 	
 }
+ChatData::ChatData(int wantedChatID) {
+	chatRoomsData^ chat = global::chatRoomsRepo->getItem(wantedChatID);
+	ChatRoomID = chat->chatroomID;
+	ChatRoom_Type= chat->type;
+	timeOfLastMsg= chat->timeOfLastMsg;
 
+
+}
 void ChatData::AddMember(int addedID) {
 	UsersIDs.push_back(addedID);
 
 
 	//theChatID change when you create or enter chatroom 
 	chatsUsersData^ newMember = gcnew chatsUsersData();
-	newMember->chatroom_ID = global::theChatID;
+	newMember->chatroom_ID = ChatRoomID;
 	newMember->member_ID = addedID;
-	newMember->timeOfLastMsgINChat = getChatRoomTime();
+	newMember->timeOfLastMsgINChat = time(0);
 
 	global::chatsUsersRepo->insert(newMember);
 
@@ -81,11 +87,6 @@ List<messageData^>^ ChatData::DisplayMessages() {
 
 
 
-int ChatData::getSecNow() {
-
-	return secNow;
-}
-
 int ChatData::getChatID() {
 	return ChatRoomID;
 }
@@ -94,20 +95,22 @@ string ChatData::getAndUpdateDateAndTime() {
 	// get
 		messageData ^ lastMsg = gcnew messageData();
 		statusData^ lastMsgStatus = gcnew statusData();
-	int lastMsgIndx = allMessagesIDs.size() - 1;
-	lastMsg = global::messageRepo->getItem(lastMsgIndx);
-	lastMsgStatus = global::statusRepo->getItem(lastMsg->messageID);
+		int lastMsgID = allMessagesIDs.at(allMessagesIDs.size() - 1);
+	lastMsg = global::messageRepo->getItem(lastMsgID);
+	lastMsgStatus = global::statusRepo->getItem(lastMsgID);
+
+
 	dateAndTime = global::cliToSTD(lastMsgStatus->dateAndtime);
 
 	//update
-	ChatRoomData^ chatupdated = gcnew ChatRoomData();
+	chatRoomsData^ chatupdated = gcnew chatRoomsData();
 	chatupdated->timeOfLastMsg = lastMsgStatus->timeOfMsg;
 	bool updated = global::chatRoomsRepo->update(ChatRoomID, chatupdated);
 
 	return dateAndTime;
 }
 
-time_t ChatData::getChatRoomTime() {
-	ChatRoomData^ chat = global::chatRoomsRepo->getItem(getChatID());
-		return chat->timeOfLastMsg ;
-}
+//time_t ChatData::getChatRoomTime() {
+//	ChatRoomData^ chat = global::chatRoomsRepo->getItem(getChatID());
+//		return chat->timeOfLastMsg ;
+//}

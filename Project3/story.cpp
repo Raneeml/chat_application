@@ -2,7 +2,6 @@
 #include <string>
 #include <iostream>
 #include <ctime>
-#include"Globals.h"
 #define _CRT_SECURE_NO_WARNINGS
 #include "userStory.h"
 

@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include <ctime>
-#include"Globals.h"
+
 
 //using namespace Globals;
 #include "global.h"

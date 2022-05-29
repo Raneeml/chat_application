@@ -2,7 +2,6 @@
 #include "SignUp.h"
 #include "chatroom.h"
 #include<string>
-#include "Globals.h"
 #include "SqlRepo.h"
 #include "global.h"
 

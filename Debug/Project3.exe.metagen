@@ -30,12 +30,11 @@ Class chatsUsersData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 chatroom_ID : Public
     Int32 member_ID : Public
     Int64 timeOfLastMsgINChat : Public
-Class ChatRoomData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class chatRoomsData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Int32 chatroomID : Public
     Boolean type : Public
-    System.String lastSeen : Public
     Int64 timeOfLastMsg : Public
 Class UserDescData: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

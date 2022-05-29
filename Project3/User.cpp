@@ -1,7 +1,6 @@
 #include "User.h"
 #include "ChatData.h"
 #include "userProfileDesc.h"
-#include"Globals.h"
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -127,14 +126,16 @@ void User::deleteMyStory()
 
 
 void User::addChatRoom(bool type) {
-	ChatData newChat = new ChatData(type);
-	newChat.AddMember(global::theUserID);
 
-	chatRoomsIDs.push_back(newChat.getChatID());
-    
+	ChatData newChat = new ChatData(type);
+
+	newChat.AddMember(global::theUserID);
+	chatRoomsIDs.push_back(global::theChatID);
+
+	
 }
 
-List<ChatRoomData^>^ User::displayChatRooms() {
+List<chatRoomsData^>^ User::displayChatRooms() {
 	QueryFilter^ filter = gcnew QueryFilter();
 	filter = filter->whereColumn("member_ID")
 		->isEqualTo(global::theUserID)
@@ -144,7 +145,7 @@ List<ChatRoomData^>^ User::displayChatRooms() {
 	// return a List of chats of the current user
 	List<chatsUsersData^>^ filteredChatRooms = global::chatsUsersRepo->getFiltered(filter);
 
-	List<ChatRoomData^>^ chatRooms = {};
+	List<chatRoomsData^>^ chatRooms = gcnew List<chatRoomsData^>();
 	for (int i = 0; i < filteredChatRooms->Count; i++)
 	{
 		chatRooms[i] = global::chatRoomsRepo->getItem(filteredChatRooms[i]->member_ID);
