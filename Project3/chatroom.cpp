@@ -357,9 +357,6 @@ void::Project3::chatroom::deleted(int i) {
 	}
 
 
-void::Project3::chatroom::Unselect_Click(System::Object^ sender, System::EventArgs^ e) {
-		unselected(0);
-	}
 
 void::Project3::chatroom::add_contact_Click(System::Object^ sender, System::EventArgs^ e) {
 		myAccount = new User();
@@ -420,7 +417,8 @@ void::Project3::chatroom::displayMyChatRooms()
 	 myAccount = new User();
 	 chatRoomsDataList = myAccount->displayChatRooms();
 	 int length = chatRoomsDataList->Count;
-	 for (int i = 0; i < length; i++)
+	 
+	 for (int i = 0; i < length ; i++)
 	 {
 		 ChatData* myChat = new ChatData(chatRoomsDataList[i]->chatroomID);
 		 List<messageData^>^ chatMsgs= myChat->DisplayMessages();
@@ -459,7 +457,7 @@ void::Project3::chatroom::button2_Click(System::Object^ sender, System::EventArg
 		}
 	}
 void::Project3::chatroom::button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		stories->BringToFront();
+	pictureBox7->Image = nullptr;
 	}
 void::Project3::chatroom::button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		stories->BringToFront();
@@ -524,6 +522,9 @@ void::Project3::chatroom::select8_Click(System::Object^ sender, System::EventArg
 	}
 	void::Project3::chatroom::select20_Click(System::Object^ sender, System::EventArgs^ e) {
 		selected(19);
+	}
+	void::Project3::chatroom::Unselect_Click(System::Object^ sender, System::EventArgs^ e) {
+		unselected(0);
 	}
 	void::Project3::chatroom::Unselect2_Click(System::Object^ sender, System::EventArgs^ e) {
 		unselected(1);
@@ -780,5 +781,60 @@ void::Project3::chatroom::select8_Click(System::Object^ sender, System::EventArg
 	}
 	void::Project3::chatroom::ADD_Click(System::Object^ sender, System::EventArgs^ e) {
 		 displayMyChatRooms();
+		 The_selected_membersers->Visible = false;
+		 choose->Visible = true;
+		 comboBox1->Text = L" ";
+		 ADD->Visible = false;
+
 		 
 	 }
+	
+	void::Project3::chatroom::label8_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	void::Project3::chatroom::checkBox29_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	void::Project3::chatroom::button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (checkBox29->Checked == true)
+		{
+			richTextBox4->Visible == false;
+			pictureBox25->Visible == false;
+		}
+	}
+	void::Project3::chatroom::richTextBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		while (richTextBox4->Visible == true)
+		{
+			pictureBox25->Visible == false;
+		}
+	}
+	void::Project3::chatroom::pictureBox25_Click(System::Object^ sender, System::EventArgs^ e) {
+		while (pictureBox25->Visible == true)
+		{
+			richTextBox4->Visible == false;
+		}
+	}
+	void::Project3::chatroom::label6_Click_1(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	void::Project3::chatroom::button6_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	void::Project3::chatroom::button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	void::Project3::chatroom::label7_Click_1(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	void::Project3::chatroom::richTextBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		while (richTextBox5->Visible == true)
+		{
+			pictureBox26->Visible == false;
+		}
+	}
+	void::Project3::chatroom::pictureBox26_Click(System::Object^ sender, System::EventArgs^ e) {
+		while (pictureBox26->Visible == true)
+		{
+			richTextBox5->Visible == false;
+		}
+	}
