@@ -68,19 +68,6 @@ List<messageData^>^ ChatData::DisplayMessages() {
 
 	}
 
-	//sort the status by time descending
-	QueryFilter^ sort = gcnew QueryFilter();
-	sort = sort->orderBy("dateAndtime", true)
-		->build();
-   List<statusData^>^ sortedStatus = global::statusRepo->getFiltered(sort);
-
-   //get messages sorted descending
-   for (int i = 0; i < msgs->Count; i++)
-   {
-	   msgs[i] = global::messageRepo->getItem(sortedStatus[i]->messageID);
-
-   }
-
 
 	return msgs;
 	
@@ -88,11 +75,12 @@ List<messageData^>^ ChatData::DisplayMessages() {
 
 
 void ChatData::undoMessage() {
-	int msgID = allMessagesIDs.at(allMessagesIDs.size() - 1);
+	List<messageData^>^ msgs = DisplayMessages();
+	int msgID = msgs[msgs->Count -1]->messageID;
 
 	global::chatMessageRepo->remove(msgID);
 	global::messageRepo->remove(msgID);
-	allMessagesIDs.pop_back();
+	//allMessagesIDs.pop_back();
 }
 
 

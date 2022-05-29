@@ -135,7 +135,7 @@ void::Project3::chatroom::message_Click(System::Object^ sender, System::EventArg
 			currentChat = new ChatData(global::theChatID);
 			currentChat->undoMessage();
 			if (Pn_messages.Count > 0) {
-				Pn_messages[Pn_messages.Count - 1]->Click += gcnew System::EventHandler(this, &chatroom::message_Click);
+			//	Pn_messages[Pn_messages.Count - 1]->Click += gcnew System::EventHandler(this, &chatroom::message_Click);
 			}
 		}
 	}
@@ -395,7 +395,7 @@ void::Project3::chatroom::displayMessages()
 	currentChat= new ChatData(global::theChatID);
 	messagesDataList = currentChat->DisplayMessages();
 	int length = messagesDataList->Count;
-	for (int i = length -1; i >=0; i--)
+	for (int i = 0 ;i< length;i++)
 	{
 		messageData^ msg = messagesDataList[i];
 		statusData^ msgStatus = global::statusRepo->getItem(msg->messageID);
