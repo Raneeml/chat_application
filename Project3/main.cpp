@@ -16,7 +16,7 @@ using namespace System::Windows::Forms;
 [STAThreadAttribute]
 void main (){
 
-SqlDbManager::startConnection("Data Source=DESKTOP-PS268NT;Initial Catalog=ChatApplication;Integrated Security=True");
+SqlDbManager::startConnection("Data Source=DESKTOP-H5DN6T9;Initial Catalog=ChatApplication;Integrated Security=True");
 if (!usersRepo->tableExists()) {
 	usersRepo->createTable("UserId");
 }

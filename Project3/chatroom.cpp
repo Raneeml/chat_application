@@ -83,6 +83,23 @@ Project3::chatroom::chatroom(void)
 	Ch_chatrooms.Add(checkBox24); Ch_chatrooms.Add(checkBox25); Ch_chatrooms.Add(checkBox26);
 	Ch_chatrooms.Add(checkBox27); Ch_chatrooms.Add(checkBox28);
 
+	contactImage.Add(pictureBox6); contactImage.Add(pictureBox27); contactImage.Add(pictureBox28); 
+	contactImage.Add(pictureBox29); contactImage.Add(pictureBox30); contactImage.Add(pictureBox31); 
+	contactImage.Add(pictureBox32); contactImage.Add(pictureBox33); contactImage.Add(pictureBox34); 
+	contactImage.Add(pictureBox35); contactImage.Add(pictureBox36); contactImage.Add(pictureBox37);
+	contactImage.Add(pictureBox38); contactImage.Add(pictureBox39); contactImage.Add(pictureBox40); 
+	contactImage.Add(pictureBox41); contactImage.Add(pictureBox42); contactImage.Add(pictureBox43); 
+	contactImage.Add(pictureBox44); contactImage.Add(pictureBox45);
+
+	discription.Add(label9); discription.Add(label10); discription.Add(label11);
+	discription.Add(label13); discription.Add(label14); discription.Add(label15);
+	discription.Add(label16); discription.Add(label17); discription.Add(label20);
+	discription.Add(label45); discription.Add(label46); discription.Add(label47);
+	discription.Add(label48); discription.Add(label49); discription.Add(label50);
+	discription.Add(label51); discription.Add(label52); discription.Add(label53);
+	discription.Add(label54); discription.Add(label55);
+
+
 }
 
 
@@ -209,6 +226,7 @@ void::Project3::chatroom::DeleteChatRoom_Click(System::Object^ sender, System::E
 			}
 		}
 	}
+
 void::Project3::chatroom::AddChatRoom_Click(System::Object^ sender, System::EventArgs^ e) {
 		add_chat->BringToFront();
 	}
@@ -317,6 +335,7 @@ void::Project3::chatroom::choose__Click(System::Object^ sender, System::EventArg
 			select[i]->Visible = false;
 			Unselect[i]->Visible = false;
 			checkBox[i]->Visible = false;
+			checkBox[i]->Checked = false;
 		}
 
 	}

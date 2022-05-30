@@ -27,13 +27,13 @@ namespace Project3 {
 		List<Label^>phone;
 		List<CheckBox^>checkBox;
 		List<Panel^>panel;
-
+		List<Label^> discription;
 		List<Label^> L_chatrooms;
 		List<PictureBox^> P_chatrooms;
 		List<Panel^> Pn_chatrooms;
 		List<Panel^> Pn_messages;
 		List<CheckBox^> Ch_chatrooms;
-
+		List<PictureBox^>contactImage;
 		User* myAccount;
 		ChatData* currentChat;
 		userProfileDesc* myAccountDesc;
@@ -131,12 +131,12 @@ private: System::Windows::Forms::Label^ id_text;
 private: System::Windows::Forms::Button^ Update;
 private: System::Windows::Forms::CheckBox^ checkBox31;
 private: System::Windows::Forms::CheckBox^ checkBox30;
-private: System::Windows::Forms::Label^ lname1;
-private: System::Windows::Forms::Label^ phone1;
-private: System::Windows::Forms::Label^ fname1;
-private: System::Windows::Forms::Label^ lname2;
-private: System::Windows::Forms::Label^ phone2;
-private: System::Windows::Forms::Label^ fname2;
+
+
+
+
+
+
 private: System::Windows::Forms::Label^ lname3;
 private: System::Windows::Forms::Label^ phone3;
 private: System::Windows::Forms::Label^ fname3;
@@ -192,6 +192,54 @@ private: System::Windows::Forms::Label^ lname20;
 private: System::Windows::Forms::Label^ phone20;
 private: System::Windows::Forms::Label^ fname20;
 private: System::Windows::Forms::PictureBox^ pictureBox6;
+private: System::Windows::Forms::PictureBox^ pictureBox27;
+private: System::Windows::Forms::PictureBox^ pictureBox28;
+private: System::Windows::Forms::PictureBox^ pictureBox29;
+private: System::Windows::Forms::PictureBox^ pictureBox30;
+private: System::Windows::Forms::PictureBox^ pictureBox31;
+private: System::Windows::Forms::PictureBox^ pictureBox32;
+private: System::Windows::Forms::PictureBox^ pictureBox33;
+private: System::Windows::Forms::PictureBox^ pictureBox34;
+private: System::Windows::Forms::PictureBox^ pictureBox35;
+private: System::Windows::Forms::PictureBox^ pictureBox36;
+private: System::Windows::Forms::PictureBox^ pictureBox37;
+private: System::Windows::Forms::PictureBox^ pictureBox38;
+private: System::Windows::Forms::PictureBox^ pictureBox39;
+private: System::Windows::Forms::PictureBox^ pictureBox40;
+private: System::Windows::Forms::PictureBox^ pictureBox41;
+private: System::Windows::Forms::PictureBox^ pictureBox42;
+private: System::Windows::Forms::PictureBox^ pictureBox43;
+private: System::Windows::Forms::PictureBox^ pictureBox44;
+private: System::Windows::Forms::PictureBox^ pictureBox45;
+private: System::Windows::Forms::Label^ lname1;
+private: System::Windows::Forms::Label^ phone1;
+private: System::Windows::Forms::Label^ fname1;
+private: System::Windows::Forms::Label^ label9;
+private: System::Windows::Forms::Label^ lname2;
+private: System::Windows::Forms::Label^ phone2;
+private: System::Windows::Forms::Label^ fname2;
+private: System::Windows::Forms::Label^ label10;
+private: System::Windows::Forms::Label^ label11;
+private: System::Windows::Forms::Label^ label13;
+private: System::Windows::Forms::Label^ label14;
+private: System::Windows::Forms::Label^ label15;
+private: System::Windows::Forms::Label^ label16;
+private: System::Windows::Forms::Label^ label17;
+private: System::Windows::Forms::Label^ label20;
+private: System::Windows::Forms::Label^ label45;
+private: System::Windows::Forms::Label^ label46;
+private: System::Windows::Forms::Label^ label47;
+private: System::Windows::Forms::Label^ label48;
+private: System::Windows::Forms::Label^ label49;
+private: System::Windows::Forms::Label^ label50;
+private: System::Windows::Forms::Label^ label51;
+private: System::Windows::Forms::Label^ label52;
+private: System::Windows::Forms::Label^ label53;
+private: System::Windows::Forms::Label^ label54;
+private: System::Windows::Forms::Label^ label55;
+
+
+
 
 
 
@@ -240,8 +288,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 
 	private: System::Windows::Forms::Panel^ pn_stext;
 
-
-
+		   
 	private: System::Windows::Forms::Panel^ pn_shows;
 
 	private: System::Windows::Forms::Panel^ pn_chat;
@@ -661,22 +708,28 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->edit_delete = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->lname1 = (gcnew System::Windows::Forms::Label());
 			this->phone1 = (gcnew System::Windows::Forms::Label());
 			this->fname1 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->Unselect1 = (gcnew System::Windows::Forms::Button());
 			this->select1 = (gcnew System::Windows::Forms::Button());
 			this->Delete1 = (gcnew System::Windows::Forms::Button());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->lname2 = (gcnew System::Windows::Forms::Label());
 			this->phone2 = (gcnew System::Windows::Forms::Label());
 			this->fname2 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox27 = (gcnew System::Windows::Forms::PictureBox());
 			this->Unselect2 = (gcnew System::Windows::Forms::Button());
 			this->select2 = (gcnew System::Windows::Forms::Button());
 			this->Delete2 = (gcnew System::Windows::Forms::Button());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox28 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname3 = (gcnew System::Windows::Forms::Label());
 			this->phone3 = (gcnew System::Windows::Forms::Label());
 			this->fname3 = (gcnew System::Windows::Forms::Label());
@@ -685,6 +738,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete3 = (gcnew System::Windows::Forms::Button());
 			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox29 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname4 = (gcnew System::Windows::Forms::Label());
 			this->phone4 = (gcnew System::Windows::Forms::Label());
 			this->fname4 = (gcnew System::Windows::Forms::Label());
@@ -693,6 +748,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete4 = (gcnew System::Windows::Forms::Button());
 			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox30 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname5 = (gcnew System::Windows::Forms::Label());
 			this->phone5 = (gcnew System::Windows::Forms::Label());
 			this->fname5 = (gcnew System::Windows::Forms::Label());
@@ -701,6 +758,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete5 = (gcnew System::Windows::Forms::Button());
 			this->checkBox5 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox31 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname6 = (gcnew System::Windows::Forms::Label());
 			this->phone6 = (gcnew System::Windows::Forms::Label());
 			this->Unselect6 = (gcnew System::Windows::Forms::Button());
@@ -709,6 +768,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete6 = (gcnew System::Windows::Forms::Button());
 			this->checkBox6 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox32 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname7 = (gcnew System::Windows::Forms::Label());
 			this->phone7 = (gcnew System::Windows::Forms::Label());
 			this->fname7 = (gcnew System::Windows::Forms::Label());
@@ -717,6 +778,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete7 = (gcnew System::Windows::Forms::Button());
 			this->checkBox7 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel9 = (gcnew System::Windows::Forms::Panel());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox33 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname8 = (gcnew System::Windows::Forms::Label());
 			this->phone8 = (gcnew System::Windows::Forms::Label());
 			this->fname8 = (gcnew System::Windows::Forms::Label());
@@ -725,6 +788,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete8 = (gcnew System::Windows::Forms::Button());
 			this->checkBox8 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel10 = (gcnew System::Windows::Forms::Panel());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox34 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname9 = (gcnew System::Windows::Forms::Label());
 			this->phone9 = (gcnew System::Windows::Forms::Label());
 			this->fname9 = (gcnew System::Windows::Forms::Label());
@@ -733,6 +798,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete9 = (gcnew System::Windows::Forms::Button());
 			this->checkBox9 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel11 = (gcnew System::Windows::Forms::Panel());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox35 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname10 = (gcnew System::Windows::Forms::Label());
 			this->phone10 = (gcnew System::Windows::Forms::Label());
 			this->fname10 = (gcnew System::Windows::Forms::Label());
@@ -741,6 +808,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete10 = (gcnew System::Windows::Forms::Button());
 			this->checkBox10 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel12 = (gcnew System::Windows::Forms::Panel());
+			this->label46 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox36 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname11 = (gcnew System::Windows::Forms::Label());
 			this->phone11 = (gcnew System::Windows::Forms::Label());
 			this->fname11 = (gcnew System::Windows::Forms::Label());
@@ -749,6 +818,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete11 = (gcnew System::Windows::Forms::Button());
 			this->checkBox11 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel13 = (gcnew System::Windows::Forms::Panel());
+			this->label47 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox37 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname12 = (gcnew System::Windows::Forms::Label());
 			this->phone12 = (gcnew System::Windows::Forms::Label());
 			this->fname12 = (gcnew System::Windows::Forms::Label());
@@ -757,6 +828,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete12 = (gcnew System::Windows::Forms::Button());
 			this->checkBox12 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel14 = (gcnew System::Windows::Forms::Panel());
+			this->label48 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox38 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname13 = (gcnew System::Windows::Forms::Label());
 			this->phone13 = (gcnew System::Windows::Forms::Label());
 			this->fname13 = (gcnew System::Windows::Forms::Label());
@@ -765,6 +838,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete13 = (gcnew System::Windows::Forms::Button());
 			this->checkBox13 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel15 = (gcnew System::Windows::Forms::Panel());
+			this->label49 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox39 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname14 = (gcnew System::Windows::Forms::Label());
 			this->phone14 = (gcnew System::Windows::Forms::Label());
 			this->fname14 = (gcnew System::Windows::Forms::Label());
@@ -773,6 +848,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete14 = (gcnew System::Windows::Forms::Button());
 			this->checkBox14 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel16 = (gcnew System::Windows::Forms::Panel());
+			this->label50 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox40 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname15 = (gcnew System::Windows::Forms::Label());
 			this->phone15 = (gcnew System::Windows::Forms::Label());
 			this->fname15 = (gcnew System::Windows::Forms::Label());
@@ -781,6 +858,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete15 = (gcnew System::Windows::Forms::Button());
 			this->checkBox15 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel17 = (gcnew System::Windows::Forms::Panel());
+			this->label51 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox41 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname16 = (gcnew System::Windows::Forms::Label());
 			this->phone16 = (gcnew System::Windows::Forms::Label());
 			this->fname16 = (gcnew System::Windows::Forms::Label());
@@ -789,6 +868,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete16 = (gcnew System::Windows::Forms::Button());
 			this->checkBox16 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel18 = (gcnew System::Windows::Forms::Panel());
+			this->label52 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox42 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname17 = (gcnew System::Windows::Forms::Label());
 			this->phone17 = (gcnew System::Windows::Forms::Label());
 			this->fname17 = (gcnew System::Windows::Forms::Label());
@@ -797,6 +878,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete17 = (gcnew System::Windows::Forms::Button());
 			this->checkBox17 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel19 = (gcnew System::Windows::Forms::Panel());
+			this->label53 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox43 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname18 = (gcnew System::Windows::Forms::Label());
 			this->phone18 = (gcnew System::Windows::Forms::Label());
 			this->fname18 = (gcnew System::Windows::Forms::Label());
@@ -805,6 +888,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete18 = (gcnew System::Windows::Forms::Button());
 			this->checkBox18 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel20 = (gcnew System::Windows::Forms::Panel());
+			this->label54 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox44 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname19 = (gcnew System::Windows::Forms::Label());
 			this->phone19 = (gcnew System::Windows::Forms::Label());
 			this->fname19 = (gcnew System::Windows::Forms::Label());
@@ -813,6 +898,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->Delete19 = (gcnew System::Windows::Forms::Button());
 			this->checkBox19 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel21 = (gcnew System::Windows::Forms::Panel());
+			this->label55 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox45 = (gcnew System::Windows::Forms::PictureBox());
 			this->lname20 = (gcnew System::Windows::Forms::Label());
 			this->phone20 = (gcnew System::Windows::Forms::Label());
 			this->fname20 = (gcnew System::Windows::Forms::Label());
@@ -836,7 +923,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->richTextBox3 = (gcnew System::Windows::Forms::RichTextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->ofd = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->pn_nav_bar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox21))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox20))->BeginInit();
@@ -881,25 +967,45 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->flowLayoutPanel1->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			this->panel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox27))->BeginInit();
 			this->panel4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox28))->BeginInit();
 			this->panel5->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox29))->BeginInit();
 			this->panel6->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox30))->BeginInit();
 			this->panel7->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox31))->BeginInit();
 			this->panel8->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox32))->BeginInit();
 			this->panel9->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox33))->BeginInit();
 			this->panel10->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox34))->BeginInit();
 			this->panel11->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox35))->BeginInit();
 			this->panel12->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox36))->BeginInit();
 			this->panel13->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox37))->BeginInit();
 			this->panel14->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox38))->BeginInit();
 			this->panel15->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox39))->BeginInit();
 			this->panel16->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox40))->BeginInit();
 			this->panel17->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox41))->BeginInit();
 			this->panel18->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox42))->BeginInit();
 			this->panel19->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox43))->BeginInit();
 			this->panel20->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox44))->BeginInit();
 			this->panel21->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox45))->BeginInit();
 			this->stories->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox26))->BeginInit();
 			this->pn_con->SuspendLayout();
@@ -907,7 +1013,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox23))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox22))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox24))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// chat
@@ -1179,7 +1284,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 				static_cast<System::Byte>(0)));
 			this->The_selected_membersers->FormattingEnabled = true;
 			this->The_selected_membersers->ItemHeight = 19;
-			this->The_selected_membersers->Location = System::Drawing::Point(261, 207);
+			this->The_selected_membersers->Location = System::Drawing::Point(235, 203);
 			this->The_selected_membersers->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->The_selected_membersers->Name = L"The_selected_membersers";
 			this->The_selected_membersers->ScrollAlwaysVisible = true;
@@ -1191,7 +1296,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// 
 			this->choose->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->choose->Location = System::Drawing::Point(261, 306);
+			this->choose->Location = System::Drawing::Point(238, 216);
 			this->choose->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->choose->Name = L"choose";
 			this->choose->Size = System::Drawing::Size(218, 29);
@@ -1206,7 +1311,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 				static_cast<System::Byte>(0)));
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"1- one to one", L"2- Group" });
-			this->comboBox1->Location = System::Drawing::Point(255, 129);
+			this->comboBox1->Location = System::Drawing::Point(235, 134);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(270, 25);
@@ -1219,7 +1324,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->label19->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->label19->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label19->Location = System::Drawing::Point(49, 132);
+			this->label19->Location = System::Drawing::Point(32, 133);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(167, 25);
 			this->label19->TabIndex = 5;
@@ -2388,10 +2493,11 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel2
 			// 
 			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel2->Controls->Add(this->pictureBox6);
+			this->panel2->Controls->Add(this->label9);
 			this->panel2->Controls->Add(this->lname1);
 			this->panel2->Controls->Add(this->phone1);
 			this->panel2->Controls->Add(this->fname1);
+			this->panel2->Controls->Add(this->pictureBox6);
 			this->panel2->Controls->Add(this->Unselect1);
 			this->panel2->Controls->Add(this->select1);
 			this->panel2->Controls->Add(this->Delete1);
@@ -2405,15 +2511,24 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel2->Visible = false;
 			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &chatroom::panel2_Paint);
 			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(342, 22);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(35, 13);
+			this->label9->TabIndex = 14;
+			this->label9->Text = L"label9";
+			// 
 			// lname1
 			// 
 			this->lname1->AutoSize = true;
 			this->lname1->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname1->Location = System::Drawing::Point(362, 6);
+			this->lname1->Location = System::Drawing::Point(190, 9);
 			this->lname1->Name = L"lname1";
 			this->lname1->Size = System::Drawing::Size(95, 19);
-			this->lname1->TabIndex = 9;
+			this->lname1->TabIndex = 13;
 			this->lname1->Text = L"Last Name";
 			// 
 			// phone1
@@ -2421,10 +2536,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone1->AutoSize = true;
 			this->phone1->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone1->Location = System::Drawing::Point(283, 38);
+			this->phone1->Location = System::Drawing::Point(111, 41);
 			this->phone1->Name = L"phone1";
 			this->phone1->Size = System::Drawing::Size(98, 17);
-			this->phone1->TabIndex = 8;
+			this->phone1->TabIndex = 12;
 			this->phone1->Text = L"Phonr Number";
 			// 
 			// fname1
@@ -2433,11 +2548,19 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname1->AutoSize = true;
 			this->fname1->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname1->Location = System::Drawing::Point(255, 5);
+			this->fname1->Location = System::Drawing::Point(83, 8);
 			this->fname1->Name = L"fname1";
 			this->fname1->Size = System::Drawing::Size(97, 19);
-			this->fname1->TabIndex = 7;
+			this->fname1->TabIndex = 11;
 			this->fname1->Text = L"First Name";
+			// 
+			// pictureBox6
+			// 
+			this->pictureBox6->Location = System::Drawing::Point(5, 0);
+			this->pictureBox6->Name = L"pictureBox6";
+			this->pictureBox6->Size = System::Drawing::Size(70, 61);
+			this->pictureBox6->TabIndex = 10;
+			this->pictureBox6->TabStop = false;
 			// 
 			// Unselect1
 			// 
@@ -2497,9 +2620,11 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel3
 			// 
 			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel3->Controls->Add(this->label10);
 			this->panel3->Controls->Add(this->lname2);
 			this->panel3->Controls->Add(this->phone2);
 			this->panel3->Controls->Add(this->fname2);
+			this->panel3->Controls->Add(this->pictureBox27);
 			this->panel3->Controls->Add(this->Unselect2);
 			this->panel3->Controls->Add(this->select2);
 			this->panel3->Controls->Add(this->Delete2);
@@ -2512,15 +2637,24 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel3->TabIndex = 2;
 			this->panel3->Visible = false;
 			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(336, 24);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(41, 13);
+			this->label10->TabIndex = 18;
+			this->label10->Text = L"label10";
+			// 
 			// lname2
 			// 
 			this->lname2->AutoSize = true;
 			this->lname2->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname2->Location = System::Drawing::Point(362, 7);
+			this->lname2->Location = System::Drawing::Point(186, 10);
 			this->lname2->Name = L"lname2";
 			this->lname2->Size = System::Drawing::Size(95, 19);
-			this->lname2->TabIndex = 9;
+			this->lname2->TabIndex = 17;
 			this->lname2->Text = L"Last Name";
 			// 
 			// phone2
@@ -2528,10 +2662,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone2->AutoSize = true;
 			this->phone2->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone2->Location = System::Drawing::Point(283, 38);
+			this->phone2->Location = System::Drawing::Point(107, 41);
 			this->phone2->Name = L"phone2";
 			this->phone2->Size = System::Drawing::Size(98, 17);
-			this->phone2->TabIndex = 8;
+			this->phone2->TabIndex = 16;
 			this->phone2->Text = L"Phonr Number";
 			// 
 			// fname2
@@ -2540,11 +2674,19 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname2->AutoSize = true;
 			this->fname2->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname2->Location = System::Drawing::Point(259, 9);
+			this->fname2->Location = System::Drawing::Point(83, 12);
 			this->fname2->Name = L"fname2";
 			this->fname2->Size = System::Drawing::Size(97, 19);
-			this->fname2->TabIndex = 7;
+			this->fname2->TabIndex = 15;
 			this->fname2->Text = L"First Name";
+			// 
+			// pictureBox27
+			// 
+			this->pictureBox27->Location = System::Drawing::Point(5, -1);
+			this->pictureBox27->Name = L"pictureBox27";
+			this->pictureBox27->Size = System::Drawing::Size(70, 61);
+			this->pictureBox27->TabIndex = 11;
+			this->pictureBox27->TabStop = false;
 			// 
 			// Unselect2
 			// 
@@ -2603,6 +2745,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel4
 			// 
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel4->Controls->Add(this->label11);
+			this->panel4->Controls->Add(this->pictureBox28);
 			this->panel4->Controls->Add(this->lname3);
 			this->panel4->Controls->Add(this->phone3);
 			this->panel4->Controls->Add(this->fname3);
@@ -2618,12 +2762,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel4->TabIndex = 3;
 			this->panel4->Visible = false;
 			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(336, 24);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(41, 13);
+			this->label11->TabIndex = 15;
+			this->label11->Text = L"label11";
+			// 
+			// pictureBox28
+			// 
+			this->pictureBox28->Location = System::Drawing::Point(5, 0);
+			this->pictureBox28->Name = L"pictureBox28";
+			this->pictureBox28->Size = System::Drawing::Size(70, 61);
+			this->pictureBox28->TabIndex = 11;
+			this->pictureBox28->TabStop = false;
+			// 
 			// lname3
 			// 
 			this->lname3->AutoSize = true;
 			this->lname3->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname3->Location = System::Drawing::Point(362, 6);
+			this->lname3->Location = System::Drawing::Point(190, 5);
 			this->lname3->Name = L"lname3";
 			this->lname3->Size = System::Drawing::Size(95, 19);
 			this->lname3->TabIndex = 9;
@@ -2634,7 +2795,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone3->AutoSize = true;
 			this->phone3->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone3->Location = System::Drawing::Point(283, 38);
+			this->phone3->Location = System::Drawing::Point(111, 37);
 			this->phone3->Name = L"phone3";
 			this->phone3->Size = System::Drawing::Size(98, 17);
 			this->phone3->TabIndex = 8;
@@ -2646,7 +2807,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname3->AutoSize = true;
 			this->fname3->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname3->Location = System::Drawing::Point(255, 5);
+			this->fname3->Location = System::Drawing::Point(83, 4);
 			this->fname3->Name = L"fname3";
 			this->fname3->Size = System::Drawing::Size(97, 19);
 			this->fname3->TabIndex = 7;
@@ -2709,6 +2870,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel5
 			// 
 			this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel5->Controls->Add(this->label13);
+			this->panel5->Controls->Add(this->pictureBox29);
 			this->panel5->Controls->Add(this->lname4);
 			this->panel5->Controls->Add(this->phone4);
 			this->panel5->Controls->Add(this->fname4);
@@ -2724,12 +2887,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel5->TabIndex = 4;
 			this->panel5->Visible = false;
 			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(336, 24);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(41, 13);
+			this->label13->TabIndex = 15;
+			this->label13->Text = L"label13";
+			// 
+			// pictureBox29
+			// 
+			this->pictureBox29->Location = System::Drawing::Point(5, -1);
+			this->pictureBox29->Name = L"pictureBox29";
+			this->pictureBox29->Size = System::Drawing::Size(70, 61);
+			this->pictureBox29->TabIndex = 11;
+			this->pictureBox29->TabStop = false;
+			// 
 			// lname4
 			// 
 			this->lname4->AutoSize = true;
 			this->lname4->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname4->Location = System::Drawing::Point(362, 6);
+			this->lname4->Location = System::Drawing::Point(190, 10);
 			this->lname4->Name = L"lname4";
 			this->lname4->Size = System::Drawing::Size(95, 19);
 			this->lname4->TabIndex = 9;
@@ -2740,7 +2920,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone4->AutoSize = true;
 			this->phone4->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone4->Location = System::Drawing::Point(283, 38);
+			this->phone4->Location = System::Drawing::Point(111, 42);
 			this->phone4->Name = L"phone4";
 			this->phone4->Size = System::Drawing::Size(98, 17);
 			this->phone4->TabIndex = 8;
@@ -2752,7 +2932,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname4->AutoSize = true;
 			this->fname4->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname4->Location = System::Drawing::Point(255, 5);
+			this->fname4->Location = System::Drawing::Point(83, 9);
 			this->fname4->Name = L"fname4";
 			this->fname4->Size = System::Drawing::Size(97, 19);
 			this->fname4->TabIndex = 7;
@@ -2815,6 +2995,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel6
 			// 
 			this->panel6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel6->Controls->Add(this->label14);
+			this->panel6->Controls->Add(this->pictureBox30);
 			this->panel6->Controls->Add(this->lname5);
 			this->panel6->Controls->Add(this->phone5);
 			this->panel6->Controls->Add(this->fname5);
@@ -2830,12 +3012,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel6->TabIndex = 5;
 			this->panel6->Visible = false;
 			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(336, 24);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(41, 13);
+			this->label14->TabIndex = 15;
+			this->label14->Text = L"label14";
+			// 
+			// pictureBox30
+			// 
+			this->pictureBox30->Location = System::Drawing::Point(5, 0);
+			this->pictureBox30->Name = L"pictureBox30";
+			this->pictureBox30->Size = System::Drawing::Size(70, 61);
+			this->pictureBox30->TabIndex = 11;
+			this->pictureBox30->TabStop = false;
+			// 
 			// lname5
 			// 
 			this->lname5->AutoSize = true;
 			this->lname5->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname5->Location = System::Drawing::Point(362, 6);
+			this->lname5->Location = System::Drawing::Point(190, 10);
 			this->lname5->Name = L"lname5";
 			this->lname5->Size = System::Drawing::Size(95, 19);
 			this->lname5->TabIndex = 9;
@@ -2846,7 +3045,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone5->AutoSize = true;
 			this->phone5->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone5->Location = System::Drawing::Point(283, 38);
+			this->phone5->Location = System::Drawing::Point(111, 42);
 			this->phone5->Name = L"phone5";
 			this->phone5->Size = System::Drawing::Size(98, 17);
 			this->phone5->TabIndex = 8;
@@ -2858,7 +3057,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname5->AutoSize = true;
 			this->fname5->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname5->Location = System::Drawing::Point(255, 5);
+			this->fname5->Location = System::Drawing::Point(83, 9);
 			this->fname5->Name = L"fname5";
 			this->fname5->Size = System::Drawing::Size(97, 19);
 			this->fname5->TabIndex = 7;
@@ -2921,6 +3120,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel7
 			// 
 			this->panel7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel7->Controls->Add(this->label15);
+			this->panel7->Controls->Add(this->pictureBox31);
 			this->panel7->Controls->Add(this->lname6);
 			this->panel7->Controls->Add(this->phone6);
 			this->panel7->Controls->Add(this->Unselect6);
@@ -2936,12 +3137,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel7->TabIndex = 6;
 			this->panel7->Visible = false;
 			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Location = System::Drawing::Point(336, 24);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(41, 13);
+			this->label15->TabIndex = 15;
+			this->label15->Text = L"label15";
+			// 
+			// pictureBox31
+			// 
+			this->pictureBox31->Location = System::Drawing::Point(5, 0);
+			this->pictureBox31->Name = L"pictureBox31";
+			this->pictureBox31->Size = System::Drawing::Size(70, 61);
+			this->pictureBox31->TabIndex = 11;
+			this->pictureBox31->TabStop = false;
+			// 
 			// lname6
 			// 
 			this->lname6->AutoSize = true;
 			this->lname6->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname6->Location = System::Drawing::Point(348, 6);
+			this->lname6->Location = System::Drawing::Point(184, 6);
 			this->lname6->Name = L"lname6";
 			this->lname6->Size = System::Drawing::Size(95, 19);
 			this->lname6->TabIndex = 8;
@@ -2952,7 +3170,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone6->AutoSize = true;
 			this->phone6->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone6->Location = System::Drawing::Point(269, 38);
+			this->phone6->Location = System::Drawing::Point(105, 38);
 			this->phone6->Name = L"phone6";
 			this->phone6->Size = System::Drawing::Size(98, 17);
 			this->phone6->TabIndex = 7;
@@ -2978,7 +3196,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname6->AutoSize = true;
 			this->fname6->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname6->Location = System::Drawing::Point(247, 6);
+			this->fname6->Location = System::Drawing::Point(83, 6);
 			this->fname6->Name = L"fname6";
 			this->fname6->Size = System::Drawing::Size(97, 19);
 			this->fname6->TabIndex = 0;
@@ -3027,6 +3245,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel8
 			// 
 			this->panel8->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel8->Controls->Add(this->label16);
+			this->panel8->Controls->Add(this->pictureBox32);
 			this->panel8->Controls->Add(this->lname7);
 			this->panel8->Controls->Add(this->phone7);
 			this->panel8->Controls->Add(this->fname7);
@@ -3042,12 +3262,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel8->TabIndex = 7;
 			this->panel8->Visible = false;
 			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(336, 24);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(41, 13);
+			this->label16->TabIndex = 15;
+			this->label16->Text = L"label16";
+			// 
+			// pictureBox32
+			// 
+			this->pictureBox32->Location = System::Drawing::Point(5, 0);
+			this->pictureBox32->Name = L"pictureBox32";
+			this->pictureBox32->Size = System::Drawing::Size(70, 61);
+			this->pictureBox32->TabIndex = 11;
+			this->pictureBox32->TabStop = false;
+			// 
 			// lname7
 			// 
 			this->lname7->AutoSize = true;
 			this->lname7->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname7->Location = System::Drawing::Point(362, 6);
+			this->lname7->Location = System::Drawing::Point(190, 9);
 			this->lname7->Name = L"lname7";
 			this->lname7->Size = System::Drawing::Size(95, 19);
 			this->lname7->TabIndex = 9;
@@ -3058,7 +3295,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone7->AutoSize = true;
 			this->phone7->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone7->Location = System::Drawing::Point(283, 38);
+			this->phone7->Location = System::Drawing::Point(111, 41);
 			this->phone7->Name = L"phone7";
 			this->phone7->Size = System::Drawing::Size(98, 17);
 			this->phone7->TabIndex = 8;
@@ -3070,7 +3307,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname7->AutoSize = true;
 			this->fname7->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname7->Location = System::Drawing::Point(255, 5);
+			this->fname7->Location = System::Drawing::Point(83, 8);
 			this->fname7->Name = L"fname7";
 			this->fname7->Size = System::Drawing::Size(97, 19);
 			this->fname7->TabIndex = 7;
@@ -3133,6 +3370,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel9
 			// 
 			this->panel9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel9->Controls->Add(this->label17);
+			this->panel9->Controls->Add(this->pictureBox33);
 			this->panel9->Controls->Add(this->lname8);
 			this->panel9->Controls->Add(this->phone8);
 			this->panel9->Controls->Add(this->fname8);
@@ -3148,12 +3387,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel9->TabIndex = 8;
 			this->panel9->Visible = false;
 			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(336, 24);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(41, 13);
+			this->label17->TabIndex = 15;
+			this->label17->Text = L"label17";
+			// 
+			// pictureBox33
+			// 
+			this->pictureBox33->Location = System::Drawing::Point(5, 0);
+			this->pictureBox33->Name = L"pictureBox33";
+			this->pictureBox33->Size = System::Drawing::Size(70, 61);
+			this->pictureBox33->TabIndex = 11;
+			this->pictureBox33->TabStop = false;
+			// 
 			// lname8
 			// 
 			this->lname8->AutoSize = true;
 			this->lname8->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname8->Location = System::Drawing::Point(362, 6);
+			this->lname8->Location = System::Drawing::Point(190, 9);
 			this->lname8->Name = L"lname8";
 			this->lname8->Size = System::Drawing::Size(95, 19);
 			this->lname8->TabIndex = 9;
@@ -3164,7 +3420,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone8->AutoSize = true;
 			this->phone8->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone8->Location = System::Drawing::Point(283, 38);
+			this->phone8->Location = System::Drawing::Point(111, 41);
 			this->phone8->Name = L"phone8";
 			this->phone8->Size = System::Drawing::Size(98, 17);
 			this->phone8->TabIndex = 8;
@@ -3176,7 +3432,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname8->AutoSize = true;
 			this->fname8->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname8->Location = System::Drawing::Point(255, 5);
+			this->fname8->Location = System::Drawing::Point(83, 8);
 			this->fname8->Name = L"fname8";
 			this->fname8->Size = System::Drawing::Size(97, 19);
 			this->fname8->TabIndex = 7;
@@ -3239,6 +3495,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel10
 			// 
 			this->panel10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel10->Controls->Add(this->label20);
+			this->panel10->Controls->Add(this->pictureBox34);
 			this->panel10->Controls->Add(this->lname9);
 			this->panel10->Controls->Add(this->phone9);
 			this->panel10->Controls->Add(this->fname9);
@@ -3254,12 +3512,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel10->TabIndex = 9;
 			this->panel10->Visible = false;
 			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(336, 24);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(41, 13);
+			this->label20->TabIndex = 15;
+			this->label20->Text = L"label20";
+			// 
+			// pictureBox34
+			// 
+			this->pictureBox34->Location = System::Drawing::Point(5, 0);
+			this->pictureBox34->Name = L"pictureBox34";
+			this->pictureBox34->Size = System::Drawing::Size(70, 61);
+			this->pictureBox34->TabIndex = 11;
+			this->pictureBox34->TabStop = false;
+			// 
 			// lname9
 			// 
 			this->lname9->AutoSize = true;
 			this->lname9->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname9->Location = System::Drawing::Point(362, 6);
+			this->lname9->Location = System::Drawing::Point(190, 6);
 			this->lname9->Name = L"lname9";
 			this->lname9->Size = System::Drawing::Size(95, 19);
 			this->lname9->TabIndex = 9;
@@ -3270,7 +3545,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone9->AutoSize = true;
 			this->phone9->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone9->Location = System::Drawing::Point(283, 38);
+			this->phone9->Location = System::Drawing::Point(111, 38);
 			this->phone9->Name = L"phone9";
 			this->phone9->Size = System::Drawing::Size(98, 17);
 			this->phone9->TabIndex = 8;
@@ -3282,7 +3557,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname9->AutoSize = true;
 			this->fname9->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname9->Location = System::Drawing::Point(255, 5);
+			this->fname9->Location = System::Drawing::Point(83, 5);
 			this->fname9->Name = L"fname9";
 			this->fname9->Size = System::Drawing::Size(97, 19);
 			this->fname9->TabIndex = 7;
@@ -3345,6 +3620,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel11
 			// 
 			this->panel11->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel11->Controls->Add(this->label45);
+			this->panel11->Controls->Add(this->pictureBox35);
 			this->panel11->Controls->Add(this->lname10);
 			this->panel11->Controls->Add(this->phone10);
 			this->panel11->Controls->Add(this->fname10);
@@ -3360,12 +3637,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel11->TabIndex = 10;
 			this->panel11->Visible = false;
 			// 
+			// label45
+			// 
+			this->label45->AutoSize = true;
+			this->label45->Location = System::Drawing::Point(336, 24);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(41, 13);
+			this->label45->TabIndex = 15;
+			this->label45->Text = L"label45";
+			// 
+			// pictureBox35
+			// 
+			this->pictureBox35->Location = System::Drawing::Point(5, 0);
+			this->pictureBox35->Name = L"pictureBox35";
+			this->pictureBox35->Size = System::Drawing::Size(70, 61);
+			this->pictureBox35->TabIndex = 11;
+			this->pictureBox35->TabStop = false;
+			// 
 			// lname10
 			// 
 			this->lname10->AutoSize = true;
 			this->lname10->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname10->Location = System::Drawing::Point(362, 6);
+			this->lname10->Location = System::Drawing::Point(190, 8);
 			this->lname10->Name = L"lname10";
 			this->lname10->Size = System::Drawing::Size(95, 19);
 			this->lname10->TabIndex = 9;
@@ -3376,7 +3670,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone10->AutoSize = true;
 			this->phone10->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone10->Location = System::Drawing::Point(283, 38);
+			this->phone10->Location = System::Drawing::Point(111, 40);
 			this->phone10->Name = L"phone10";
 			this->phone10->Size = System::Drawing::Size(98, 17);
 			this->phone10->TabIndex = 8;
@@ -3388,7 +3682,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname10->AutoSize = true;
 			this->fname10->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname10->Location = System::Drawing::Point(255, 5);
+			this->fname10->Location = System::Drawing::Point(83, 7);
 			this->fname10->Name = L"fname10";
 			this->fname10->Size = System::Drawing::Size(97, 19);
 			this->fname10->TabIndex = 7;
@@ -3451,6 +3745,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel12
 			// 
 			this->panel12->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel12->Controls->Add(this->label46);
+			this->panel12->Controls->Add(this->pictureBox36);
 			this->panel12->Controls->Add(this->lname11);
 			this->panel12->Controls->Add(this->phone11);
 			this->panel12->Controls->Add(this->fname11);
@@ -3466,12 +3762,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel12->TabIndex = 11;
 			this->panel12->Visible = false;
 			// 
+			// label46
+			// 
+			this->label46->AutoSize = true;
+			this->label46->Location = System::Drawing::Point(336, 24);
+			this->label46->Name = L"label46";
+			this->label46->Size = System::Drawing::Size(41, 13);
+			this->label46->TabIndex = 15;
+			this->label46->Text = L"label46";
+			// 
+			// pictureBox36
+			// 
+			this->pictureBox36->Location = System::Drawing::Point(5, 0);
+			this->pictureBox36->Name = L"pictureBox36";
+			this->pictureBox36->Size = System::Drawing::Size(70, 61);
+			this->pictureBox36->TabIndex = 11;
+			this->pictureBox36->TabStop = false;
+			// 
 			// lname11
 			// 
 			this->lname11->AutoSize = true;
 			this->lname11->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname11->Location = System::Drawing::Point(362, 6);
+			this->lname11->Location = System::Drawing::Point(190, 7);
 			this->lname11->Name = L"lname11";
 			this->lname11->Size = System::Drawing::Size(95, 19);
 			this->lname11->TabIndex = 9;
@@ -3482,7 +3795,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone11->AutoSize = true;
 			this->phone11->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone11->Location = System::Drawing::Point(283, 38);
+			this->phone11->Location = System::Drawing::Point(111, 39);
 			this->phone11->Name = L"phone11";
 			this->phone11->Size = System::Drawing::Size(98, 17);
 			this->phone11->TabIndex = 8;
@@ -3494,7 +3807,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname11->AutoSize = true;
 			this->fname11->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname11->Location = System::Drawing::Point(255, 5);
+			this->fname11->Location = System::Drawing::Point(83, 6);
 			this->fname11->Name = L"fname11";
 			this->fname11->Size = System::Drawing::Size(97, 19);
 			this->fname11->TabIndex = 7;
@@ -3557,6 +3870,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel13
 			// 
 			this->panel13->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel13->Controls->Add(this->label47);
+			this->panel13->Controls->Add(this->pictureBox37);
 			this->panel13->Controls->Add(this->lname12);
 			this->panel13->Controls->Add(this->phone12);
 			this->panel13->Controls->Add(this->fname12);
@@ -3572,12 +3887,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel13->TabIndex = 12;
 			this->panel13->Visible = false;
 			// 
+			// label47
+			// 
+			this->label47->AutoSize = true;
+			this->label47->Location = System::Drawing::Point(336, 24);
+			this->label47->Name = L"label47";
+			this->label47->Size = System::Drawing::Size(41, 13);
+			this->label47->TabIndex = 15;
+			this->label47->Text = L"label47";
+			// 
+			// pictureBox37
+			// 
+			this->pictureBox37->Location = System::Drawing::Point(5, 0);
+			this->pictureBox37->Name = L"pictureBox37";
+			this->pictureBox37->Size = System::Drawing::Size(70, 61);
+			this->pictureBox37->TabIndex = 11;
+			this->pictureBox37->TabStop = false;
+			// 
 			// lname12
 			// 
 			this->lname12->AutoSize = true;
 			this->lname12->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname12->Location = System::Drawing::Point(362, 6);
+			this->lname12->Location = System::Drawing::Point(190, 7);
 			this->lname12->Name = L"lname12";
 			this->lname12->Size = System::Drawing::Size(95, 19);
 			this->lname12->TabIndex = 9;
@@ -3588,7 +3920,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone12->AutoSize = true;
 			this->phone12->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone12->Location = System::Drawing::Point(283, 38);
+			this->phone12->Location = System::Drawing::Point(111, 39);
 			this->phone12->Name = L"phone12";
 			this->phone12->Size = System::Drawing::Size(98, 17);
 			this->phone12->TabIndex = 8;
@@ -3600,7 +3932,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname12->AutoSize = true;
 			this->fname12->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname12->Location = System::Drawing::Point(255, 5);
+			this->fname12->Location = System::Drawing::Point(83, 6);
 			this->fname12->Name = L"fname12";
 			this->fname12->Size = System::Drawing::Size(97, 19);
 			this->fname12->TabIndex = 7;
@@ -3663,6 +3995,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel14
 			// 
 			this->panel14->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel14->Controls->Add(this->label48);
+			this->panel14->Controls->Add(this->pictureBox38);
 			this->panel14->Controls->Add(this->lname13);
 			this->panel14->Controls->Add(this->phone13);
 			this->panel14->Controls->Add(this->fname13);
@@ -3678,12 +4012,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel14->TabIndex = 13;
 			this->panel14->Visible = false;
 			// 
+			// label48
+			// 
+			this->label48->AutoSize = true;
+			this->label48->Location = System::Drawing::Point(336, 24);
+			this->label48->Name = L"label48";
+			this->label48->Size = System::Drawing::Size(41, 13);
+			this->label48->TabIndex = 15;
+			this->label48->Text = L"label48";
+			// 
+			// pictureBox38
+			// 
+			this->pictureBox38->Location = System::Drawing::Point(5, 1);
+			this->pictureBox38->Name = L"pictureBox38";
+			this->pictureBox38->Size = System::Drawing::Size(70, 61);
+			this->pictureBox38->TabIndex = 11;
+			this->pictureBox38->TabStop = false;
+			// 
 			// lname13
 			// 
 			this->lname13->AutoSize = true;
 			this->lname13->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname13->Location = System::Drawing::Point(362, 6);
+			this->lname13->Location = System::Drawing::Point(190, 6);
 			this->lname13->Name = L"lname13";
 			this->lname13->Size = System::Drawing::Size(95, 19);
 			this->lname13->TabIndex = 9;
@@ -3694,7 +4045,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone13->AutoSize = true;
 			this->phone13->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone13->Location = System::Drawing::Point(283, 38);
+			this->phone13->Location = System::Drawing::Point(111, 38);
 			this->phone13->Name = L"phone13";
 			this->phone13->Size = System::Drawing::Size(98, 17);
 			this->phone13->TabIndex = 8;
@@ -3706,7 +4057,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname13->AutoSize = true;
 			this->fname13->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname13->Location = System::Drawing::Point(255, 5);
+			this->fname13->Location = System::Drawing::Point(83, 5);
 			this->fname13->Name = L"fname13";
 			this->fname13->Size = System::Drawing::Size(97, 19);
 			this->fname13->TabIndex = 7;
@@ -3769,6 +4120,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel15
 			// 
 			this->panel15->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel15->Controls->Add(this->label49);
+			this->panel15->Controls->Add(this->pictureBox39);
 			this->panel15->Controls->Add(this->lname14);
 			this->panel15->Controls->Add(this->phone14);
 			this->panel15->Controls->Add(this->fname14);
@@ -3784,12 +4137,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel15->TabIndex = 14;
 			this->panel15->Visible = false;
 			// 
+			// label49
+			// 
+			this->label49->AutoSize = true;
+			this->label49->Location = System::Drawing::Point(336, 24);
+			this->label49->Name = L"label49";
+			this->label49->Size = System::Drawing::Size(41, 13);
+			this->label49->TabIndex = 16;
+			this->label49->Text = L"label49";
+			// 
+			// pictureBox39
+			// 
+			this->pictureBox39->Location = System::Drawing::Point(5, 1);
+			this->pictureBox39->Name = L"pictureBox39";
+			this->pictureBox39->Size = System::Drawing::Size(70, 61);
+			this->pictureBox39->TabIndex = 11;
+			this->pictureBox39->TabStop = false;
+			// 
 			// lname14
 			// 
 			this->lname14->AutoSize = true;
 			this->lname14->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname14->Location = System::Drawing::Point(362, 6);
+			this->lname14->Location = System::Drawing::Point(190, 6);
 			this->lname14->Name = L"lname14";
 			this->lname14->Size = System::Drawing::Size(95, 19);
 			this->lname14->TabIndex = 9;
@@ -3800,7 +4170,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone14->AutoSize = true;
 			this->phone14->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone14->Location = System::Drawing::Point(283, 38);
+			this->phone14->Location = System::Drawing::Point(111, 38);
 			this->phone14->Name = L"phone14";
 			this->phone14->Size = System::Drawing::Size(98, 17);
 			this->phone14->TabIndex = 8;
@@ -3812,7 +4182,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname14->AutoSize = true;
 			this->fname14->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname14->Location = System::Drawing::Point(255, 5);
+			this->fname14->Location = System::Drawing::Point(83, 5);
 			this->fname14->Name = L"fname14";
 			this->fname14->Size = System::Drawing::Size(97, 19);
 			this->fname14->TabIndex = 7;
@@ -3875,6 +4245,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel16
 			// 
 			this->panel16->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel16->Controls->Add(this->label50);
+			this->panel16->Controls->Add(this->pictureBox40);
 			this->panel16->Controls->Add(this->lname15);
 			this->panel16->Controls->Add(this->phone15);
 			this->panel16->Controls->Add(this->fname15);
@@ -3890,12 +4262,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel16->TabIndex = 15;
 			this->panel16->Visible = false;
 			// 
+			// label50
+			// 
+			this->label50->AutoSize = true;
+			this->label50->Location = System::Drawing::Point(336, 24);
+			this->label50->Name = L"label50";
+			this->label50->Size = System::Drawing::Size(41, 13);
+			this->label50->TabIndex = 16;
+			this->label50->Text = L"label50";
+			// 
+			// pictureBox40
+			// 
+			this->pictureBox40->Location = System::Drawing::Point(5, 2);
+			this->pictureBox40->Name = L"pictureBox40";
+			this->pictureBox40->Size = System::Drawing::Size(70, 61);
+			this->pictureBox40->TabIndex = 11;
+			this->pictureBox40->TabStop = false;
+			// 
 			// lname15
 			// 
 			this->lname15->AutoSize = true;
 			this->lname15->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname15->Location = System::Drawing::Point(362, 6);
+			this->lname15->Location = System::Drawing::Point(190, 6);
 			this->lname15->Name = L"lname15";
 			this->lname15->Size = System::Drawing::Size(95, 19);
 			this->lname15->TabIndex = 9;
@@ -3906,7 +4295,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone15->AutoSize = true;
 			this->phone15->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone15->Location = System::Drawing::Point(283, 38);
+			this->phone15->Location = System::Drawing::Point(111, 38);
 			this->phone15->Name = L"phone15";
 			this->phone15->Size = System::Drawing::Size(98, 17);
 			this->phone15->TabIndex = 8;
@@ -3918,7 +4307,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname15->AutoSize = true;
 			this->fname15->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname15->Location = System::Drawing::Point(255, 5);
+			this->fname15->Location = System::Drawing::Point(83, 5);
 			this->fname15->Name = L"fname15";
 			this->fname15->Size = System::Drawing::Size(97, 19);
 			this->fname15->TabIndex = 7;
@@ -3981,6 +4370,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel17
 			// 
 			this->panel17->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel17->Controls->Add(this->label51);
+			this->panel17->Controls->Add(this->pictureBox41);
 			this->panel17->Controls->Add(this->lname16);
 			this->panel17->Controls->Add(this->phone16);
 			this->panel17->Controls->Add(this->fname16);
@@ -3996,12 +4387,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel17->TabIndex = 16;
 			this->panel17->Visible = false;
 			// 
+			// label51
+			// 
+			this->label51->AutoSize = true;
+			this->label51->Location = System::Drawing::Point(336, 24);
+			this->label51->Name = L"label51";
+			this->label51->Size = System::Drawing::Size(41, 13);
+			this->label51->TabIndex = 16;
+			this->label51->Text = L"label51";
+			// 
+			// pictureBox41
+			// 
+			this->pictureBox41->Location = System::Drawing::Point(5, 0);
+			this->pictureBox41->Name = L"pictureBox41";
+			this->pictureBox41->Size = System::Drawing::Size(70, 61);
+			this->pictureBox41->TabIndex = 11;
+			this->pictureBox41->TabStop = false;
+			// 
 			// lname16
 			// 
 			this->lname16->AutoSize = true;
 			this->lname16->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname16->Location = System::Drawing::Point(362, 6);
+			this->lname16->Location = System::Drawing::Point(190, 3);
 			this->lname16->Name = L"lname16";
 			this->lname16->Size = System::Drawing::Size(95, 19);
 			this->lname16->TabIndex = 9;
@@ -4012,7 +4420,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone16->AutoSize = true;
 			this->phone16->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone16->Location = System::Drawing::Point(283, 38);
+			this->phone16->Location = System::Drawing::Point(111, 35);
 			this->phone16->Name = L"phone16";
 			this->phone16->Size = System::Drawing::Size(98, 17);
 			this->phone16->TabIndex = 8;
@@ -4024,7 +4432,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname16->AutoSize = true;
 			this->fname16->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname16->Location = System::Drawing::Point(255, 5);
+			this->fname16->Location = System::Drawing::Point(83, 2);
 			this->fname16->Name = L"fname16";
 			this->fname16->Size = System::Drawing::Size(97, 19);
 			this->fname16->TabIndex = 7;
@@ -4087,6 +4495,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel18
 			// 
 			this->panel18->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel18->Controls->Add(this->label52);
+			this->panel18->Controls->Add(this->pictureBox42);
 			this->panel18->Controls->Add(this->lname17);
 			this->panel18->Controls->Add(this->phone17);
 			this->panel18->Controls->Add(this->fname17);
@@ -4102,12 +4512,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel18->TabIndex = 17;
 			this->panel18->Visible = false;
 			// 
+			// label52
+			// 
+			this->label52->AutoSize = true;
+			this->label52->Location = System::Drawing::Point(336, 24);
+			this->label52->Name = L"label52";
+			this->label52->Size = System::Drawing::Size(41, 13);
+			this->label52->TabIndex = 16;
+			this->label52->Text = L"label52";
+			// 
+			// pictureBox42
+			// 
+			this->pictureBox42->Location = System::Drawing::Point(5, 0);
+			this->pictureBox42->Name = L"pictureBox42";
+			this->pictureBox42->Size = System::Drawing::Size(70, 61);
+			this->pictureBox42->TabIndex = 11;
+			this->pictureBox42->TabStop = false;
+			// 
 			// lname17
 			// 
 			this->lname17->AutoSize = true;
 			this->lname17->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname17->Location = System::Drawing::Point(362, 6);
+			this->lname17->Location = System::Drawing::Point(190, 6);
 			this->lname17->Name = L"lname17";
 			this->lname17->Size = System::Drawing::Size(95, 19);
 			this->lname17->TabIndex = 9;
@@ -4118,7 +4545,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone17->AutoSize = true;
 			this->phone17->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone17->Location = System::Drawing::Point(283, 38);
+			this->phone17->Location = System::Drawing::Point(111, 38);
 			this->phone17->Name = L"phone17";
 			this->phone17->Size = System::Drawing::Size(98, 17);
 			this->phone17->TabIndex = 8;
@@ -4130,7 +4557,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname17->AutoSize = true;
 			this->fname17->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname17->Location = System::Drawing::Point(255, 5);
+			this->fname17->Location = System::Drawing::Point(83, 5);
 			this->fname17->Name = L"fname17";
 			this->fname17->Size = System::Drawing::Size(97, 19);
 			this->fname17->TabIndex = 7;
@@ -4193,6 +4620,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel19
 			// 
 			this->panel19->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel19->Controls->Add(this->label53);
+			this->panel19->Controls->Add(this->pictureBox43);
 			this->panel19->Controls->Add(this->lname18);
 			this->panel19->Controls->Add(this->phone18);
 			this->panel19->Controls->Add(this->fname18);
@@ -4208,12 +4637,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel19->TabIndex = 18;
 			this->panel19->Visible = false;
 			// 
+			// label53
+			// 
+			this->label53->AutoSize = true;
+			this->label53->Location = System::Drawing::Point(336, 24);
+			this->label53->Name = L"label53";
+			this->label53->Size = System::Drawing::Size(41, 13);
+			this->label53->TabIndex = 12;
+			this->label53->Text = L"label53";
+			// 
+			// pictureBox43
+			// 
+			this->pictureBox43->Location = System::Drawing::Point(5, 0);
+			this->pictureBox43->Name = L"pictureBox43";
+			this->pictureBox43->Size = System::Drawing::Size(70, 61);
+			this->pictureBox43->TabIndex = 11;
+			this->pictureBox43->TabStop = false;
+			// 
 			// lname18
 			// 
 			this->lname18->AutoSize = true;
 			this->lname18->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname18->Location = System::Drawing::Point(362, 6);
+			this->lname18->Location = System::Drawing::Point(190, 7);
 			this->lname18->Name = L"lname18";
 			this->lname18->Size = System::Drawing::Size(95, 19);
 			this->lname18->TabIndex = 9;
@@ -4224,7 +4670,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone18->AutoSize = true;
 			this->phone18->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone18->Location = System::Drawing::Point(283, 38);
+			this->phone18->Location = System::Drawing::Point(111, 39);
 			this->phone18->Name = L"phone18";
 			this->phone18->Size = System::Drawing::Size(98, 17);
 			this->phone18->TabIndex = 8;
@@ -4236,7 +4682,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname18->AutoSize = true;
 			this->fname18->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname18->Location = System::Drawing::Point(255, 5);
+			this->fname18->Location = System::Drawing::Point(83, 6);
 			this->fname18->Name = L"fname18";
 			this->fname18->Size = System::Drawing::Size(97, 19);
 			this->fname18->TabIndex = 7;
@@ -4299,6 +4745,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel20
 			// 
 			this->panel20->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel20->Controls->Add(this->label54);
+			this->panel20->Controls->Add(this->pictureBox44);
 			this->panel20->Controls->Add(this->lname19);
 			this->panel20->Controls->Add(this->phone19);
 			this->panel20->Controls->Add(this->fname19);
@@ -4314,12 +4762,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel20->TabIndex = 19;
 			this->panel20->Visible = false;
 			// 
+			// label54
+			// 
+			this->label54->AutoSize = true;
+			this->label54->Location = System::Drawing::Point(336, 23);
+			this->label54->Name = L"label54";
+			this->label54->Size = System::Drawing::Size(41, 13);
+			this->label54->TabIndex = 12;
+			this->label54->Text = L"label54";
+			// 
+			// pictureBox44
+			// 
+			this->pictureBox44->Location = System::Drawing::Point(5, 0);
+			this->pictureBox44->Name = L"pictureBox44";
+			this->pictureBox44->Size = System::Drawing::Size(70, 61);
+			this->pictureBox44->TabIndex = 11;
+			this->pictureBox44->TabStop = false;
+			// 
 			// lname19
 			// 
 			this->lname19->AutoSize = true;
 			this->lname19->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname19->Location = System::Drawing::Point(362, 6);
+			this->lname19->Location = System::Drawing::Point(190, 3);
 			this->lname19->Name = L"lname19";
 			this->lname19->Size = System::Drawing::Size(95, 19);
 			this->lname19->TabIndex = 9;
@@ -4330,7 +4795,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone19->AutoSize = true;
 			this->phone19->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone19->Location = System::Drawing::Point(283, 38);
+			this->phone19->Location = System::Drawing::Point(111, 35);
 			this->phone19->Name = L"phone19";
 			this->phone19->Size = System::Drawing::Size(98, 17);
 			this->phone19->TabIndex = 8;
@@ -4342,7 +4807,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname19->AutoSize = true;
 			this->fname19->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname19->Location = System::Drawing::Point(255, 5);
+			this->fname19->Location = System::Drawing::Point(83, 2);
 			this->fname19->Name = L"fname19";
 			this->fname19->Size = System::Drawing::Size(97, 19);
 			this->fname19->TabIndex = 7;
@@ -4405,6 +4870,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// panel21
 			// 
 			this->panel21->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel21->Controls->Add(this->label55);
+			this->panel21->Controls->Add(this->pictureBox45);
 			this->panel21->Controls->Add(this->lname20);
 			this->panel21->Controls->Add(this->phone20);
 			this->panel21->Controls->Add(this->fname20);
@@ -4420,12 +4887,29 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel21->TabIndex = 20;
 			this->panel21->Visible = false;
 			// 
+			// label55
+			// 
+			this->label55->AutoSize = true;
+			this->label55->Location = System::Drawing::Point(336, 25);
+			this->label55->Name = L"label55";
+			this->label55->Size = System::Drawing::Size(41, 13);
+			this->label55->TabIndex = 12;
+			this->label55->Text = L"label55";
+			// 
+			// pictureBox45
+			// 
+			this->pictureBox45->Location = System::Drawing::Point(5, 3);
+			this->pictureBox45->Name = L"pictureBox45";
+			this->pictureBox45->Size = System::Drawing::Size(70, 61);
+			this->pictureBox45->TabIndex = 11;
+			this->pictureBox45->TabStop = false;
+			// 
 			// lname20
 			// 
 			this->lname20->AutoSize = true;
 			this->lname20->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lname20->Location = System::Drawing::Point(362, 6);
+			this->lname20->Location = System::Drawing::Point(190, 8);
 			this->lname20->Name = L"lname20";
 			this->lname20->Size = System::Drawing::Size(95, 19);
 			this->lname20->TabIndex = 9;
@@ -4436,7 +4920,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->phone20->AutoSize = true;
 			this->phone20->Font = (gcnew System::Drawing::Font(L"Tahoma", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->phone20->Location = System::Drawing::Point(283, 38);
+			this->phone20->Location = System::Drawing::Point(111, 40);
 			this->phone20->Name = L"phone20";
 			this->phone20->Size = System::Drawing::Size(98, 17);
 			this->phone20->TabIndex = 8;
@@ -4448,7 +4932,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->fname20->AutoSize = true;
 			this->fname20->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->fname20->Location = System::Drawing::Point(255, 5);
+			this->fname20->Location = System::Drawing::Point(83, 7);
 			this->fname20->Name = L"fname20";
 			this->fname20->Size = System::Drawing::Size(97, 19);
 			this->fname20->TabIndex = 7;
@@ -4598,6 +5082,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// 
 			// pn_con
 			// 
+			this->pn_con->Controls->Add(this->add_chat);
 			this->pn_con->Controls->Add(this->pn_show_contact);
 			this->pn_con->Controls->Add(this->pn_profile);
 			this->pn_con->Controls->Add(this->pn_sphoto);
@@ -4605,7 +5090,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->pn_con->Controls->Add(this->stories);
 			this->pn_con->Controls->Add(this->pn_chatroom);
 			this->pn_con->Controls->Add(this->pn_chat);
-			this->pn_con->Controls->Add(this->add_chat);
 			this->pn_con->Controls->Add(this->pn_new_contact);
 			this->pn_con->Controls->Add(this->pn_stext);
 			this->pn_con->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -4698,14 +5182,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			// 
 			this->ofd->FileName = L"openFileDialog1";
 			// 
-			// pictureBox6
-			// 
-			this->pictureBox6->Location = System::Drawing::Point(5, 0);
-			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(70, 61);
-			this->pictureBox6->TabIndex = 10;
-			this->pictureBox6->TabStop = false;
-			// 
 			// chatroom
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -4770,44 +5246,64 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox27))->EndInit();
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox28))->EndInit();
 			this->panel5->ResumeLayout(false);
 			this->panel5->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox29))->EndInit();
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox30))->EndInit();
 			this->panel7->ResumeLayout(false);
 			this->panel7->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox31))->EndInit();
 			this->panel8->ResumeLayout(false);
 			this->panel8->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox32))->EndInit();
 			this->panel9->ResumeLayout(false);
 			this->panel9->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox33))->EndInit();
 			this->panel10->ResumeLayout(false);
 			this->panel10->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox34))->EndInit();
 			this->panel11->ResumeLayout(false);
 			this->panel11->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox35))->EndInit();
 			this->panel12->ResumeLayout(false);
 			this->panel12->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox36))->EndInit();
 			this->panel13->ResumeLayout(false);
 			this->panel13->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox37))->EndInit();
 			this->panel14->ResumeLayout(false);
 			this->panel14->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox38))->EndInit();
 			this->panel15->ResumeLayout(false);
 			this->panel15->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox39))->EndInit();
 			this->panel16->ResumeLayout(false);
 			this->panel16->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox40))->EndInit();
 			this->panel17->ResumeLayout(false);
 			this->panel17->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox41))->EndInit();
 			this->panel18->ResumeLayout(false);
 			this->panel18->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox42))->EndInit();
 			this->panel19->ResumeLayout(false);
 			this->panel19->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox43))->EndInit();
 			this->panel20->ResumeLayout(false);
 			this->panel20->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox44))->EndInit();
 			this->panel21->ResumeLayout(false);
 			this->panel21->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox45))->EndInit();
 			this->stories->ResumeLayout(false);
 			this->stories->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox26))->EndInit();
@@ -4816,7 +5312,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox23))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox22))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox24))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			this->ResumeLayout(false);
 
 		}

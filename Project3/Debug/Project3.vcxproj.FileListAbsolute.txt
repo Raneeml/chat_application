@@ -18,3 +18,8 @@ D:\github\chat28\Project3\Debug\Project3.chatroom.resources
 D:\github\chat28\Project3\Debug\Project3.signIn.resources
 D:\github\chat28\Project3\Debug\Project3.SignUp.resources
 D:\github\chat28\Project3\Debug\Project3.vcxproj.GenerateResource.cache
+D:\Downloads\inshallah\chat_application\Project3\Debug\Project3.vcxproj.AssemblyReference.cache
+D:\Downloads\inshallah\chat_application\Project3\Debug\Project3.chatroom.resources
+D:\Downloads\inshallah\chat_application\Project3\Debug\Project3.signIn.resources
+D:\Downloads\inshallah\chat_application\Project3\Debug\Project3.SignUp.resources
+D:\Downloads\inshallah\chat_application\Project3\Debug\Project3.vcxproj.GenerateResource.cache
